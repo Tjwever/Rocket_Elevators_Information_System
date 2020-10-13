@@ -1,24 +1,60 @@
-# README
+&#xa0;
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+  <!-- Saad Eddine FEKI -->
+</div>
 
-Things you may want to cover:
+<h1 align="center"> 🚀 Rocket Elevators ---- By Cindy, Christ, Joey et Saad</h1>
 
-* Ruby version
+<!-- Status -->
 
-* System dependencies
+<h4 align="center">
+  🚀  CodeBoxx
+</h4>
 
-* Configuration
+<hr>
 
-* Database creation
+<p align="center">
+  <a href="#dart-about">About</a> &#xa0; | &#xa0; 
+  <a href="#sparkles-features">Features</a> &#xa0; | &#xa0;
+  <a href="#white_check_mark-requirements">Requirements</a> &#xa0; | &#xa0;
+  <a href="#checkered_flag-starting">Starting</a> &#xa0; | &#xa0;
+  <a href="#memo-license">License</a> &#xa0; | &#xa0;
+  <a href="https://github.com/saadeddine" target="_blank">Saad eddine</a>
+</p>
 
-* Database initialization
+<br>
 
-* How to run the test suite
+## :dart: About
 
-* Services (job queues, cache servers, search engines, etc.)
+1. Making a digital presence of a company called Rocket Elevators.
+2. A form with javascript, who calculate on the same page the cost of a project according to the information provided by the visitor of the site.
 
-* Deployment instructions
+## :sparkles: Features
 
-* ...
+:heavy_check_mark: HTML 5;\
+:heavy_check_mark: CSS 3;\
+:heavy_check_mark: Javascript;\
+:heavy_check_mark: Bootstrap;
+
+<!-- ## :rocket: Technologies
+
+The following tools were used in this project:
+
+- [Bootstrap]()
+- [HTML3]()
+- [CSS5]()
+- [JavaScript]() -->
+
+## :white_check_mark: Requirements
+
+No requirements
+
+## :memo: License
+
+- This project is under license from CodeBoxx.
+
+Made with :heart: by <a href="https://github.com/saadeddinne" target="_blank">{{SaadEddine}}</a>
+
+&#xa0;
+
+<a href="#top">Back to top</a>
