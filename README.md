@@ -49,6 +49,13 @@ The following tools were used in this project:
 
 No requirements
 
+## :memo: Routes
+
+- homepage: <b>/</b>
+- residential page: <b>/residential/index</b>
+- commercial page: <b>/commercial/index</b>
+- form page: <b>/form/index</b>
+
 ## :memo: License
 
 - This project is under license from CodeBoxx.
