@@ -1,4 +1,4 @@
-	<body class="smoothscroll enable-animation">
+
 
 
 
@@ -6,32 +6,7 @@
 
 		<!-- wrapper -->
 		<div id="wrapper">
-			<!--
-				AVAILABLE HEADER CLASSES
-
-				Default nav height: 96px
-				.header-md 		= 70px nav height
-				.header-sm 		= 60px nav height
-
-				.b-0 		= remove bottom border (only with transparent use)
-				.transparent	= transparent header
-				.translucent	= translucent header
-				.sticky			= sticky header
-				.static			= static header
-				.dark			= dark header
-				.bottom			= header on bottom
-
-				shadow-before-1 = shadow 1 header top
-				shadow-after-1 	= shadow 1 header bottom
-				shadow-before-2 = shadow 2 header top
-				shadow-after-2 	= shadow 2 header bottom
-				shadow-before-3 = shadow 3 header top
-				shadow-after-3 	= shadow 3 header bottom
-
-				.clearfix		= required for mobile menu, do not remove!
-
-				Example Usage:  class="clearfix sticky header-sm transparent b-0"
-			-->
+			
 			<div id="header" class="navbar-toggleable-md 	shadow-after-1 sticky header-md clearfix">
 				<!-- TOP NAV -->
 				<header id="topNav">
@@ -47,7 +22,8 @@
 
 						<!-- Logo -->
 						<a class="logo float-left scrollTo" href="#top">
-							<img src="assets/images/logo-inc.png" alt="" />
+							
+							<%= image_tag("logo-inc.png", class: "logo float-left scrollTo") %>
 						</a>
 
 						<!--
@@ -143,13 +119,15 @@
 								<!-- dark overlay [1 to 9 opacity] -->
 							</div>
 							<!-- MAIN IMAGE -->
-							<img
+							<%# <img
 								src="assets/images/img01.jpg"
 								alt="cover image"
 								data-bgposition="center top"
 								data-bgfit="cover"
 								data-bgrepeat="no-repeat"
-							/>
+							/> %>
+							<%= image_tag("img01.jpg") %>
+
 
 							<div
 								class="tp-caption white_big skewfromleft tp-resizeme"
@@ -521,11 +499,8 @@
 									><!-- image-hover-light | image-hover-dark -->
 								</span>
 
-								<img
-									class="img-fluid"
-									src="assets/images/awards500px.jpg"
-									alt="img"
-								/>
+								
+								<%= image_tag("awards500px.jpg", class: "img-fluid") %>
 							</a>
 							<h3 class="mt-10 text-danger text-center">Awards and projects</h3>
 							<p class="text-justify">
@@ -1636,6 +1611,7 @@
 									alt="client"
 									style="cursor: none;"
 								/>
+								<%= image_tag("logo-inc.png", class: "footer-logo", style:"width: 100px") %>
 							</a>
 						</li>
 					</ul>
@@ -1927,12 +1903,10 @@
 				<!-- FOOTER -->
 				<footer id="footer">
 					<div class="container mt-0">
-						<div class="row"> 	<img
-							class="footer-logo"
-							src="assets/images/logo-inc.png"
-							alt=""
-							style="width: 100px"
-						/></div>
+						<div class="row"> 	
+						
+						<%= image_tag("logo-inc.png", class: "footer-logo", style:"width: 100px") %>
+						</div>
 						<div class="row">
 							<div class="col-md-4">
 								<!-- Footer Logo -->
@@ -2227,4 +2201,3 @@
 
 	
 
-	</body>
