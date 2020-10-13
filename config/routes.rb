@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   get 'user/update'
   devise_for :users
   
+  get 'form/index'
+  get 'commercial/index'
   get 'residential/index'
   get 'application/index'
   root 'pages#index'
