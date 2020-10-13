@@ -1,26 +1,159 @@
-<h2>Log in</h2>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- mobile settings -->
+  <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0"/>
+  <meta charset="utf-8" />
+
+  <title>Rocket Elevators</title>
+  <meta name="description" content=" Rocket Elevators make professional elevators quebec canada" />
+  <meta name="Author" content="Saad Eddine FEKI [CodeBoxx]" />
+
+  <!-- RAILS CSS/JS -->
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'%>
+  <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'%>
+  <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload'%>
+
+  <!-- WEB FONTS : use %7C instead of | (pipe) -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600%7CRaleway:300,400,500,600,700%7CLato:300,400,400italic,600,700"
+    rel="stylesheet"
+    type="text/css"
+  />
+  <!-- Rocket elevators Favicon -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+    crossorigin="anonymous" />
+  <link rel="icon"
+    type="image/png"
+    href="<%= asset_path( 'favicon-16x16.png' ) %>" />
+
+  <style>
+  .myDiv {
+    border: 3px outset black;
+    background-color: rgba(215,255,255,0.2);    
+    text-align: center;
+    width: 375px;
+    margin: auto;
+    height: 400px;
+    border-radius: 7%
+  }
+  </style>
+</head>
+
+<body style="background-color: lightgrey">
+
+  <div id="header" class="navbar-toggleable-md sticky clearfix">
+    <!-- TOP NAV -->
+    <header id="topNav">
+      <div class="container">
+        <!-- Mobile Menu Button -->
+        <button class="btn btn-mobile"
+          data-toggle="collapse"
+          data-target=".nav-main-collapse">
+          <i class="fa fa-bars"></i>
+        </button>
+
+        <!-- Logo -->
+        <a class="logo float-left scrollTo" href="#top">
+          <img src="<%= asset_path( 'logo-inc.png' ) %>">							
+        </a>
+
+        <!--
+          Top Nav
+        -->
+        <div
+          class="navbar-collapse collapse float-right nav-main-collapse submenu-dark"
+        >
+          <nav class="nav-main">
+            <!--
+              .nav-onepage
+              Required for onepage navigation links
+
+              Add .external for an external link!
+            -->
+            <ul id="topMain" class="nav nav-pills nav-main nav-onepage">
+              <li class="active">
+                <!-- HOME -->
+                <a href="index.html"> HOME </a>
+              </li>
+              <li class="dropdown"><!-- sERVICES -->
+                <a class="dropdown-toggle" href="#">
+                  SERVICES
+                </a>
+                <ul class="dropdown-menu">
+                  <li class="dropdown">
+                    <a class="dropdown-toggle" href="page-commercial.html">
+                      COMMERCIAL
+                    </a>
+                  </li>
+                  <li class="dropdown">
+                    <a class="dropdown-toggle" href="page-residential.html">
+                      RESIDENTIAL
+                    </a>
+                  </li>
+                  <li class="dropdown">
+                    <a class="dropdown-toggle" href="page-form.html">
+                      REQUEST FOR QUOTE
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <!-- WORK -->
+                <a href="index.html#work"> PORTFOLIO </a>
+              </li>
+              <li>
+                <!-- NEWS -->
+                <a href="index.html#news"> NEWS </a>
+              </li>
+
+              <li>
+                <!-- CLIENTS -->
+                <a href="index.html#clients"> CLIENTS </a>
+              </li>
+
+              <li>
+                <!-- CONTACT -->
+                <a href="index.html#contact"> CONTACT </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <!-- /Top Nav -->
   </div>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
 
-  <% if devise_mapping.rememberable? %>
+<div class= "myDiv mt-120">
+  <h2>Log in</h2>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
     </div>
-  <% end %>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
+    <div class="field">
+      <%= f.label :password %><br />
+      <%= f.password_field :password, autocomplete: "current-password" %>
+    </div>
+
+    <% if devise_mapping.rememberable? %>
+      <div class="field form-check-inline">
+        <%= f.check_box :remember_me %>
+        <%= f.label :remember_me %>
+      </div>
+    <% end %>
+
+    <div class="actions">
+      <%= f.submit "Log in" %>
   </div>
 <% end %>
 
 <%= render "devise/shared/links" %>
+</div>
+
+</body>
