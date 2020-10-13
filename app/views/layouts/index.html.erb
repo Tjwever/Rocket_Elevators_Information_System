@@ -5,9 +5,9 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-<%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>  
-<%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>  
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 
 <%= favicon_link_tag asset_path('favicon-16x16.png') %>
  <!-- REVOLUTION SLIDER -->
@@ -35,8 +35,4 @@
 
   
     <%= yield %>
-    <%= javascript_include_tag 'popper.min'%>
-    <%= javascript_include_tag 'demo.revolution_slider'%>
-    <%= javascript_include_tag '/plugins/slider.revolution/jsjquery.themepunch.tools.min'%>
-    <%= javascript_include_tag '/plugins/slider.revolution/jquery.themepunch.revolution.min'%>
 </html>

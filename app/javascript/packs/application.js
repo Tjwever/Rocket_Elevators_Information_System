@@ -4,6 +4,7 @@
 // that code so it'll be compiled.
 # app/javascript/packs/application.js
 import 'bootstrap'
+import 'bootstrap-social'
 import '../stylesheets/application'
 
 require("@rails/ujs").start()
