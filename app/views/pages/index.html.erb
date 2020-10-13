@@ -1,7 +1,36 @@
-	<body class="smoothscroll enable-animation">
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- mobile settings -->
+		<meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0"/>
+		<meta charset="utf-8" />
 
+		<title>Rocket Elevators</title>
+		<meta name="description" content=" Rocket Elevators make professional elevators quebec canada" />
+		<meta name="Author" content="Saad Eddine FEKI [CodeBoxx]" />
 
+		<!-- RAILS CSS/JS -->
+		<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'%>
+		<%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'%>
+		<%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload'%>
 
+		<!-- WEB FONTS : use %7C instead of | (pipe) -->
+		<link
+			href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600%7CRaleway:300,400,500,600,700%7CLato:300,400,400italic,600,700"
+			rel="stylesheet"
+			type="text/css"
+		/>
+		<!-- Rocket elevators Favicon -->
+		<link rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+			integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+			crossorigin="anonymous" />
+		<link rel="icon"
+			type="image/png"
+			href="<%= asset_path( 'favicon-16x16.png' ) %>" />
+	</head>
+
+<body class="smoothscroll enable-animation">
 		<!-- /SLIDE TOP -->
 
 		<!-- wrapper -->
@@ -47,7 +76,7 @@
 
 						<!-- Logo -->
 						<a class="logo float-left scrollTo" href="#top">
-							<img src="assets/images/logo-inc.png" alt="" />
+							<img src="<%= asset_path( 'logo-inc.png' ) %>">								
 						</a>
 
 						<!--
@@ -1245,7 +1274,6 @@
 											<h4 class="carousel-title"> <i class="fas fa-briefcase text-success mr-5 "></i>
 
 												<span class="text-dark">Patrick Thibault</span></h4>
-											</CEO>
 											<div class="carousel-line"></div>
 
 											<p class="testimonial">
@@ -1265,7 +1293,6 @@
 											<h4 class="carousel-title"> <i class="fas fa-award text-warning mr-5 "></i>
 
 												<span class="text-dark">September 2020 Employee of the Month!</span></h4>
-											</CEO>
 											<div class="carousel-line"></div>
 
 											<p class="testimonial">
@@ -1522,7 +1549,17 @@
 							<a>
 								<img
 									class="img-fluid"
-									src="assets/images/logo01.jpg"
+									img src="<%= asset_path( 'logo01.jpg' ) %>"
+									alt="client"
+									style="cursor: none;"
+								/>
+							</a>
+						</li>
+						<li class="col-md-3 col-sm-3 col-6">
+							<a >
+								<img
+									class="img-fluid"									
+									img src="<%= asset_path( 'logo02.png' ) %>"
 									alt="client"
 									style="cursor: none;"
 								/>
@@ -1532,7 +1569,7 @@
 							<a >
 								<img
 									class="img-fluid"
-									src="assets/images/logo02.png"
+									img src="<%= asset_path( 'logo03.png' ) %>"
 									alt="client"
 									style="cursor: none;"
 								/>
@@ -1542,7 +1579,7 @@
 							<a >
 								<img
 									class="img-fluid"
-									src="assets/images/logo03.png"
+									img src="<%= asset_path( 'logo04.jpg' ) %>"
 									alt="client"
 									style="cursor: none;"
 								/>
@@ -1552,7 +1589,7 @@
 							<a >
 								<img
 									class="img-fluid"
-									src="assets/images/logo04.jpg"
+									img src="<%= asset_path( 'logo05.jpg' ) %>"
 									alt="client"
 									style="cursor: none;"
 								/>
@@ -1562,7 +1599,7 @@
 							<a >
 								<img
 									class="img-fluid"
-									src="assets/images/logo05.jpg"
+									img src="<%= asset_path( 'logo06.png' ) %>"
 									alt="client"
 									style="cursor: none;"
 								/>
@@ -1572,7 +1609,7 @@
 							<a >
 								<img
 									class="img-fluid"
-									src="assets/images/logo06.png"
+									img src="<%= asset_path( 'logo07.jpg' ) %>"
 									alt="client"
 									style="cursor: none;"
 								/>
@@ -1582,7 +1619,7 @@
 							<a >
 								<img
 									class="img-fluid"
-									src="assets/images/logo07.jpg"
+									img src="<%= asset_path( 'logo08.jpg' ) %>"
 									alt="client"
 									style="cursor: none;"
 								/>
@@ -1592,7 +1629,7 @@
 							<a >
 								<img
 									class="img-fluid"
-									src="assets/images/logo08.jpg"
+									img src="<%= asset_path( 'logo09.png' ) %>"
 									alt="client"
 									style="cursor: none;"
 								/>
@@ -1602,7 +1639,7 @@
 							<a >
 								<img
 									class="img-fluid"
-									src="assets/images/logo09.png"
+									img src="<%= asset_path( 'logo10.jpg' ) %>"
 									alt="client"
 									style="cursor: none;"
 								/>
@@ -1612,7 +1649,7 @@
 							<a >
 								<img
 									class="img-fluid"
-									src="assets/images/logo10.jpg"
+									img src="<%= asset_path( 'logo11.png' ) %>"
 									alt="client"
 									style="cursor: none;"
 								/>
@@ -1622,17 +1659,7 @@
 							<a >
 								<img
 									class="img-fluid"
-									src="assets/images/logo11.png"
-									alt="client"
-									style="cursor: none;"
-								/>
-							</a>
-						</li>
-						<li class="col-md-3 col-sm-3 col-6">
-							<a >
-								<img
-									class="img-fluid"
-									src="assets/images/logo12.jpg"
+									img src="<%= asset_path( 'logo12.jpg' ) %>"
 									alt="client"
 									style="cursor: none;"
 								/>

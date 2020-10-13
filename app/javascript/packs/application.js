@@ -6,6 +6,9 @@
 import 'bootstrap'
 import 'bootstrap-social'
 import '../stylesheets/application'
+import '../javascripts/demo.revolution_slider.js'
+import '../plugins/slider.revolution'
+
 
 require("@rails/ujs").start()
 require("turbolinks").start()
