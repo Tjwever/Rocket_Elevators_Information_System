@@ -55,6 +55,7 @@ No requirements
 - residential page: <b>/residential</b>
 - commercial page: <b>/commercial</b>
 - form page: <b>/form</b>
+- Admin panel:<b>/admin</b>
 
 ## :memo: License
 
