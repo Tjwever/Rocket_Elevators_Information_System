@@ -1,3 +1,4 @@
+<<<<<<< HEAD:app/views/pages/home.html.erb
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -31,36 +32,17 @@
 	</head>
 
 <body class="smoothscroll enable-animation">
+=======
+
+
+
+
+>>>>>>> ae6e3319fa024ac378995ad03468781c6a7e88d5:app/views/pages/index.html.erb
 		<!-- /SLIDE TOP -->
 
 		<!-- wrapper -->
 		<div id="wrapper">
-			<!--
-				AVAILABLE HEADER CLASSES
-
-				Default nav height: 96px
-				.header-md 		= 70px nav height
-				.header-sm 		= 60px nav height
-
-				.b-0 		= remove bottom border (only with transparent use)
-				.transparent	= transparent header
-				.translucent	= translucent header
-				.sticky			= sticky header
-				.static			= static header
-				.dark			= dark header
-				.bottom			= header on bottom
-
-				shadow-before-1 = shadow 1 header top
-				shadow-after-1 	= shadow 1 header bottom
-				shadow-before-2 = shadow 2 header top
-				shadow-after-2 	= shadow 2 header bottom
-				shadow-before-3 = shadow 3 header top
-				shadow-after-3 	= shadow 3 header bottom
-
-				.clearfix		= required for mobile menu, do not remove!
-
-				Example Usage:  class="clearfix sticky header-sm transparent b-0"
-			-->
+			
 			<div id="header" class="navbar-toggleable-md 	shadow-after-1 sticky header-md clearfix">
 				<!-- TOP NAV -->
 				<header id="topNav">
@@ -76,7 +58,12 @@
 
 						<!-- Logo -->
 						<a class="logo float-left scrollTo" href="#top">
+<<<<<<< HEAD:app/views/pages/home.html.erb
 							<img src="<%= asset_path( 'logo-inc.png' ) %>">								
+=======
+							
+							<%= image_tag("logo-inc.png", class: "logo float-left scrollTo") %>
+>>>>>>> ae6e3319fa024ac378995ad03468781c6a7e88d5:app/views/pages/index.html.erb
 						</a>
 
 						<!--
@@ -172,13 +159,20 @@
 								<!-- dark overlay [1 to 9 opacity] -->
 							</div>
 							<!-- MAIN IMAGE -->
+<<<<<<< HEAD:app/views/pages/home.html.erb
 							<img
 								src="<%= asset_path( 'img01.jpg' ) %>"
+=======
+							<%# <img
+								src="assets/images/img01.jpg"
+>>>>>>> ae6e3319fa024ac378995ad03468781c6a7e88d5:app/views/pages/index.html.erb
 								alt="cover image"
 								data-bgposition="center top"
 								data-bgfit="cover"
 								data-bgrepeat="no-repeat"
-							/>
+							/> %>
+							<%= image_tag("img01.jpg") %>
+
 
 							<div
 								class="tp-caption white_big skewfromleft tp-resizeme"
@@ -550,12 +544,17 @@
 									><!-- image-hover-light | image-hover-dark -->
 								</span>
 
+<<<<<<< HEAD:app/views/pages/home.html.erb
 
 								<img
 									class="img-fluid"
 									src="<%= asset_path( 'awards500px.jpg' ) %>"
 									alt="img"
 								/>
+=======
+								
+								<%= image_tag("awards500px.jpg", class: "img-fluid") %>
+>>>>>>> ae6e3319fa024ac378995ad03468781c6a7e88d5:app/views/pages/index.html.erb
 							</a>
 							<h3 class="mt-10 text-danger text-center">Awards and projects</h3>
 							<p class="text-justify">
@@ -1659,6 +1658,7 @@
 									alt="client"
 									style="cursor: none;"
 								/>
+								<%= image_tag("logo-inc.png", class: "footer-logo", style:"width: 100px") %>
 							</a>
 						</li>
 					</ul>
@@ -1950,12 +1950,19 @@
 				<!-- FOOTER -->
 				<footer id="footer">
 					<div class="container mt-0">
+<<<<<<< HEAD:app/views/pages/home.html.erb
 						<div class="row"> 	<img
 							class="footer-logo"
 							src="<%= asset_path( 'logo-inc.png' ) %>"
 							alt=""
 							style="width: 100px"
 						/></div>
+=======
+						<div class="row"> 	
+						
+						<%= image_tag("logo-inc.png", class: "footer-logo", style:"width: 100px") %>
+						</div>
+>>>>>>> ae6e3319fa024ac378995ad03468781c6a7e88d5:app/views/pages/index.html.erb
 						<div class="row">
 							<div class="col-md-4">
 								<!-- Footer Logo -->
@@ -2250,4 +2257,3 @@
 
 	
 
-	</body>
