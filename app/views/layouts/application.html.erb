@@ -1,0 +1,32 @@
+  
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rocket Elevators</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600%7CRaleway:300,400,500,600,700%7CLato:300,400,400italic,600,700" rel="stylesheet" type="text/css" />
+    <%= favicon_link_tag asset_path('favicon-16x16.png') %>
+    
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'extralayers', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'settings', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'essentials', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'layout', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'red', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'https://use.fontawesome.com/releases/v5.0.10/css/all.css' %>
+    <%= stylesheet_link_tag    'https://cdn.jsdelivr.net/npm/et-line@1.0.1/style.min.css' %>
+  </head>
+  <body>
+    <%= yield %>
+    <%= javascript_include_tag 'jquery.themepunch.tools.min.js', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'jquery.themepunch.revolution.min.js', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'demo.revolution_slider.js', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'contact.js', 'data-turbolinks-track': 'reload' %>
+  </body>
+</html>

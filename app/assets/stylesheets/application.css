@@ -11,7 +11,6 @@
  * It is generally better to create a new file per style scope.
  *
  *= require bootstrap
- *= require bootstrap-social
  *= require_tree .
  *= require_self
  *= require essentials.css
@@ -19,6 +18,14 @@
  *= require color_scheme/red.css
  *= require header-1.css
  *= require font-awesome
- */
+ 
 
  @import "font-awesome";
+ *= require red
+ *= require essentials
+ *= require extralayers
+ *= require header-1
+ *= require layout
+ *= require form
+ *= require settings
+ */
