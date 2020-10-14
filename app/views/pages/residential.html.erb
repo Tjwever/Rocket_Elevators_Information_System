@@ -52,8 +52,6 @@
 		data-background="assets/images/_smarty/boxed_background/1.jpg"
 	-->
 	<body class="smoothscroll enable-animation">
-
-
 		<!-- wrapper -->
 		<div id="wrapper">
 
@@ -70,7 +68,7 @@
 
 						<!-- Logo -->
 						<a class="logo float-left scrollTo" href="#top">
-							<img src="<%= asset_path( 'logo-inc.png' ) %>">							
+							<%= image_tag "logo-inc.png" %>													
 						</a>
 
 						<!--
@@ -92,7 +90,7 @@
 										<a href="index.html"> HOME </a>
 									</li>
 									<li class="dropdown"><!-- sERVICES -->
-										<a class="dropdown-toggle" href="#">
+										<a class="dropdown-toggle" href="#">										
 											SERVICES
 										</a>
 										<ul class="dropdown-menu">
@@ -614,20 +612,5 @@
 
 		<!-- SCROLL TO TOP -->
 		<a href="#" id="toTop"></a>
-
-
-		<!-- PRELOADER -->
-<!--		<div id="preloader">
-			<div class="inner">
-				<span class="loader"></span>
-			</div>
-		</div> -->
-		<!-- /PRELOADER -->
-
-		<!-- JAVASCRIPT FILES -->
-		<!-- <script>
-			var plugin_path = "assets/plugins/";
-		</script>
-		<script src="assets/js/scripts.js"></script> -->
 	</body>
 </html>
