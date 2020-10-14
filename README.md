@@ -60,8 +60,10 @@ No requirements
 
 - This project is under license from CodeBoxx.
 
-Made with :heart: by <a href="https://github.com/saadeddinne" target="_blank">{{SaadEddine}}</a>
-
+Made with :heart: by
+Cindy Okino
+Joey Coderre
+Christ Saraviaclear
 &#xa0;
 
 <a href="#top">Back to top</a>

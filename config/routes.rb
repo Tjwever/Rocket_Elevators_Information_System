@@ -8,7 +8,6 @@ Rails.application.routes.draw do
   get 'user/destroy'
   get 'user/update'
   devise_for :users
-  
   get '/commercial', to: 'pages#commercial'
   get '/residential', to: 'pages#residential'
   get '/form', to: 'pages#form'
