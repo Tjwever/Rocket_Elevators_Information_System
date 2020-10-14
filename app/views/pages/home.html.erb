@@ -1,181 +1,16 @@
-<<<<<<< HEAD:app/views/pages/home.html.erb
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<!-- mobile settings -->
-		<meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0"/>
-		<meta charset="utf-8" />
-
-		<title>Rocket Elevators</title>
-		<meta name="description" content=" Rocket Elevators make professional elevators quebec canada" />
-		<meta name="Author" content="Saad Eddine FEKI [CodeBoxx]" />
-
-		<!-- RAILS CSS/JS -->
-		<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'%>
-		<%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'%>
-		<%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload'%>
-
-		<!-- WEB FONTS : use %7C instead of | (pipe) -->
-		<link
-			href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600%7CRaleway:300,400,500,600,700%7CLato:300,400,400italic,600,700"
-			rel="stylesheet"
-			type="text/css"
-		/>
-		<!-- Rocket elevators Favicon -->
-		<link rel="stylesheet"
-			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
-			integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
-			crossorigin="anonymous" />
-		<link rel="icon"
-			type="image/png"
-			href="<%= asset_path( 'favicon-16x16.png' ) %>" />
-	</head>
-
-<body class="smoothscroll enable-animation">
-=======
-
-
-
-
->>>>>>> ae6e3319fa024ac378995ad03468781c6a7e88d5:app/views/pages/index.html.erb
-		<!-- /SLIDE TOP -->
-
-		<!-- wrapper -->
-		<div id="wrapper">
-			
-			<div id="header" class="navbar-toggleable-md 	shadow-after-1 sticky header-md clearfix">
-				<!-- TOP NAV -->
-				<header id="topNav">
-					<div class="container">
-						<!-- Mobile Menu Button -->
-						<button
-							class="btn btn-mobile"
-							data-toggle="collapse"
-							data-target=".nav-main-collapse"
-						>
-							<i class="fa fa-bars"></i>
-						</button>
-
-						<!-- Logo -->
-						<a class="logo float-left scrollTo" href="#top">
-<<<<<<< HEAD:app/views/pages/home.html.erb
-							<img src="<%= asset_path( 'logo-inc.png' ) %>">								
-=======
-							
-							<%= image_tag("logo-inc.png", class: "logo float-left scrollTo") %>
->>>>>>> ae6e3319fa024ac378995ad03468781c6a7e88d5:app/views/pages/index.html.erb
-						</a>
-
-						<!--
-							Top Nav
-
-							AVAILABLE CLASSES:
-							submenu-dark = dark sub menu
-						-->
-						<div
-							class="navbar-collapse collapse float-right nav-main-collapse submenu-dark"
-						>
-							<nav class="nav-main">
-
-								<ul id="topMain" class="nav nav-pills nav-main nav-onepage">
-									<li class="active">
-										<!-- HOME -->
-										<a href="index.html"> HOME </a>
-									</li>
-									<li class="dropdown"><!-- sERVICES -->
-										<a class="dropdown-toggle" href="#">
-											SERVICES
-										</a>
-										<ul class="dropdown-menu">
-											<li class="dropdown">
-												<a class="dropdown-toggle" href="page-commercial.html">
-													COMMERCIAL
-												</a>
-											</li>
-											<li class="dropdown">
-												<a class="dropdown-toggle" href="page-residential.html">
-													RESIDENTIAL
-												</a>
-											</li>
-											<li class="dropdown">
-												<a class="dropdown-toggle" href="page-form.html">
-													REQUEST FOR QUOTE
-												</a>
-											</li>
-										</ul>
-									</li>
-
-
-									<li>
-										<!-- WORK -->
-										<a href="#work"> PORTFOLIO</a>
-									</li>
-									<li>
-										<!-- NEWS -->
-										<a href="#news"> NEWS </a>
-									</li>
-
-									<li>
-										<!-- CLIENTS -->
-										<a href="#clients"> CLIENTS </a>
-									</li>
-
-									<li>
-										<!-- CONTACT -->
-										<a href="#contact"> CONTACT </a>
-									</li>
-								</ul>
-							</nav>
-						</div>
-					</div>
-				</header>
-				<!-- /Top Nav -->
-			</div>
-
 			<!-- REVOLUTION SLIDER -->
 			<div class="slider fullwidthbanner-container roundedcorners">
 
-				<div
-					class="fullwidthbanner"
-					data-height="600"
-					data-shadow="0"
-					data-navigationStyle="preview3"
-				>
+				<div class="fullwidthbanner" data-height="600" data-shadow="0" data-navigationStyle="preview3">
 					<ul class="hide">
 						<!-- SLIDE  -->
-
 						<!-- data-delay="7000"  Slide 7secondes -->
-						<li
-							data-transition="parallaxtobottom"
-							data-slotamount="7"
-							data-masterspeed="600"
-							data-saveperformance="off"
-							data-title="Home"
-							data-delay="7000"
-						>
-
-
+						<li data-transition="parallaxtobottom" data-slotamount="7" data-masterspeed="600" data-saveperformance="off" data-title="Home" data-delay="7000">
 							<div class="overlay dark-1">
-								<!-- dark overlay [1 to 9 opacity] -->
 							</div>
 							<!-- MAIN IMAGE -->
-<<<<<<< HEAD:app/views/pages/home.html.erb
-							<img
-								src="<%= asset_path( 'img01.jpg' ) %>"
-=======
-							<%# <img
-								src="assets/images/img01.jpg"
->>>>>>> ae6e3319fa024ac378995ad03468781c6a7e88d5:app/views/pages/index.html.erb
-								alt="cover image"
-								data-bgposition="center top"
-								data-bgfit="cover"
-								data-bgrepeat="no-repeat"
-							/> %>
-							<%= image_tag("img01.jpg") %>
-
-
-							<div
-								class="tp-caption white_big skewfromleft tp-resizeme"
+							<%= image_tag("img01.jpg", :alt => "cover image", :data_bgposition => "center top", :data_bgfit => "cover", :data_bgrepeat => "no-repeat") %>
+							<div class="tp-caption white_big skewfromleft tp-resizeme"
 								data-x="90"
 								data-y="100"
 								data-speed="400"
@@ -186,22 +21,17 @@
 								data-elementdelay="0.1"
 								data-endelementdelay="0.1"
 								data-endspeed="600"
-								style="
-									z-index: 2;
-									color: #df4759;
+								style=" z-index: 2; color: #df4759;
 									font-size: 65px;
 									line-height: 100px;
 									font-weight: bold;
 									letter-spacing: 10px;
 									text-shadow: none;
-									text-transform: uppercase;
-								"
-							>
+									text-transform: uppercase;">
 								<p class="display-1">Rocket Elevators.</p>
 							</div>
 
-							<div
-								class="tp-caption content_text_center skewfromleft tp-resizeme"
+							<div class="tp-caption content_text_center skewfromleft tp-resizeme"
 								data-x="90"
 								data-y="195"
 								data-speed="500"
@@ -217,15 +47,12 @@
 									font-size: 22px;
 									color: #fff;
 									font-weight: 300;
-									text-shadow: none;
-								"
-							>
+									text-shadow: none; ">
 								Reinventing The Way You Move. <br />
 								With Safety, Speed and Style
 							</div>
 
-							<div
-								class="tp-caption tp-fade"
+							<div class="tp-caption tp-fade"
 								data-x="left"
 								data-y="25"
 								data-speed="300"
@@ -239,8 +66,7 @@
 
 							</div>
 
-							<div
-								class="tp-caption skewfromleft tp-resizeme un-button-2-lg"
+							<div class="tp-caption skewfromleft tp-resizeme un-button-2-lg"
 								data-x="100"
 								data-y="300"
 								data-speed="300"
@@ -255,15 +81,10 @@
 									z-index: 5;
 									max-width: auto;
 									max-height: auto;
-									white-space: nowrap;
-								"
-							>
-								<a class="btn btn-danger btn-lg" href="#services"
-									>Our services &nbsp; <i class="fa fa-angle-right"></i
-								></a>
+									white-space: nowrap;">
+								<a class="btn btn-danger btn-lg" href="#services">Our services &nbsp; <i class="fa fa-angle-right"></i></a>
 							</div>
-							<div
-								class="tp-caption skewfromright sfb tp-resizeme"
+							<div class="tp-caption skewfromright sfb tp-resizeme"
 								data-x="290"
 								data-y="300"
 								data-speed="300"
@@ -278,12 +99,8 @@
 									z-index: 6;
 									max-width: auto;
 									max-height: auto;
-									white-space: nowrap;
-								"
-							>
-								<a class="btn btn-danger btn-danger btn-lg" href="page-form.html"
-									>GET A QUOTE &nbsp; <i class="fa fa-angle-right"></i
-								></a>
+									white-space: nowrap;">
+								<a class="btn btn-danger btn-danger btn-lg" href="form.html">GET A QUOTE &nbsp; <i class="fa fa-angle-right"></i></a>
 							</div>
 						</li>
 
@@ -296,19 +113,12 @@
 							data-masterspeed="600"
 							data-saveperformance="off"
 							data-title="Commercial"
-							data-delay="7000"
-						>
-							<!-- MAIN IMAGE -->
-							<img
-								src="assets/images/img02.jpg"
-								alt="cover image"
-								data-bgposition="center top"
-								data-bgfit="cover"
-								data-bgrepeat="no-repeat"
-							/>
+							data-delay="7000">
 
-							<div
-								class="tp-caption white_big skewfromleft tp-resizeme"
+							<!-- MAIN IMAGE -->
+							<%= image_tag("img02.jpg", :alt => "cover image", :data_bgposition => "center top", :data_bgfit => "cover", :data_bgrepeat => "no-repeat") %>
+							
+							<div class="tp-caption white_big skewfromleft tp-resizeme"
 								data-x="90"
 								data-y="100"
 								data-speed="400"
@@ -321,21 +131,18 @@
 								data-endspeed="600"
 								style="
 									z-index: 2;
-
 									color: #df4759;
 									font-size: 55px;
 									line-height: 100px;
 									font-weight: bold;
 									letter-spacing: 10px;
 									text-shadow: none;
-									text-transform: uppercase;
-								"
-							>
+									text-transform: uppercase;">
+
 								Commercial solutions
 							</div>
 
-							<div
-								class="tp-caption content_text_center skewfromleft tp-resizeme"
+							<div class="tp-caption content_text_center skewfromleft tp-resizeme"
 								data-x="90"
 								data-y="195"
 								data-speed="500"
@@ -353,16 +160,13 @@
 									font-weight: 300;
 									text-shadow: none;
 									background-color: #df4759;
-									padding: 0 10px;
-								"
-							>
+									padding: 0 10px;">
 								innovative solutions for new buildings.
 								<br />Our committed teams are invested<br />
 								in the future of your elevators
 							</div>
 
-							<div
-								class="tp-caption tp-fade"
+							<div class="tp-caption tp-fade"
 								data-x="left"
 								data-y="25"
 								data-speed="300"
@@ -371,11 +175,9 @@
 								data-elementdelay="0.1"
 								data-endelementdelay="0.1"
 								data-endspeed="300"
-								style="z-index: 4"
-							></div>
+								style="z-index: 4"></div>
 
-							<div
-								class="tp-caption skewfromleft tp-resizeme un-button-2-lg"
+							<div class="tp-caption skewfromleft tp-resizeme un-button-2-lg"
 								data-x="90"
 								data-y="300"
 								data-speed="300"
@@ -390,12 +192,9 @@
 									z-index: 5;
 									max-width: auto;
 									max-height: auto;
-									white-space: nowrap;
-								"
-							>
-								<a class="btn btn-danger btn-lg" href="page-commercial.html"
-									>Learn more &nbsp; <i class="fa fa-angle-right"></i
-								></a>
+									white-space: nowrap;">
+								<a class="btn btn-danger btn-lg" href="commercial.html"
+									>Learn more &nbsp; <i class="fa fa-angle-right"></i></a>
 							</div>
 						</li>
 						<!-- fin ajout slide 2-->
@@ -406,20 +205,11 @@
 							data-masterspeed="600"
 							data-saveperformance="off"
 							data-title="Residential"
-							data-delay="7000"
-						>
+							data-delay="7000">
 							<!-- MAIN IMAGE -->
-							<div class="overlay dark-3">
-								<!-- dark overlay [1 to 9 opacity] -->
-							</div>
-							<img
-								src="<%= asset_path( 'img03.jpg' ) %>"
-								alt="cover image "
-								data-bgposition="center top"
-								data-bgfit="cover"
-								data-bgrepeat="no-repeat"
-							/>
-
+							<div class="overlay dark-3"><!-- dark overlay [1 to 9 opacity] --></div>
+							<%= image_tag("img03.jpg", :alt => "cover image", :data_bgposition => "center top", :data_bgfit => "cover", :data_bgrepeat => "no-repeat") %>
+							
 							<div
 								class="tp-caption white_big skewfromleft tp-resizeme"
 								data-x="90"
@@ -508,7 +298,7 @@
 									white-space: nowrap;
 								"
 							>
-								<a class="btn btn-danger btn-lg" href="page-residential.html"
+								<a class="btn btn-danger btn-lg" href="pages/residential"
 									>Learn more &nbsp; <i class="fa fa-angle-right"></i
 								></a>
 							</div>
@@ -544,17 +334,11 @@
 									><!-- image-hover-light | image-hover-dark -->
 								</span>
 
-<<<<<<< HEAD:app/views/pages/home.html.erb
-
 								<img
 									class="img-fluid"
 									src="<%= asset_path( 'awards500px.jpg' ) %>"
 									alt="img"
 								/>
-=======
-								
-								<%= image_tag("awards500px.jpg", class: "img-fluid") %>
->>>>>>> ae6e3319fa024ac378995ad03468781c6a7e88d5:app/views/pages/index.html.erb
 							</a>
 							<h3 class="mt-10 text-danger text-center">Awards and projects</h3>
 							<p class="text-justify">
@@ -589,7 +373,7 @@
 								products can exceed your expectations.
 							</p>
 							<center>
-								<a href="page-commercial.html" class="btn btn-danger mt-10">Learn more</a>
+								<a href="commercial" class="btn btn-danger mt-10">Learn more</a>
 							</center>
 						</div>
 
@@ -615,7 +399,7 @@
 							</p>
 							<br />
 							<center>
-								<a href="page-residential.html" class="btn btn-danger mt-10">Learn more</a>
+								<a href="residential" class="btn btn-danger mt-10">Learn more</a>
 							</center>
 						</div>
 					</div>
@@ -645,7 +429,7 @@
 							Improving the flow of urban life since 1976
 						</h1>
 
-						<a class="mr-5 btn btn-outline-danger btn-lg" href="page-form.html"
+						<a class="mr-5 btn btn-outline-danger btn-lg" href="form.html"
 							>GET A QUOTE <i class="fa fa-angle-right"></i
 						></a>
 
@@ -695,11 +479,8 @@
 											<!-- lightbox -->
 											<a
 												class="ico-rounded lightbox"
-												href="assets/images/com01.jpg"
-												data-plugin-options='{"type":"image",
-
-											}'
-											>
+												href="<%= asset_path( 'com01.jpg' ) %>"
+												data-plugin-options='{"type":"image"}'>
 												<span class="fa fa-plus fs-20"></span>
 											</a>
 
@@ -1288,7 +1069,7 @@
 
 										<div class="item carousel-item">
 											<div class="img-box">
-												<img src="assets/images/me.png" alt="CEO" />
+												<img src="<%= asset_path( 'me.png' ) %>" alt="CEO" />	
 											</div>
 											<h4 class="carousel-title"> <i class="fas fa-award text-warning mr-5 "></i>
 
@@ -1658,7 +1439,6 @@
 									alt="client"
 									style="cursor: none;"
 								/>
-								<%= image_tag("logo-inc.png", class: "footer-logo", style:"width: 100px") %>
 							</a>
 						</li>
 					</ul>
@@ -1950,19 +1730,12 @@
 				<!-- FOOTER -->
 				<footer id="footer">
 					<div class="container mt-0">
-<<<<<<< HEAD:app/views/pages/home.html.erb
 						<div class="row"> 	<img
 							class="footer-logo"
 							src="<%= asset_path( 'logo-inc.png' ) %>"
 							alt=""
 							style="width: 100px"
 						/></div>
-=======
-						<div class="row"> 	
-						
-						<%= image_tag("logo-inc.png", class: "footer-logo", style:"width: 100px") %>
-						</div>
->>>>>>> ae6e3319fa024ac378995ad03468781c6a7e88d5:app/views/pages/index.html.erb
 						<div class="row">
 							<div class="col-md-4">
 								<!-- Footer Logo -->
@@ -2257,3 +2030,4 @@
 
 	
 
+	</body>
