@@ -2,18 +2,14 @@
 // present in this directory. You're encouraged to place your actual application logic in
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
-# app/javascript/packs/application.js
-import 'bootstrap'
-import 'bootstrap-social'
-import '../stylesheets/application'
-import '../javascripts/demo.revolution_slider.js'
-import '../plugins/slider.revolution'
-
-
 require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
+
+import 'bootstrap'
+import 'bootstrap-social'
+import 'jquery'
 
 document.addEventListener("turbolinks:load", () => {
   $('[data-toggle="tooltip"]').tooltip();
