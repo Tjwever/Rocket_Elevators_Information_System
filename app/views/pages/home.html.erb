@@ -30,35 +30,8 @@
 
 <body class="smoothscroll enable-animation">
 		<!-- /SLIDE TOP -->
-
 		<!-- wrapper -->
 		<div id="wrapper">
-			<!--
-				AVAILABLE HEADER CLASSES
-
-				Default nav height: 96px
-				.header-md 		= 70px nav height
-				.header-sm 		= 60px nav height
-
-				.b-0 		= remove bottom border (only with transparent use)
-				.transparent	= transparent header
-				.translucent	= translucent header
-				.sticky			= sticky header
-				.static			= static header
-				.dark			= dark header
-				.bottom			= header on bottom
-
-				shadow-before-1 = shadow 1 header top
-				shadow-after-1 	= shadow 1 header bottom
-				shadow-before-2 = shadow 2 header top
-				shadow-after-2 	= shadow 2 header bottom
-				shadow-before-3 = shadow 3 header top
-				shadow-after-3 	= shadow 3 header bottom
-
-				.clearfix		= required for mobile menu, do not remove!
-
-				Example Usage:  class="clearfix sticky header-sm transparent b-0"
-			-->
 			<div id="header" class="navbar-toggleable-md 	shadow-after-1 sticky header-md clearfix">
 				<!-- TOP NAV -->
 				<header id="topNav">
@@ -77,12 +50,7 @@
 							<img src="<%= asset_path( 'logo-inc.png' ) %>">								
 						</a>
 
-						<!--
-							Top Nav
-
-							AVAILABLE CLASSES:
-							submenu-dark = dark sub menu
-						-->
+						<!-- Top Nav -->
 						<div
 							class="navbar-collapse collapse float-right nav-main-collapse submenu-dark"
 						>
@@ -99,23 +67,22 @@
 										</a>
 										<ul class="dropdown-menu">
 											<li class="dropdown">
-												<a class="dropdown-toggle" href="page-commercial.html">
+												<a class="dropdown-toggle" href="commercial.html">
 													COMMERCIAL
 												</a>
 											</li>
 											<li class="dropdown">
-												<a class="dropdown-toggle" href="page-residential.html">
+												<a class="dropdown-toggle" href="residential.html">
 													RESIDENTIAL
 												</a>
 											</li>
 											<li class="dropdown">
-												<a class="dropdown-toggle" href="page-form.html">
+												<a class="dropdown-toggle" href="form.html">
 													REQUEST FOR QUOTE
 												</a>
 											</li>
 										</ul>
 									</li>
-
 
 									<li>
 										<!-- WORK -->
@@ -146,40 +113,16 @@
 			<!-- REVOLUTION SLIDER -->
 			<div class="slider fullwidthbanner-container roundedcorners">
 
-				<div
-					class="fullwidthbanner"
-					data-height="600"
-					data-shadow="0"
-					data-navigationStyle="preview3"
-				>
+				<div class="fullwidthbanner" data-height="600" data-shadow="0" data-navigationStyle="preview3">
 					<ul class="hide">
 						<!-- SLIDE  -->
-
 						<!-- data-delay="7000"  Slide 7secondes -->
-						<li
-							data-transition="parallaxtobottom"
-							data-slotamount="7"
-							data-masterspeed="600"
-							data-saveperformance="off"
-							data-title="Home"
-							data-delay="7000"
-						>
-
-
+						<li data-transition="parallaxtobottom" data-slotamount="7" data-masterspeed="600" data-saveperformance="off" data-title="Home" data-delay="7000">
 							<div class="overlay dark-1">
-								<!-- dark overlay [1 to 9 opacity] -->
 							</div>
 							<!-- MAIN IMAGE -->
-							<img
-								src="<%= asset_path( 'img01.jpg' ) %>"
-								alt="cover image"
-								data-bgposition="center top"
-								data-bgfit="cover"
-								data-bgrepeat="no-repeat"
-							/>
-
-							<div
-								class="tp-caption white_big skewfromleft tp-resizeme"
+							<%= image_tag("img01.jpg", :alt => "cover image", :data_bgposition => "center top", :data_bgfit => "cover", :data_bgrepeat => "no-repeat") %>
+							<div class="tp-caption white_big skewfromleft tp-resizeme"
 								data-x="90"
 								data-y="100"
 								data-speed="400"
@@ -190,22 +133,17 @@
 								data-elementdelay="0.1"
 								data-endelementdelay="0.1"
 								data-endspeed="600"
-								style="
-									z-index: 2;
-									color: #df4759;
+								style=" z-index: 2; color: #df4759;
 									font-size: 65px;
 									line-height: 100px;
 									font-weight: bold;
 									letter-spacing: 10px;
 									text-shadow: none;
-									text-transform: uppercase;
-								"
-							>
+									text-transform: uppercase;">
 								<p class="display-1">Rocket Elevators.</p>
 							</div>
 
-							<div
-								class="tp-caption content_text_center skewfromleft tp-resizeme"
+							<div class="tp-caption content_text_center skewfromleft tp-resizeme"
 								data-x="90"
 								data-y="195"
 								data-speed="500"
@@ -221,15 +159,12 @@
 									font-size: 22px;
 									color: #fff;
 									font-weight: 300;
-									text-shadow: none;
-								"
-							>
+									text-shadow: none; ">
 								Reinventing The Way You Move. <br />
 								With Safety, Speed and Style
 							</div>
 
-							<div
-								class="tp-caption tp-fade"
+							<div class="tp-caption tp-fade"
 								data-x="left"
 								data-y="25"
 								data-speed="300"
@@ -243,8 +178,7 @@
 
 							</div>
 
-							<div
-								class="tp-caption skewfromleft tp-resizeme un-button-2-lg"
+							<div class="tp-caption skewfromleft tp-resizeme un-button-2-lg"
 								data-x="100"
 								data-y="300"
 								data-speed="300"
@@ -259,15 +193,10 @@
 									z-index: 5;
 									max-width: auto;
 									max-height: auto;
-									white-space: nowrap;
-								"
-							>
-								<a class="btn btn-danger btn-lg" href="#services"
-									>Our services &nbsp; <i class="fa fa-angle-right"></i
-								></a>
+									white-space: nowrap;">
+								<a class="btn btn-danger btn-lg" href="#services">Our services &nbsp; <i class="fa fa-angle-right"></i></a>
 							</div>
-							<div
-								class="tp-caption skewfromright sfb tp-resizeme"
+							<div class="tp-caption skewfromright sfb tp-resizeme"
 								data-x="290"
 								data-y="300"
 								data-speed="300"
@@ -282,12 +211,8 @@
 									z-index: 6;
 									max-width: auto;
 									max-height: auto;
-									white-space: nowrap;
-								"
-							>
-								<a class="btn btn-danger btn-danger btn-lg" href="page-form.html"
-									>GET A QUOTE &nbsp; <i class="fa fa-angle-right"></i
-								></a>
+									white-space: nowrap;">
+								<a class="btn btn-danger btn-danger btn-lg" href="form.html">GET A QUOTE &nbsp; <i class="fa fa-angle-right"></i></a>
 							</div>
 						</li>
 
@@ -300,19 +225,12 @@
 							data-masterspeed="600"
 							data-saveperformance="off"
 							data-title="Commercial"
-							data-delay="7000"
-						>
-							<!-- MAIN IMAGE -->
-							<img
-								src="assets/images/img02.jpg"
-								alt="cover image"
-								data-bgposition="center top"
-								data-bgfit="cover"
-								data-bgrepeat="no-repeat"
-							/>
+							data-delay="7000">
 
-							<div
-								class="tp-caption white_big skewfromleft tp-resizeme"
+							<!-- MAIN IMAGE -->
+							<%= image_tag("img02.jpg", :alt => "cover image", :data_bgposition => "center top", :data_bgfit => "cover", :data_bgrepeat => "no-repeat") %>
+							
+							<div class="tp-caption white_big skewfromleft tp-resizeme"
 								data-x="90"
 								data-y="100"
 								data-speed="400"
@@ -325,21 +243,18 @@
 								data-endspeed="600"
 								style="
 									z-index: 2;
-
 									color: #df4759;
 									font-size: 55px;
 									line-height: 100px;
 									font-weight: bold;
 									letter-spacing: 10px;
 									text-shadow: none;
-									text-transform: uppercase;
-								"
-							>
+									text-transform: uppercase;">
+
 								Commercial solutions
 							</div>
 
-							<div
-								class="tp-caption content_text_center skewfromleft tp-resizeme"
+							<div class="tp-caption content_text_center skewfromleft tp-resizeme"
 								data-x="90"
 								data-y="195"
 								data-speed="500"
@@ -357,16 +272,13 @@
 									font-weight: 300;
 									text-shadow: none;
 									background-color: #df4759;
-									padding: 0 10px;
-								"
-							>
+									padding: 0 10px;">
 								innovative solutions for new buildings.
 								<br />Our committed teams are invested<br />
 								in the future of your elevators
 							</div>
 
-							<div
-								class="tp-caption tp-fade"
+							<div class="tp-caption tp-fade"
 								data-x="left"
 								data-y="25"
 								data-speed="300"
@@ -375,11 +287,9 @@
 								data-elementdelay="0.1"
 								data-endelementdelay="0.1"
 								data-endspeed="300"
-								style="z-index: 4"
-							></div>
+								style="z-index: 4"></div>
 
-							<div
-								class="tp-caption skewfromleft tp-resizeme un-button-2-lg"
+							<div class="tp-caption skewfromleft tp-resizeme un-button-2-lg"
 								data-x="90"
 								data-y="300"
 								data-speed="300"
@@ -394,12 +304,9 @@
 									z-index: 5;
 									max-width: auto;
 									max-height: auto;
-									white-space: nowrap;
-								"
-							>
-								<a class="btn btn-danger btn-lg" href="page-commercial.html"
-									>Learn more &nbsp; <i class="fa fa-angle-right"></i
-								></a>
+									white-space: nowrap;">
+								<a class="btn btn-danger btn-lg" href="commercial.html"
+									>Learn more &nbsp; <i class="fa fa-angle-right"></i></a>
 							</div>
 						</li>
 						<!-- fin ajout slide 2-->
@@ -410,20 +317,11 @@
 							data-masterspeed="600"
 							data-saveperformance="off"
 							data-title="Residential"
-							data-delay="7000"
-						>
+							data-delay="7000">
 							<!-- MAIN IMAGE -->
-							<div class="overlay dark-3">
-								<!-- dark overlay [1 to 9 opacity] -->
-							</div>
-							<img
-								src="<%= asset_path( 'img03.jpg' ) %>"
-								alt="cover image "
-								data-bgposition="center top"
-								data-bgfit="cover"
-								data-bgrepeat="no-repeat"
-							/>
-
+							<div class="overlay dark-3"><!-- dark overlay [1 to 9 opacity] --></div>
+							<%= image_tag("img03.jpg", :alt => "cover image", :data_bgposition => "center top", :data_bgfit => "cover", :data_bgrepeat => "no-repeat") %>
+							
 							<div
 								class="tp-caption white_big skewfromleft tp-resizeme"
 								data-x="90"
@@ -512,7 +410,7 @@
 									white-space: nowrap;
 								"
 							>
-								<a class="btn btn-danger btn-lg" href="page-residential.html"
+								<a class="btn btn-danger btn-lg" href="pages/residential"
 									>Learn more &nbsp; <i class="fa fa-angle-right"></i
 								></a>
 							</div>
@@ -587,7 +485,7 @@
 								products can exceed your expectations.
 							</p>
 							<center>
-								<a href="page-commercial.html" class="btn btn-danger mt-10">Learn more</a>
+								<a href="commercial" class="btn btn-danger mt-10">Learn more</a>
 							</center>
 						</div>
 
@@ -613,7 +511,7 @@
 							</p>
 							<br />
 							<center>
-								<a href="page-residential.html" class="btn btn-danger mt-10">Learn more</a>
+								<a href="residential" class="btn btn-danger mt-10">Learn more</a>
 							</center>
 						</div>
 					</div>
@@ -643,7 +541,7 @@
 							Improving the flow of urban life since 1976
 						</h1>
 
-						<a class="mr-5 btn btn-outline-danger btn-lg" href="page-form.html"
+						<a class="mr-5 btn btn-outline-danger btn-lg" href="form.html"
 							>GET A QUOTE <i class="fa fa-angle-right"></i
 						></a>
 
@@ -693,11 +591,8 @@
 											<!-- lightbox -->
 											<a
 												class="ico-rounded lightbox"
-												href="assets/images/com01.jpg"
-												data-plugin-options='{"type":"image",
-
-											}'
-											>
+												href="<%= asset_path( 'com01.jpg' ) %>"
+												data-plugin-options='{"type":"image"}'>
 												<span class="fa fa-plus fs-20"></span>
 											</a>
 
@@ -1286,7 +1181,7 @@
 
 										<div class="item carousel-item">
 											<div class="img-box">
-												<img src="assets/images/me.png" alt="CEO" />
+												<img src="<%= asset_path( 'me.png' ) %>" alt="CEO" />	
 											</div>
 											<h4 class="carousel-title"> <i class="fas fa-award text-warning mr-5 "></i>
 
