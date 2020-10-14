@@ -61,10 +61,11 @@ No requirements
 - This project is under license from CodeBoxx.
 
 Made with :heart: by
-Cindy Okino
-Joey Coderre
-Christ Saravia
-Saad Eddine
+
+- Cindy Okino
+- Joey Coderre
+- Christ Saravia
+- Saad Eddine
 
 &#xa0;
 
