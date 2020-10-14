@@ -52,9 +52,9 @@ No requirements
 ## :memo: Routes
 
 - homepage: <b>/</b>
-- residential page: <b>/residential/index</b>
-- commercial page: <b>/commercial/index</b>
-- form page: <b>/form/index</b>
+- residential page: <b>/residential</b>
+- commercial page: <b>/commercial</b>
+- form page: <b>/form</b>
 
 ## :memo: License
 
