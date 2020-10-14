@@ -10,12 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2020_10_14_173232) do
 
   create_table "employees", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "firstName"
     t.string "lastName"
     t.string "title"
+=======
+ActiveRecord::Schema.define(version: 2020_10_14_175935) do
+
+  create_table "employees", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.string "FirstName"
+    t.string "LastName"
+    t.string "Title"
+>>>>>>> 9809cf8abbdce9a4a6d08644d3473526cac6feda
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -24,6 +33,7 @@ ActiveRecord::Schema.define(version: 2020_10_14_173232) do
     t.integer "totalCost"
     t.integer "InstallationFee"
     t.integer "Total"
+<<<<<<< HEAD
     t.integer "NumbelevatorTotal"
     t.string "choiceElevator"
     t.integer "nbApparts"
@@ -40,6 +50,22 @@ ActiveRecord::Schema.define(version: 2020_10_14_173232) do
     t.integer "unitPrice"
     t.integer "priceElevator"
     t.integer "productType"
+=======
+    t.integer "TotalNBofElevator"
+    t.string "ElevatorChoice"
+    t.integer "NbApparts"
+    t.integer "NbFloors"
+    t.integer "NbBasements"
+    t.integer "NbBusiness"
+    t.integer "NbParking"
+    t.integer "NbCages"
+    t.integer "NbDistinctTenant"
+    t.integer "nbOccup"
+    t.integer "Activity24"
+    t.integer "NbElevator"
+    t.integer "UnitPrice"
+    t.integer "PriceElevator"
+>>>>>>> 9809cf8abbdce9a4a6d08644d3473526cac6feda
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
