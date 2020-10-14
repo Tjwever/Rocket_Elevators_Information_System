@@ -55,12 +55,18 @@ No requirements
 - residential page: <b>/residential</b>
 - commercial page: <b>/commercial</b>
 - form page: <b>/form</b>
+- Admin panel:<b>/admin</b>
 
 ## :memo: License
 
 - This project is under license from CodeBoxx.
 
-Made with :heart: by <a href="https://github.com/saadeddinne" target="_blank">{{SaadEddine}}</a>
+Made with :heart: by
+
+- Cindy Okino
+- Joey Coderre
+- Christ Saravia
+- Saad Eddine
 
 &#xa0;
 

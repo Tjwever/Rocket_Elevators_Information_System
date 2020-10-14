@@ -1,0 +1,41 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  totalCost: 1
+  InstallationFee: 1
+  Total: 1
+  TotalNBofElevator: 1
+  ElevatorChoice: MyString
+  NbApparts: 1
+  NbFloors: 1
+  NbBasements: 1
+  NbBusiness: 1
+  NbParking: 1
+  NbCages: 1
+  NbDistinctTenant: 1
+  nbOccup: 1
+  Activity24: 1
+  NbElevator: 1
+  TotalCost: 1
+  UnitPrice: 1
+  PriceElevator: 1
+
+two:
+  totalCost: 1
+  InstallationFee: 1
+  Total: 1
+  TotalNBofElevator: 1
+  ElevatorChoice: MyString
+  NbApparts: 1
+  NbFloors: 1
+  NbBasements: 1
+  NbBusiness: 1
+  NbParking: 1
+  NbCages: 1
+  NbDistinctTenant: 1
+  nbOccup: 1
+  Activity24: 1
+  NbElevator: 1
+  TotalCost: 1
+  UnitPrice: 1
+  PriceElevator: 1
