@@ -4,7 +4,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.7.1'
 
 gem 'jquery-ui-rails'
-gem 'bootstrap-social'
+
+#gem 'bootstrap-social'
 
 # https://github.com/rails/jquery-rails
 gem 'jquery-rails'

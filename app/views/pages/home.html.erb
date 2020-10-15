@@ -1,4 +1,96 @@
+<div id="header" class="navbar-toggleable-md sticky clearfix">
+    <!-- TOP NAV -->
+    <header id="topNav">
+      <div class="container">
+        <!-- Mobile Menu Button -->
+        <button class="btn btn-mobile"
+          data-toggle="collapse"
+          data-target=".nav-main-collapse">
+          <i class="fa fa-bars"></i>
+        </button>
+
+        <!-- Logo -->
+        <a class="logo float-left scrollTo" href="#top">
+          <img src="<%= asset_path( 'logo-inc.png' ) %>">							
+        </a>
+
+        <!--
+          Top Nav
+        -->
+    <div class="navbar-collapse collapse float-right nav-main-collapse submenu-dark" >
+          <nav class="nav-main">
+            <!--
+              .nav-onepage
+              Required for onepage navigation links
+
+              Add .external for an external link!
+            -->
+            <ul id="topMain" class="nav nav-pills nav-main nav-onepage">
+              <li class="active">
+                <!-- HOME -->
+               
+				<%= link_to 'HOME', root_path %>
+              </li>
+              <li class="dropdown"><!-- sERVICES -->
+                <a class="dropdown-toggle" href="#">
+                  SERVICES
+                </a>
+				
+                <ul class="dropdown-menu">
+                  <li class="dropdown">
+                   
+					<%= link_to 'COMMERCIAL', commercial_path %>
+                  </li>
+                  <li class="dropdown">
+                    
+					<%= link_to 'RESIDENTIAL', residential_path %>
+                  </li>
+                  <li class="dropdown">
+                   
+					<%= link_to 'REQUEST FOR QUOTE', form_path %>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <!-- WORK -->
+                
+				<%= link_to "PORTFOLIO", "#{root_path}#work" %>
+              </li>
+              <li>
+                <!-- NEWS -->
+				
+				<%= link_to "NEWS", "#{root_path}#news" %>
+              </li>
+
+              <li>
+                <!-- CLIENTS -->
+				<%= link_to "CLIENTS", "#{root_path}#clients" %>
+              </li>
+
+              <li>
+                <!-- CONTACT -->
+				<%= link_to "CONTACT", "#{root_path}#contact" %>
+              </li>
+		<% if !current_user %>
+			<li><%= link_to "LOGIN", new_user_session_path %></li>
+			<li><%= link_to "SIGN UP", new_user_registration_path %></li>
+			
+			<% else %>
+			<li><%= link_to "PROFILE", edit_user_registration_path %></li>
+			<li><%= link_to "LOGOUT", destroy_user_session_path, method: :delete %></li>
+			<% end %>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+   
+  </div>
+  <%# end header %>
+			
+			
 			<!-- REVOLUTION SLIDER -->
+			
 			<div class="slider fullwidthbanner-container roundedcorners">
 
 				<div class="fullwidthbanner" data-height="600" data-shadow="0" data-navigationStyle="preview3">
@@ -82,7 +174,12 @@
 									max-width: auto;
 									max-height: auto;
 									white-space: nowrap;">
-								<a class="btn btn-danger btn-lg" href="#services">Our services &nbsp; <i class="fa fa-angle-right"></i></a>
+								
+
+								
+								<span ><%= link_to 'OUR SERVICES', "#{root_path}#services", class: "btn btn-danger btn-danger btn-lg" %> <i class="fa fa-angle-right"></i></span>
+								
+								
 							</div>
 							<div class="tp-caption skewfromright sfb tp-resizeme"
 								data-x="290"
@@ -100,7 +197,7 @@
 									max-width: auto;
 									max-height: auto;
 									white-space: nowrap;">
-								<a class="btn btn-danger btn-danger btn-lg" href="form.html">GET A QUOTE &nbsp; <i class="fa fa-angle-right"></i></a>
+								<span ><%= link_to 'REQUEST FOR QUOTE', form_path, class: "btn btn-danger btn-danger btn-lg" %> <i class="fa fa-angle-right"></i></span>
 							</div>
 						</li>
 
@@ -316,7 +413,7 @@
 		<a href="#contact" class="btn btn-xlg btn-danger fs-20 fullwidth m-0 rad-0 p-40">
 			<span class="font-lato fs-30">
 				Did Rocket Elevators convinced you?
-				<strong>Contact us &raquo;</strong>
+				<strong><%= link_to "CONTACT", "#{root_path}#contact" %> &raquo;</strong>
 			</span>
 		</a>
 		<!-- /BUTTON CALLOUT -->
@@ -429,13 +526,11 @@
 							Improving the flow of urban life since 1976
 						</h1>
 
-						<a class="mr-5 btn btn-outline-danger btn-lg" href="form.html"
-							>GET A QUOTE <i class="fa fa-angle-right"></i
-						></a>
-
-						<a class="btn btn-danger btn-danger btn-lg" href="#contact"
-							>CONTACT US &nbsp; <i class="fa fa-angle-right"></i
-						></a>
+					
+						
+						<span class= "btn btn-danger btn-danger btn-lg" ><%= link_to 'GET A QUOTE', form_path, class: "btn btn-danger btn-danger btn-lg"%> <i class="fa fa-angle-right"></i></span>
+					
+						<span class= "btn btn-danger btn-danger btn-lg" ><%= link_to 'CONTACT US', "#{root_path}#contact", class: "btn btn-danger btn-danger btn-lg" %> <i class="fa fa-angle-right"></i></span>
 					</div>
 				</div>
 			</section>
