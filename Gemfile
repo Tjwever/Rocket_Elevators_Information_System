@@ -7,7 +7,7 @@ gem "font-awesome-rails"
 
 gem 'jquery-ui-rails'
 
-#gem 'bootstrap-social'
+gem 'bootstrap', '~> 4.4.1'
 
 # https://github.com/rails/jquery-rails
 gem 'jquery-rails'

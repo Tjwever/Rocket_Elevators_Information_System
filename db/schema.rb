@@ -12,46 +12,46 @@
 
 ActiveRecord::Schema.define(version: 2020_10_14_175935) do
 
-    create_table "employees", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-      t.string "FirstName"
-      t.string "LastName"
-      t.string "Title"
-      t.datetime "created_at", null: false
-      t.datetime "updated_at", null: false
-    end
-  
-    create_table "quotes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-      t.integer "totalCost"
-      t.integer "InstallationFee"
-      t.integer "Total"
-      t.integer "TotalNBofElevator"
-      t.string "ElevatorChoice"
-      t.integer "NbApparts"
-      t.integer "NbFloors"
-      t.integer "NbBasements"
-      t.integer "NbBusiness"
-      t.integer "NbParking"
-      t.integer "NbCages"
-      t.integer "NbDistinctTenant"
-      t.integer "nbOccup"
-      t.integer "Activity24"
-      t.integer "NbElevator"
-      t.integer "UnitPrice"
-      t.integer "PriceElevator"
-      t.datetime "created_at", null: false
-      t.datetime "updated_at", null: false
-    end
-  
-    create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-      t.string "email", default: "", null: false
-      t.string "encrypted_password", default: "", null: false
-      t.string "reset_password_token"
-      t.datetime "reset_password_sent_at"
-      t.datetime "remember_created_at"
-      t.datetime "created_at", precision: 6, null: false
-      t.datetime "updated_at", precision: 6, null: false
-      t.index ["email"], name: "index_users_on_email", unique: true
-      t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-    end
-  
+  create_table "employees", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.string "FirstName"
+    t.string "LastName"
+    t.string "Title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
+
+  create_table "quotes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.integer "totalCost"
+    t.integer "InstallationFee"
+    t.integer "Total"
+    t.integer "TotalNBofElevator"
+    t.string "ElevatorChoice"
+    t.integer "NbApparts"
+    t.integer "NbFloors"
+    t.integer "NbBasements"
+    t.integer "NbBusiness"
+    t.integer "NbParking"
+    t.integer "NbCages"
+    t.integer "NbDistinctTenant"
+    t.integer "nbOccup"
+    t.integer "Activity24"
+    t.integer "NbElevator"
+    t.integer "UnitPrice"
+    t.integer "PriceElevator"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+end
