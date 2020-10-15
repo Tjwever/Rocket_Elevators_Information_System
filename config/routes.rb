@@ -9,8 +9,8 @@ Rails.application.routes.draw do
   get 'user/update'
   devise_for :users
   
-  get '/commercial', to: 'pages#commercial'
-  get '/residential', to: 'pages#residential'
-  get '/form', to: 'pages#form'
-  root 'pages#home'
+  get '/commercial', to: 'home#commercial'
+  get '/residential', to: 'home#residential'
+  get '/form', to: 'home#form'
+  root 'home#home'
 end
