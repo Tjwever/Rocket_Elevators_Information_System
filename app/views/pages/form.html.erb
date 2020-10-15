@@ -4,7 +4,7 @@
 
 		<!-- breadcrumbs -->
 		<ol class="breadcrumb">
-			<li><a href="index.html">HOME</a></li>
+			<li><a href="/">HOME</a></li>
 			<li><a href="#" class="active">QUOTE FORM</a></li>
 		</ol>
 		<!-- /breadcrumbs -->
@@ -174,7 +174,7 @@ class="callout alert alert-success b-0 rad-0 m-0 pt-60 pb-60 clearfix"
 	</p>
 
 	<a
-		href="index.html#contact"
+		href="/#contact"
 		class="btn btn-primary btn-lg btn-round mt-30"
 		>CONTACT US NOW</a
 	>
@@ -184,8 +184,7 @@ class="callout alert alert-success b-0 rad-0 m-0 pt-60 pb-60 clearfix"
 </div>
 <!-- /wrapper -->
 <!-- Script JS -->	
-<%= javascript_include_tag('app.js') %>
-<%= javascript_include_tag('scripts.js') %>
+<%= javascript_include_tag '/assets/javascripts/app.js', 'data-turbolinks-track': 'reload' %>
 
 <!-- SCROLL TO TOP -->
 <a href="#" id="toTop"></a>
