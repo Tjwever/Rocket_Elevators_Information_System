@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+
 		<meta charset="utf-8" />
 		<title>Rocket Elevators</title>
 		<meta name="description" content=" Rocket Elevators make professional elevators quebec canada" />
@@ -18,7 +19,8 @@
 		<%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload'%>
 
 		<!-- form style -->
-		<link rel="stylesheet" href="assets/css/form.css">
+		<%= stylesheet_link_tag    "application", :media => "all" %>
+		<link rel="stylesheet" href="assets/stylesheets/form.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
 
 		<!-- WEB FONTS : use %7C instead of | (pipe) -->
@@ -47,17 +49,27 @@
 		/>
 
 		<!-- THEME CSS -->
-		<link href="assets/css/essentials.css" rel="stylesheet" type="text/css" />
-		<link href="assets/css/layout.css" rel="stylesheet" type="text/css" />
+		<link href="assets/stylesheets/essentials.css" rel="stylesheet" type="text/css" />
+		<link href="assets/stylesheets/layout.css" rel="stylesheet" type="text/css" />
 
 		<!-- PAGE LEVEL SCRIPTS -->
-		<link href="assets/css/header-1.css" rel="stylesheet" type="text/css" />
+		<link href="assets/stylesheets/header-1.css" rel="stylesheet" type="text/css" />
 		<link
-			href="assets/css/color_scheme/red.css"
+			href="assets/stylesheets/red.css"
 			rel="stylesheet"
 			type="text/css"
 			id="color_scheme"
 		/>
+		<style>
+			#Btn-center {
+				width: 100%;
+				height: 50px;
+				border: 1px solid black;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+		</style>
 	</head>
 
 
@@ -205,7 +217,7 @@
 											</select>
 										</div>
 									</div>
-									<div class="row uppercase ">
+									<div class="row  ">
 										<div id ="fields-1" class="col-md-4 ">
 											<h6 class="my-auto"> Number of apartments:</h6>
 											<input type="number"  min="0" id="type1" class="form-control " oninput="validity.valid||(value='');"> 
@@ -219,11 +231,11 @@
 											<input type="number"  min="0" id="type3" class="form-control " oninput="validity.valid||(value='');">
 										</div>
 										<div id="fields-4" class="col-md-4">
-											<h6 class="my-auto" >Number of businesses.</h6>
+											<h6 class="my-auto" >Number of businesses</h6>
 											<input type="number"  min="0" id="type4" class="form-control " oninput="validity.valid||(value='');">
 										</div>
 										<div id="fields-5" class="col-md-4">
-											<h6 class="my-auto">Parking space available.</h6>
+											<h6 class="my-auto">Parking space available</h6>
 											<input type="number"  min="0" id="type5" class="form-control " oninput="validity.valid||(value='');">
 										</div>
 										<div id="fields-6" class="col-md-4">
@@ -231,7 +243,7 @@
 											<input type="number"  min="0" id="type6" class="form-control " oninput="validity.valid||(value='');">
 										</div>
 										<div id="fields-7" class="col-md-4">
-											<h6 class="my-auto"> Rental companies.</h6>
+											<h6 class="my-auto"> Rental companies</h6>
 											<input type="number"  min="0" id="type7" class="form-control " oninput="validity.valid||(value='');">
 										</div>
 										<div id="fields-8" class="col-md-4">
@@ -239,10 +251,9 @@
 												<input type="number"  min="0" id="type8" class="form-control " oninput="validity.valid||(value='');">
 										</div>
 										<div id="fields-9" class="col-md-4">
-												<h6 class="my-auto"> Hours of activity (Max 24h).</h6>
+												<h6 class="my-auto"> Active Hour (Max 24h)</h6>
 												<input type="number"  min="0" max="24" id="type9" class="form-control mb-2" oninput="validity.valid||(value='');">
 										</div>
-
 								    </div>
 									<div class="row ">
 										<div class="col-md-12">
@@ -257,6 +268,7 @@
 
 
 														<label class="radio fw-500">
+									
 														<input type="radio" id="productType" name="radio-btn"  value="standard"/>
 
 														<i></i>Standard</label>
@@ -319,7 +331,7 @@
 										</div>	
 									</div>
 									<div >
-										<input type="submit" class=" btn btn-shadow-1 btn-outline-dark text-white" value="Submit">
+										<input id="Btn-center" type="submit" class=" btn btn-shadow-1 btn-outline-dark text-white" value="Submit">
 									</div>
 								</ul>
 							</fieldset>
@@ -659,8 +671,10 @@
 		</div>
 		<!-- /wrapper -->
 		<!-- Script JS -->	
+		<%= javascript_include_tag "application" %>
+		<%= javascript_include_tag("application.js") %>
 		<%= javascript_include_tag('app.js') %>
-		<%= javascript_include_tag('scripts.js') %>
+		<%= javascript_include_tag('scripts.js') %> 
 		<!--/Script JS -->
 		<!-- SCROLL TO TOP -->
 		<a href="#" id="toTop"></a>
