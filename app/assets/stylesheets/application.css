@@ -15,12 +15,12 @@
  *= require_self
  *= require essentials.css
  *= require layout.css
- *= require color_scheme/red.css
+ *= require red.css
  *= require header-1.css
  *= require font-awesome
  
 
- @import "font-awesome";
+ *= require jquery-ui
  *= require red
  *= require essentials
  *= require extralayers
@@ -29,3 +29,4 @@
  *= require form
  *= require settings
  */
+@import "font-awesome";
