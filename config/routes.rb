@@ -14,5 +14,6 @@ Rails.application.routes.draw do
   get '/form', to: 'pages#form'
   root 'pages#home'
 
+
   
 end

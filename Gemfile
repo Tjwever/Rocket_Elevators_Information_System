@@ -11,6 +11,10 @@ gem 'jquery-ui-rails'
 # https://github.com/gavinkflam/bootstrap-social-rails
 gem 'font-awesome-rails'
 
+gem 'cancancan'
+
+gem 'toastr-rails'
+
 # https://github.com/rails/jquery-rails
 gem 'jquery-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

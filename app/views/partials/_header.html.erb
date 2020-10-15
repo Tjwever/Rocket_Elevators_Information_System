@@ -61,46 +61,57 @@
 										<!-- HOME -->
 										<a href="/"> HOME </a>
 									</li>
-									<li class="dropdown"><!-- sERVICES -->
+									<li class="dropdown"><!-- SERVICES -->
 										<a class="dropdown-toggle" href="#">
 											SERVICES
 										</a>
 										<ul class="dropdown-menu">
 											<li class="dropdown">
-												<a class="dropdown-toggle" href="commercial">
-													COMMERCIAL
-												</a>
+												<%= link_to 'COMMERCIAL', commercial_path %>
 											</li>
 											<li class="dropdown">
-												<a class="dropdown-toggle" href="residential">
-													RESIDENTIAL
-												</a>
+												<%= link_to 'RESIDENTIAL', residential_path %>
 											</li>
 											<li class="dropdown">
-												<a class="dropdown-toggle" href="form">
-													REQUEST FOR QUOTE
-												</a>
+												<%= link_to 'REQUEST FOR QUOTE', form_path %>
 											</li>
 										</ul>
 									</li>
 
 									<li>
 										<!-- WORK -->
-										<a href="/#work"> PORTFOLIO</a>
+										<%= link_to "PORTFOLIO", "#{root_path}#work" %>
 									</li>
 									<li>
 										<!-- NEWS -->
-										<a href="/#news"> NEWS </a>
+										<%= link_to "NEWS", "#{root_path}#news" %>
 									</li>
 
 									<li>
 										<!-- CLIENTS -->
-										<a href="/#clients"> CLIENTS </a>
+										<%= link_to "CLIENTS", "#{root_path}#clients" %>
 									</li>
 
 									<li>
 										<!-- CONTACT -->
-										<a href="#bottom" id="scrollBottom"> CONTACT </a>
+										<%= link_to "CONTACT", "#{root_path}#contact" %>
+									</li>
+
+									<li class="dropdown"><!-- SERVICES -->
+										<a class="dropdown-toggle" href="#">
+											MEMBER
+										</a>
+										<ul class="dropdown-menu">
+											<% if !current_user %>
+												<li><%= link_to "LOGIN", new_user_session_path %></li>
+												<li><%= link_to "SIGN UP", new_user_registration_path %></li>
+			
+												<% else %>
+												<li><%= link_to "DASHBOARD", rails_admin.dashboard_path %></li>
+												<li><%= link_to "EDIT USER", edit_user_registration_path %></li>
+												<li><%= link_to "LOGOUT", destroy_user_session_path, method: :delete %></li>
+												<% end %>
+										</ul>
 									</li>
 								</ul>
 							</nav>

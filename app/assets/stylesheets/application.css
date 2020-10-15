@@ -21,8 +21,8 @@
  *= require header-1.css
  *= require font-awesome
  
-
  *= require jquery-ui
+ *= require toastr
  *= require red
  *= require essentials
  *= require extralayers
