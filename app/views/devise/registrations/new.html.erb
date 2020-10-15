@@ -1,10 +1,155 @@
-<h2>Sign up</h2>
 
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- mobile settings -->
+  <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0"/>
+  <meta charset="utf-8" />
+
+  <title>Rocket Elevators</title>
+  <meta name="description" content=" Rocket Elevators make professional elevators quebec canada" />
+  <meta name="Author" content="Saad Eddine FEKI [CodeBoxx]" />
+
+  <!-- RAILS CSS/JS -->
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'%>
+  <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'%>
+  <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload'%>
+
+  <!-- WEB FONTS : use %7C instead of | (pipe) -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600%7CRaleway:300,400,500,600,700%7CLato:300,400,400italic,600,700"
+    rel="stylesheet"
+    type="text/css"
+  />
+  <!-- Rocket elevators Favicon -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+    crossorigin="anonymous" />
+  <link rel="icon"
+    type="image/png"
+    href="<%= asset_path( 'favicon-16x16.png' ) %>" />
+
+  <style>
+  .myDiv {
+   
+    
+    text-align: center;
+    width: 375px;
+    margin: auto;
+    height: 400px;
+    border-radius: 7%
+  }
+  </style>
+</head>
+
+<body style="background-color: lightgrey">
+
+<div id="header" class="navbar-toggleable-md sticky clearfix">
+    <!-- TOP NAV -->
+    <header id="topNav">
+      <div class="container">
+        <!-- Mobile Menu Button -->
+        <button class="btn btn-mobile"
+          data-toggle="collapse"
+          data-target=".nav-main-collapse">
+          <i class="fa fa-bars"></i>
+        </button>
+
+        <!-- Logo -->
+        <a class="logo float-left scrollTo" href="#top">
+          <img src="<%= asset_path( 'logo-inc.png' ) %>">							
+        </a>
+
+        <!--
+          Top Nav
+        -->
+    <div class="navbar-collapse collapse float-right nav-main-collapse submenu-dark" >
+          <nav class="nav-main">
+            <!--
+              .nav-onepage
+              Required for onepage navigation links
+
+              Add .external for an external link!
+            -->
+            <ul id="topMain" class="nav nav-pills nav-main nav-onepage">
+              <li class="active">
+                <!-- HOME -->
+               
+				<%= link_to 'HOME', root_path %>
+              </li>
+              <li class="dropdown"><!-- sERVICES -->
+                <a class="dropdown-toggle" href="#">
+                  SERVICES
+                </a>
+				
+                <ul class="dropdown-menu">
+                  <li class="dropdown">
+                   
+					<%= link_to 'COMMERCIAL', commercial_path %>
+                  </li>
+                  <li class="dropdown">
+                    
+					<%= link_to 'RESIDENTIAL', residential_path %>
+                  </li>
+                  <li class="dropdown">
+                   
+					<%= link_to 'REQUEST FOR QUOTE', form_path %>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <!-- WORK -->
+                
+				<%= link_to "PORTFOLIO", "#{root_path}#work" %>
+              </li>
+              <li>
+                <!-- NEWS -->
+				
+				<%= link_to "NEWS", "#{root_path}#news" %>
+              </li>
+
+              <li>
+                <!-- CLIENTS -->
+				<%= link_to "CLIENTS", "#{root_path}#clients" %>
+              </li>
+
+              <li>
+                <!-- CONTACT -->
+				<%= link_to "CONTACT", "#{root_path}#contact" %>
+              </li>
+		<% if !current_user %>
+			<li><%= link_to "LOGIN", new_user_session_path %></li>
+			<li><%= link_to "SIGN UP", new_user_registration_path %></li>
+			
+			<% else %>
+			<li><%= link_to "PROFILE", edit_user_registration_path %></li>
+			<li><%= link_to "LOGOUT", destroy_user_session_path, method: :delete %></li>
+			<% end %>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+   
+  </div>
+  <%# end header %>
+
+
+<section>
+<h2 class ="text-center">Sign up</h2>
+<hr>
+<div class="row justify-content-center">
+
+
+
+
+  <div class="span6 offset3">
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :email %>
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
@@ -17,13 +162,19 @@
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
+    <%= f.label :password_confirmation %>
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
+  <div class="actions mt-10 text-center">
+    <%= f.submit "Sign up", class: "btn btn-large btn-primary" %>
   </div>
 <% end %>
+</div>
+
+
+</div>
+</section>
+
 
 <%= render "devise/shared/links" %>
