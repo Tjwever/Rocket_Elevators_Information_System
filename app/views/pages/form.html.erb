@@ -131,6 +131,16 @@
 											</div>
 											<div class="col-6"><input id="nbElevator" class="form-control text-white bg-transparent " type="number" readonly >
 											</div>
+										</div>
+										<div class="row"><div class="col-6 my-auto">Total:
+
+										</div>
+										<div class="col-6">
+											<input id="totalCost" class="form-control text-white bg-transparent" type="text" readonly>
+										</div>	
+									</div>
+									<div >
+										<input type="submit" class=" btn btn-shadow-1 btn-outline-dark text-white" value="Submit">
 									</div>
 									<div class="row"><div class="col-6 my-auto">Unit price:
 
@@ -164,40 +174,12 @@
 				</fieldset>
 			</form>
 		</div>
-	</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- /CONTACT -->
-
-
-<!-- /REQUEST QUOTE FORM  -->
-
-<div
-class="callout alert alert-success b-0 rad-0 m-0 pt-60 pb-60 clearfix"
->
-<div class="text-center">
-	<h3>
-		Call now at <span><strong> (581) 701-0303</strong></span> for more details!
-	</h3>
-	<p class="font-lato fs-20">
-		We truly care about our users and our product.
-	</p>
-
-	<a
-		href="index.html#contact"
-		class="btn btn-primary btn-lg btn-round mt-30"
-		>CONTACT US NOW</a
-	>
-</div>
-</div>
-	
-</div>
-<!-- /wrapper -->
-
-<!-- SCROLL TO TOP -->
-<a href="#" id="toTop"></a>
-</body>
+		<!-- /wrapper -->
+		<!-- Script JS -->	
+		<%= javascript_include_tag('app.js') %>
+		<%= javascript_include_tag('scripts.js') %>
+		<!--/Script JS -->
+		<!-- SCROLL TO TOP -->
+		<a href="#" id="toTop"></a>
+	</body>
 </html>
