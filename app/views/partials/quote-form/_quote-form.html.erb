@@ -1,13 +1,12 @@
 <div class="container">
-  <!-- <form id="displayCost"> -->
-  <%= form_with(url: "/form", method: "post", id: "displayCost") do |form|%>
-  <div class="row col-md-12">
-    <div class="col-md-7 col-sm-7 col-xs-7">
-      <div class="card card-default ">
-        <div class="card-heading">
-          <h2 class="card-title text-danger ">Step 1 : Building details:</h2>
-        </div>
+<form  id="displayCost">
+  <div class="col-md-7 col-sm-7 col-xs-7">
+    
+    <div class="card card-default ">
+      <div class="card-heading">
+        <h2 class="card-title text-danger ">Step 1 : Building details:</h2>
       </div>
+    </div>
       <fieldset>
         <input type="hidden" name="action" value="contact_send" />
         <div class="row">
@@ -21,121 +20,116 @@
             </select>
           </div>
         </div>
-        <div class="row">
+        <div class="row  ">
           <div id ="fields-1" class="col-md-4 ">
             <h6 class="my-auto"> Number of apartments:</h6>
-            <%= form.number_field :NbApparts, min: 0, id: "type1", class: "form-control", oninput: "validity.valid||(value='');"%>          
-            <!-- <input type="number"  min="0" id="type1" class="form-control " oninput=> -->
+            <input name="NbApparts" type="number"  min="0" id="type1" class="form-control " oninput="validity.valid||(value='');">
           </div>
           <div id ="fields-2" class="col-md-4 ">
             <h6 class="my-auto">Number of floors:</h6>
-            <%= form.number_field :NbFloors, min: 0, id: "type2", class: "form-control", oninput: "validity.valid||(value='');"%> 
-            <!-- <input type="number"  min="0" id="type2" class="form-control " oninput="validity.valid||(value='');"> -->
+            <input name="NbFloors" type="number"  min="0" id="type2" class="form-control " oninput="validity.valid||(value='');">
           </div>
           <div id="fields-3" class="col-md-4">
             <h6 class="my-auto">Number of basements:</h6>
-            <%= form.number_field :NbBasements, min: 0, id: "type3", class: "form-control", oninput: "validity.valid||(value='');"%>
-            <!-- <input type="number"  min="0" id="type3" class="form-control " oninput="validity.valid||(value='');"> -->
+            <input name="NbBasements" type="number"  min="0" id="type3" class="form-control " oninput="validity.valid||(value='');">
           </div>
           <div id="fields-4" class="col-md-4">
             <h6 class="my-auto" >Number of businesses</h6>
-            <input type="number"  min="0" id="type4" class="form-control " oninput="validity.valid||(value='');">
+            <input name="NbBusiness" type="number"  min="0" id="type4" class="form-control " oninput="validity.valid||(value='');">
           </div>
           <div id="fields-5" class="col-md-4">
             <h6 class="my-auto">Parking space available</h6>
-            <input type="number"  min="0" id="type5" class="form-control " oninput="validity.valid||(value='');">
+            <input name="NbParking" type="number"  min="0" id="type5" class="form-control " oninput="validity.valid||(value='');">
           </div>
           <div id="fields-6" class="col-md-4">
             <h6 class="my-auto"> Number of cages: </h6>
-            <input type="number"  min="0" id="type6" class="form-control " oninput="validity.valid||(value='');">
+            <input name="NbCages" type="number"  min="0" id="type6" class="form-control " oninput="validity.valid||(value='');">
           </div>
           <div id="fields-7" class="col-md-4">
             <h6 class="my-auto"> Rental companies</h6>
-            <input type="number"  min="0" id="type7" class="form-control " oninput="validity.valid||(value='');">
+            <input name="NbDistinctTenant" type="number"  min="0" id="type7" class="form-control " oninput="validity.valid||(value='');">
           </div>
           <div id="fields-8" class="col-md-4">
             <h6 class="my-auto"> Max occupants per floor</h6>
-            <input type="number"  min="0" id="type8" class="form-control " oninput="validity.valid||(value='');">
+            <input name="nbOccup" type="number"  min="0" id="type8" class="form-control " oninput="validity.valid||(value='');">
           </div>
           <div id="fields-9" class="col-md-4">
             <h6 class="my-auto"> Active Hour (Max 24h)</h6>
-            <input type="number"  min="0" max="24" id="type9" class="form-control mb-2" oninput="validity.valid||(value='');">
+            <input name="Activity24" type="number"  min="0" max="24" id="type9" class="form-control mb-2" oninput="validity.valid||(value='');">
           </div>
         </div>
-        <div class="row">
+        <div class="row ">
           <div class="col-md-12">
             <div class="card card-default ">
               <div class="card-heading">
-
-              
                 <h2 class=" text-danger card-title">Step 2: Select the desired product</h2>
               </div>
             </div>
             <div id="fields10">
               <label class="radio fw-500">
-                <input type="radio" id="productType" name="radio-btn"  value="standard"/>
+                <input type="radio" id="productType" name="ElevatorChoice"  value="standard"/>
                 <i></i>Standard</label>
               <label class="radio fw-500">
-                <input type="radio" id="productType" name="radio-btn"  value="premium"/><i></i> Premium</label>
+                <input type="radio" id="productType" name="ElevatorChoice"  value="premium"/><i></i> Premium</label>
               <label class="radio fw-500">
-                <input type="radio" id="productType" name="radio-btn"  value="excelium"/> <i></i>Excelium</label>
+                <input type="radio" id="productType" name="ElevatorChoice"  value="excelium"/> <i></i>Excelium</label>
             </div>
           </div>
         </div>
       </fieldset>
-    </div>
-    <div class="col-md-5 col-sm-5 col-xs-5 ">
-      <div class="row fs-18 fw-300 ">
-        <div class="col-md-12 col-sm-12 ">
-          <div id="myBox" class="box-static  fs-16 text-white  box-border-top box-color p-30">
-            <h2 class=" text-center fs-18 fw-300 letter-spacing-5 mb-2  "><span><i class="fas fa-dollar-sign fa-2x text-white"></i></span> How Much Should I Pay</h2>
-            <hr/>
+    
+  </div>
+  <div class="col-md-5 col-sm-5 col-xs-5 ">
+    <div class="row fs-18 fw-300 ">
+      <div class="col-md-12 col-sm-12 ">
+        <div id="myBox" class="box-static  fs-16 text-white  box-border-top box-color p-30">
+          <h2 class=" text-center fs-18 fw-300 letter-spacing-5 mb-2  "><span><i class="fas fa-dollar-sign fa-2x text-white"></i></span> How Much Should I Pay</h2>
+          <hr/>
+          
             <fieldset>
               <ul class="list-unstyled  ">
                 <div class="row">
                   <div class="col-6 my-auto ">Number of elevator:
                   </div>
-                  <div class="col-6"><input id="nbElevator" class="form-control text-white bg-transparent " type="number" readonly >
+                  <div class="col-6"><input name="NbElevator" id="nbElevator" class="form-control text-white bg-transparent " type="number" readonly >
                   </div>
                 </div>
                 <div class="row">
                   <div class="col-6 my-auto">Unit price:
                   </div>
-                  <div class="col-6"><input id="unitPrice" class="form-control text-white bg-transparent" type="text" readonly>
+                  <div class="col-6"><input name="UnitPrice" id="unitPrice" class="form-control text-white bg-transparent" type="text" readonly>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col-6 my-auto">Elevator total cost:
                   </div>
                   <div class="col-6">
-                    <input id="priceElevator" class="form-control  text-white bg-transparent" type="text"  readonly>
+                    <input name="PriceElevator" id="PriceElevator" class="form-control  text-white bg-transparent" type="text"  readonly>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col-6 my-auto">Installation fee :
                   </div>
                   <div class="col-6">
-                    <input id="instFee" class="form-control text-white bg-transparent" type="text" readonly >
+                    <input name="InstallationFee" id="instFee" class="form-control text-white bg-transparent" type="text" readonly >
                   </div>
                 </div>
                 <div class="row">
                   <div class="col-6 my-auto">Total:
                   </div>
                   <div class="col-6">
-                    <input id="totalCost" class="form-control text-white bg-transparent" type="text" readonly>
+                    <input name="Total" id="totalCost" class="form-control text-white bg-transparent" type="text" readonly>
                   </div>
                 </div>
                 <div >
-                <%= form.submit "Submit", id: "Btn-center", class: "btn btn-shadow-1 btn-outline-dark text-white", value: "Submit" %>
-<!--                  <input id="Btn-center" type="submit" class=" btn btn-shadow-1 btn-outline-dark text-white" value="Submit"> -->
+                  <input id="Btn-center" type="submit" class=" btn btn-shadow-1 btn-outline-dark text-white" value="Submit">
                 </div>
               </ul>
             </fieldset>
-          </div>
+          
         </div>
       </div>
     </div>
-    </div>
-    <% end %>
-  <!-- </form> -->
+  </div>
+  </form>
 </div>
