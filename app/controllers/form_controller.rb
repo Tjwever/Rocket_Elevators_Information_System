@@ -3,19 +3,14 @@ class FormController < ApplicationController
   end
 
   def create
-    # @quotes = Quote.new(my_params)
-
-    puts "FUNCIONAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    puts "FUNCIONAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"    
+    puts 
     
-    puts params[:NbApparts]
-    
-    # qu = Quote.new
-    # qu.totalCost = 15
-    # qu.InstallationFee = 30 
-    # qu.TotalNBofElevator = 80
-    # qu.save
-    # puts @quotes.NbApparts
+    quote = Quote.new
+    quote.NbApparts = params[:NbApparts]
+    quote.NbFloors = params[:NbFloors]   
+    quote.NbBasements = params[:NbBasements]   
 
-    # @quotes.save
+    # quote.save
   end
 end
