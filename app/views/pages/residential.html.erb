@@ -1,318 +1,123 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<!-- mobile settings -->
-		<meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0"/>
-		<meta charset="utf-8" />
+<section>
+<div class="container">
+	<header class="text-center">
+		<h2 class="m-0">Residential Services</h2>
+		<p class="font-lato fs-20 m-0">We truly care about our customers</p>
+	</header>
+	<hr />
+	<p class="lead  text-justify">
+		Take a look at some of the elevator projects that we have completed
+		at Elevator Technologies. Whether you want a new elevator installed
+		for your building or you need elevator repairs, we are the right
+		team for the job. You can also rely on us for 24/7/365 emergency
+		services! Call us today for a FREE estimate on our services.
+	</p>
 
-		<title>Rocket Elevators</title>
-		<meta name="description" content=" Rocket Elevators make professional elevators quebec canada" />
-		<meta name="Author" content="Saad Eddine FEKI [CodeBoxx]" />
+	<div class="divider divider-center divider-color">
+		<!-- divider -->
+		<i class="fa fa-chevron-down"></i>
+	</div>
+</div>
 
-		<!-- RAILS CSS/JS -->
-		<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload'%>
-
-		<!-- WEB FONTS : use %7C instead of | (pipe) -->
-		<link
-			href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600%7CRaleway:300,400,500,600,700%7CLato:300,400,400italic,600,700"
-			rel="stylesheet"
-			type="text/css"
-		/>
-		<!-- Rocket elevators Favicon -->
-		<link rel="stylesheet"
-			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
-			integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
-			crossorigin="anonymous" />
-		<link rel="icon"
-			type="image/png"
-			href="<%= asset_path( 'favicon-16x16.png' ) %>" />
-	</head>
-
-	<!--
-		AVAILABLE BODY CLASSES:
-
-		smoothscroll 			= create a browser smooth scroll
-		enable-animation		= enable WOW animations
-
-		bg-grey					= grey background
-		grain-grey				= grey grain background
-		grain-blue				= blue grain background
-		grain-green				= green grain background
-		grain-blue				= blue grain background
-		grain-orange			= orange grain background
-		grain-yellow			= yellow grain background
-
-		boxed 					= boxed layout
-		pattern1 ... patern11	= pattern background
-		menu-vertical-hide		= hidden, open on click
-
-		BACKGROUND IMAGE [together with .boxed class]
-		data-background="assets/images/_smarty/boxed_background/1.jpg"
-	-->
-	<body class="smoothscroll enable-animation">
-		<!-- wrapper -->
-		<div id="wrapper">
-<div id="header" class="navbar-toggleable-md sticky clearfix">
-    <!-- TOP NAV -->
-    <header id="topNav">
-      <div class="container">
-        <!-- Mobile Menu Button -->
-        <button class="btn btn-mobile"
-          data-toggle="collapse"
-          data-target=".nav-main-collapse">
-          <i class="fa fa-bars"></i>
-        </button>
-
-        <!-- Logo -->
-        <a class="logo float-left scrollTo" href="#top">
-          <img src="<%= asset_path( 'logo-inc.png' ) %>">							
-        </a>
-
-        <!--
-          Top Nav
-        -->
-    <div class="navbar-collapse collapse float-right nav-main-collapse submenu-dark" >
-          <nav class="nav-main">
-            <!--
-              .nav-onepage
-              Required for onepage navigation links
-
-              Add .external for an external link!
-            -->
-            <ul id="topMain" class="nav nav-pills nav-main nav-onepage">
-              <li class="active">
-                <!-- HOME -->
-               
-				<%= link_to 'HOME', root_path %>
-              </li>
-              <li class="dropdown"><!-- sERVICES -->
-                <a class="dropdown-toggle" href="#">
-                  SERVICES
-                </a>
-                <ul class="dropdown-menu">
-                  <li class="dropdown">
-                   
-					<%= link_to 'COMMERCIAL', commercial_path %>
-                  </li>
-                  <li class="dropdown">
-                    
-					<%= link_to 'RESIDENTIAL', residential_path %>
-                  </li>
-                  <li class="dropdown">
-                   
-					<%= link_to 'REQUEST FOR QUOTE', form_path %>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <!-- WORK -->
-                
-				<%= link_to "PORTFOLIO", "#{root_path}#work" %>
-              </li>
-              <li>
-                <!-- NEWS -->
-				
-				<%= link_to "NEWS", "#{root_path}#news" %>
-              </li>
-
-              <li>
-                <!-- CLIENTS -->
-				<%= link_to "CLIENTS", "#{root_path}#clients" %>
-              </li>
-
-              <li>
-                <!-- CONTACT -->
-				<%= link_to "CONTACT", "#{root_path}#contact" %>
-              </li>
-		<% if !current_user %>
-			<li><%= link_to "LOGIN", new_user_session_path %></li>
-			<li><%= link_to "SIGN UP", new_user_registration_path %></li>
-			
-			<% else %>
-			<li><%= link_to "PROFILE", edit_user_registration_path %></li>
-			<li><%= link_to "LOGOUT", destroy_user_session_path, method: :delete %></li>
-			<% end %>
-            </ul>
-          </nav>
-        </div>
-      </div>
-    </header>
-    <!-- /Top Nav -->
-  </div>
-
-			<!-- PAGE HEADER -->
-			<section class="page-header page-header-xs dark">
-				<div class="container">
-					<h1>SERVICES</h1>
-
-					<!-- breadcrumbs -->
-					<ol class="breadcrumb">
-						<li><a href="index.html">HOME</a></li>
-						<li><a href="#" class="active">RESIDENTIAL</a></li>
-					</ol>
-					<!-- /breadcrumbs -->
+<div class="container">
+	<div class="row">
+		<!-- Team Member 1 -->
+		<div class="col-xl-3 col-md-6 mb-4">
+			<div class="card border-0 shadow">
+				<img
+					src="<%= asset_path( 'int06.jpg' ) %>"
+					class="card-img-top"
+					alt="..."
+				/>
+				<div class="card-body text-center">
+					<h5 class="card-title mb-0">Modern design</h5>
+					<div class="card-text text-black-50">SkyWalker model</div>
 				</div>
-			</section>
-			<!-- /PAGE HEADER -->
+			</div>
+		</div>
+		<!-- Team Member 2 -->
+		<div class="col-xl-3 col-md-6 mb-4">
+			<div class="card border-0 shadow">
+				<img
+					src="<%= asset_path( 'int05.jpg' ) %>"
+					class="card-img-top"
+					alt="..."
+				/>
+				<div class="card-body text-center">
+					<h5 class="card-title mb-0">Customized design</h5>
+					<div class="card-text text-black-50">Las Vegas Model</div>
+				</div>
+			</div>
+		</div>
+		<!-- Team Member 3 -->
+		<div class="col-xl-3 col-md-6 mb-4">
+			<div class="card border-0 shadow">
+				<img
+					src="<%= asset_path( 'int03.jpg' ) %>"
+					class="card-img-top"
+					alt="..."
+				/>
+				<div class="card-body text-center">
+					<h5 class="card-title mb-0">Italian Design</h5>
+					<div class="card-text text-black-50">Sunny Model</div>
+				</div>
+			</div>
+		</div>
+		<!-- Team Member 4 -->
+		<div class="col-xl-3 col-md-6 mb-4">
+			<div class="card border-0 shadow">
+				<img
+					src="<%= asset_path( 'int04.jpg' ) %>"
+					class="card-img-top"
+					alt="..."
+				/>
+				<div class="card-body text-center">
+					<h5 class="card-title mb-0">French Model</h5>
+					<div class="card-text text-black-50">Voila Model</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /.row -->
+</div>
+</section>
 
-			<!-- -->
-			<section>
-				<div class="container">
-					<header class="text-center">
-						<h2 class="m-0">Residential Services</h2>
-						<p class="font-lato fs-20 m-0">We truly care about our customers</p>
-					</header>
+<!-- old section -->
+<section>
+<div class="container">
+	<header class="text-center">
+		<h2 class="m-0">Residential Elevators</h2>
+		<p class="font-lato fs-20 m-0">Best prices in the market</p>
+	</header>
+
+	<hr />
+
+	<div class="container b-0">
+		<div class="row">
+			<div class="col-md-4 col-sm-4">
+				<div class="price-clean">
+					<h4><sup>$</sup>7565<em></em></h4>
+					<h5>STARTER</h5>
 					<hr />
-					<p class="lead  text-justify">
-						Take a look at some of the elevator projects that we have completed
-						at Elevator Technologies. Whether you want a new elevator installed
-						for your building or you need elevator repairs, we are the right
-						team for the job. You can also rely on us for 24/7/365 emergency
-						services! Call us today for a FREE estimate on our services.
-					</p>
-
-					<div class="divider divider-center divider-color">
-						<!-- divider -->
-						<i class="fa fa-chevron-down"></i>
-					</div>
-
-					<!-- FEATURED BOXES 3 -->
-
-					<!-- /FEATURED BOXES 3 -->
-				</div>
-
-				<div class="container">
-					<div class="row">
-						<!-- Team Member 1 -->
-						<div class="col-xl-3 col-md-6 mb-4">
-							<div class="card border-0 shadow">
-								<img
-									src="<%= asset_path( 'int06.jpg' ) %>"
-									class="card-img-top"
-									alt="..."
-								/>
-								<div class="card-body text-center">
-									<h5 class="card-title mb-0">Modern design</h5>
-									<div class="card-text text-black-50">SkyWalker model</div>
-								</div>
-							</div>
-						</div>
-						<!-- Team Member 2 -->
-						<div class="col-xl-3 col-md-6 mb-4">
-							<div class="card border-0 shadow">
-								<img
-									src="<%= asset_path( 'int05.jpg' ) %>"
-									class="card-img-top"
-									alt="..."
-								/>
-								<div class="card-body text-center">
-									<h5 class="card-title mb-0">Customized design</h5>
-									<div class="card-text text-black-50">Las Vegas Model</div>
-								</div>
-							</div>
-						</div>
-						<!-- Team Member 3 -->
-						<div class="col-xl-3 col-md-6 mb-4">
-							<div class="card border-0 shadow">
-								<img
-									src="<%= asset_path( 'int03.jpg' ) %>"
-									class="card-img-top"
-									alt="..."
-								/>
-								<div class="card-body text-center">
-									<h5 class="card-title mb-0">Italian Design</h5>
-									<div class="card-text text-black-50">Sunny Model</div>
-								</div>
-							</div>
-						</div>
-						<!-- Team Member 4 -->
-						<div class="col-xl-3 col-md-6 mb-4">
-							<div class="card border-0 shadow">
-								<img
-									src="<%= asset_path( 'int04.jpg' ) %>"
-									class="card-img-top"
-									alt="..."
-								/>
-								<div class="card-body text-center">
-									<h5 class="card-title mb-0">French Model</h5>
-									<div class="card-text text-black-50">Voila Model</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- /.row -->
-				</div>
-			</section>
-
-			<!-- old section -->
-			<section>
-				<div class="container">
-					<header class="text-center">
-						<h2 class="m-0">Residential Elevators</h2>
-						<p class="font-lato fs-20 m-0">Best prices in the market</p>
-					</header>
-
+					<p class="text-uppercase">Standard model</p>
 					<hr />
-
-					<div class="container b-0">
-						<div class="row">
-							<div class="col-md-4 col-sm-4">
-								<div class="price-clean">
-									<h4><sup>$</sup>7565<em></em></h4>
-									<h5>STARTER</h5>
-									<hr />
-									<p class="text-uppercase">Standard model</p>
-									<hr />
-									<a href="form.html" class="btn btn-3d btn-teal text-uppercase">Estimate My Project !</a>
-								</div>
-							</div>
-
-							<div class="col-md-4 col-sm-4">
-								<div class="price-clean price-clean-popular">
-									<div class="ribbon">
-										<div class="ribbon-inner">POPULAR</div>
-									</div>
-									<h4><sup>$</sup>12,345<em></em></h4>
-									<h5>STARTER</h5>
-									<hr />
-									<p class="text-uppercase">Premium Model</p>
-									<hr />
-									<a href="form.html" class="btn btn-3d btn-primary text-uppercase">Estimate My Project !</a>
-								</div>
-							</div>
-
-							<div class="col-md-4 col-sm-4">
-								<div class="price-clean">
-									<h4><sup>$</sup>15,400<em></em></h4>
-									<h5>STARTER</h5>
-									<hr />
-									<p class="uppercase">Excelium model</p>
-									<hr />
-									<a href="form.html" class="btn btn-3d btn-teal text-uppercase">Estimate My Project!</a>
-								</div>
-							</div>
-						</div>
-					</div>
+					<a href="form" class="btn btn-3d btn-teal text-uppercase">Estimate My Project !</a>
 				</div>
-			</section>
+			</div>
 
-			<section class:"bb-0"></section>
-				<div class="callout alert alert-transparent b-0 rad-0 m-0 pt-60 pb-60 clearfix">
-					<div class="text-center">
-						<h3>
-							Call now at <span><strong> (581) 701-0303</strong></span> for more details!
-						</h3>
-						<p class="font-lato fs-20">
-							We truly care about our users and our product.
-						</p>
-
-						<a
-							href="index.html#contact"
-							class="btn btn-primary btn-lg btn-round mt-30"
-							>CONTACT US NOW</a
-						>
+			<div class="col-md-4 col-sm-4">
+				<div class="price-clean price-clean-popular">
+					<div class="ribbon">
+						<div class="ribbon-inner">POPULAR</div>
 					</div>
+					<h4><sup>$</sup>12,345<em></em></h4>
+					<h5>STARTER</h5>
+					<hr />
+					<p class="text-uppercase">Premium Model</p>
+					<hr />
+					<a href="form" class="btn btn-3d btn-primary text-uppercase">Estimate My Project !</a>
 				</div>
+<<<<<<< HEAD
 			<!-- /CALLOUT -->
 			</section>
 				<!-- FOOTER -->
@@ -583,21 +388,48 @@
 												</div>
 												</div>
 											</div>
+=======
+			</div>
+>>>>>>> Cindy
 
-										<!-- end pop up -->
-										</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-				</footer>
-				<!-- /FOOTER -->
-			<!-- /FOOTER -->
+			<div class="col-md-4 col-sm-4">
+				<div class="price-clean">
+					<h4><sup>$</sup>15,400<em></em></h4>
+					<h5>STARTER</h5>
+					<hr />
+					<p class="uppercase">Excelium model</p>
+					<hr />
+					<a href="form" class="btn btn-3d btn-teal text-uppercase">Estimate My Project!</a>
+				</div>
+			</div>
 		</div>
-		<!-- /wrapper -->
+	</div>
+</div>
+</section>
 
-		<!-- SCROLL TO TOP -->
-		<a href="#" id="toTop"></a>
-	</body>
+<section class:"bb-0"></section>
+<div class="callout alert alert-transparent b-0 rad-0 m-0 pt-60 pb-60 clearfix">
+	<div class="text-center">
+		<h3>
+			Call now at <span><strong> (581) 701-0303</strong></span> for more details!
+		</h3>
+		<p class="font-lato fs-20">
+			We truly care about our users and our product.
+		</p>
+
+		<a
+			href="index.html#contact"
+			class="btn btn-primary btn-lg btn-round mt-30"
+			>CONTACT US NOW</a
+		>
+	</div>
+</div>
+</section>
+</div>
+
+<!-- SCROLL TO TOP -->
+<a href="#" id="toTop"></a>
+</body>
 </html>
+<!-- SCROLL TO BOTTOM -->
+	<a name="bottom"></a>

@@ -1,171 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<title>Rocket Elevators</title>
-		<meta name="description" content=" Rocket Elevators make professional elevators quebec canada" />
-		<meta name="Author" content="Saad Eddine FEKI [CodeBoxx]" />
-
-		<!-- mobile settings -->
-		<meta
-			name="viewport"
-			content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0"
-		/>
-		
-		<!-- RAILS CSS/JS -->
-		<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'%>
-		<%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'%>
-		<%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload'%>
-
-		<!-- WEB FONTS : use %7C instead of | (pipe) -->
-		<link
-			href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600%7CRaleway:300,400,500,600,700%7CLato:300,400,400italic,600,700"
-			rel="stylesheet"
-			type="text/css"
-		/>
-		<!-- Rocket elevators Favicon -->
-		<link
-			rel="stylesheet"
-			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
-			integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
-			crossorigin="anonymous"
-		/>
-		<link
-			rel="icon"
-			type="image/png"
-			href="<%= asset_path( 'favicon-16x16.png' ) %>"
-		/>
-		<!-- CORE CSS -->
-		<link
-			href="assets/plugins/bootstrap/css/bootstrap.min.css"
-			rel="stylesheet"
-			type="text/css"
-		/>
-
-		<!-- THEME CSS -->
-		<link href="assets/css/essentials.css" rel="stylesheet" type="text/css" />
-		<link href="assets/css/layout.css" rel="stylesheet" type="text/css" />
-
-		<!-- PAGE LEVEL SCRIPTS -->
-		<link href="assets/css/header-1.css" rel="stylesheet" type="text/css" />
-		<link
-			href="assets/css/color_scheme/red.css"
-			rel="stylesheet"
-			type="text/css"
-			id="color_scheme"
-		/>
-	</head>
-
-	<body class="smoothscroll enable-animation">
-		
-
-		<!-- wrapper -->
-		<div id="wrapper">
-			
-<div id="header" class="navbar-toggleable-md sticky clearfix">
-    <!-- TOP NAV -->
-    <header id="topNav">
-      <div class="container">
-        <!-- Mobile Menu Button -->
-        <button class="btn btn-mobile"
-          data-toggle="collapse"
-          data-target=".nav-main-collapse">
-          <i class="fa fa-bars"></i>
-        </button>
-
-        <!-- Logo -->
-        <a class="logo float-left scrollTo" href="#top">
-          <img src="<%= asset_path( 'logo-inc.png' ) %>">							
-        </a>
-
-        <!--
-          Top Nav
-        -->
-    <div class="navbar-collapse collapse float-right nav-main-collapse submenu-dark" >
-          <nav class="nav-main">
-            <!--
-              .nav-onepage
-              Required for onepage navigation links
-
-              Add .external for an external link!
-            -->
-            <ul id="topMain" class="nav nav-pills nav-main nav-onepage">
-              <li class="active">
-                <!-- HOME -->
-               
-				<%= link_to 'HOME', root_path %>
-              </li>
-              <li class="dropdown"><!-- sERVICES -->
-                <a class="dropdown-toggle" href="#">
-                  SERVICES
-                </a>
-                <ul class="dropdown-menu">
-                  <li class="dropdown">
-                   
-					<%= link_to 'COMMERCIAL', commercial_path %>
-                  </li>
-                  <li class="dropdown">
-                    
-					<%= link_to 'RESIDENTIAL', residential_path %>
-                  </li>
-                  <li class="dropdown">
-                   
-					<%= link_to 'REQUEST FOR QUOTE', form_path %>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <!-- WORK -->
-                
-				<%= link_to "PORTFOLIO", "#{root_path}#work" %>
-              </li>
-              <li>
-                <!-- NEWS -->
-				
-				<%= link_to "NEWS", "#{root_path}#news" %>
-              </li>
-
-              <li>
-                <!-- CLIENTS -->
-				<%= link_to "CLIENTS", "#{root_path}#clients" %>
-              </li>
-
-              <li>
-                <!-- CONTACT -->
-				<%= link_to "CONTACT", "#{root_path}#contact" %>
-              </li>
-		<% if !current_user %>
-			<li><%= link_to "LOGIN", new_user_session_path %></li>
-			<li><%= link_to "SIGN UP", new_user_registration_path %></li>
-			
-			<% else %>
-			<li><%= link_to "PROFILE", edit_user_registration_path %></li>
-			<li><%= link_to "LOGOUT", destroy_user_session_path, method: :delete %></li>
-			<% end %>
-            </ul>
-          </nav>
-        </div>
-      </div>
-    </header>
-    <!-- /Top Nav -->
-  </div>
-
-			<!-- PAGE HEADER -->
-			<section class="page-header page-header-xs dark">
-				<div class="container">
-					<h1>SERVICES</h1>
-
-					<!-- breadcrumbs -->
-					<ol class="breadcrumb">
-						<li><a href="index.html">HOME</a></li>
-						<li><a href="#" class="active">COMMERCIAL</a></li>
-					</ol>
-					<!-- /breadcrumbs -->
-				</div>
-			</section>
-			<!-- /PAGE HEADER -->
-
-			<!-- -->
 			<section class="b-0">
 				<div class="container">
 					<header class="text-center">
@@ -197,7 +29,7 @@
 					<div class="row">
 						<div class="col-md-4">
 							<div class="box-icon box-icon-left box-icon-round">
-								<a class="box-icon-title" href="form.html">
+								<a class="box-icon-title" href="form">
 									<i class="fas fa-shopping-cart"></i>
 									<h2>A ONE-STOP SHOP</h2>
 								</a>
@@ -431,7 +263,7 @@
 									<hr />
 									<p class="text-uppercase">Standard model</p>
 									<hr />
-									<a href="form.html" class="btn btn-3d btn-teal text-uppercase">Estimate My Project !</a>
+									<a href="form" class="btn btn-3d btn-teal text-uppercase">Estimate My Project !</a>
 								</div>
 							</div>
 
@@ -445,7 +277,7 @@
 									<hr />
 									<p class="text-uppercase">Premium Model</p>
 									<hr />
-									<a href="form.html" class="btn btn-3d btn-primary text-uppercase">Estimate My Project !</a>
+									<a href="form" class="btn btn-3d btn-primary text-uppercase">Estimate My Project !</a>
 								</div>
 							</div>
 
@@ -456,15 +288,14 @@
 									<hr />
 									<p class="text-uppercase">Excelium model</p>
 									<hr />
-									<a href="form.html" class="btn btn-3d btn-teal text-uppercase">Estimate My Project!</a>
+									<a href="form" class="btn btn-3d btn-teal text-uppercase">Estimate My Project!</a>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</section>
-			<!-- / -->
-			<!-- -->
+
 			<section>
 				<div class="container">
 					<div class="row">
@@ -561,19 +392,7 @@
 			</section>
 			<!-- / -->
 
-			<!-- 
-			CALLOUT
-
-			FULLWIDTH: OUTSIDE OF <section> 
-
-				Available Classes:
-				alert-default
-				alert-info
-				alert-warning
-				alert-danger
-				alert-success
-				alert-dark
-			-->
+			<!-- CALLOUT -->
 
 			<div
 				class="callout alert alert-transparent b-0 rad-0 m-0 pt-60 pb-60 clearfix"
@@ -595,6 +414,7 @@
 				</div>
 			</div>
 			<!-- /CALLOUT -->
+<<<<<<< HEAD
 
 				<!-- FOOTER -->
 				<footer id="footer">
@@ -897,10 +717,15 @@
 					</div>
 				</footer>
 				<!-- /FOOTER -->
+=======
+				
+>>>>>>> Cindy
 		</div>
 		<!-- /wrapper -->
 
 		<!-- SCROLL TO TOP -->
 		<a href="#" id="toTop"></a>
 	</body>
+	<!-- SCROLL TO BOTTOM -->
+	<a name="bottom"></a>
 </html>

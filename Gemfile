@@ -8,6 +8,8 @@ gem "font-awesome-rails"
 gem 'jquery-ui-rails'
 
 #gem 'bootstrap-social'
+# https://github.com/gavinkflam/bootstrap-social-rails
+gem 'font-awesome-rails'
 
 # https://github.com/rails/jquery-rails
 gem 'jquery-rails'

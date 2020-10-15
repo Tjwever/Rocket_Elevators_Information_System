@@ -8,7 +8,7 @@ require("@rails/activestorage").start()
 require("channels")
 
 import 'bootstrap'
-import 'bootstrap-social'
+import 'font-awesome-rails'
 import 'jquery'
 
 document.addEventListener("turbolinks:load", () => {
