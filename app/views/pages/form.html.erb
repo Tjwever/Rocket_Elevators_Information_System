@@ -80,94 +80,93 @@
 		<div id="wrapper">
 
 
-			<div id="header" class="navbar-toggleable-md sticky clearfix">
-				<!-- TOP NAV -->
-				<header id="topNav">
-					<div class="container">
-						<!-- Mobile Menu Button -->
-						<button
-							class="btn btn-mobile"
-							data-toggle="collapse"
-							data-target=".nav-main-collapse"
-						>
-							<i class="fa fa-bars"></i>
-						</button>
+	<div id="header" class="navbar-toggleable-md sticky clearfix">
+    <!-- TOP NAV -->
+    <header id="topNav">
+      <div class="container">
+        <!-- Mobile Menu Button -->
+        <button class="btn btn-mobile"
+          data-toggle="collapse"
+          data-target=".nav-main-collapse">
+          <i class="fa fa-bars"></i>
+        </button>
 
-						<!-- Logo -->
-						<a class="logo float-left scrollTo" href="#top">
-							<img src="<%= asset_path( 'logo-inc.png' ) %>" alt="" />							
-						</a>
+        <!-- Logo -->
+        <a class="logo float-left scrollTo" href="#top">
+          <img src="<%= asset_path( 'logo-inc.png' ) %>">							
+        </a>
 
-						<!--
-							Top Nav
+        <!--
+          Top Nav
+        -->
+    <div class="navbar-collapse collapse float-right nav-main-collapse submenu-dark" >
+          <nav class="nav-main">
+            <!--
+              .nav-onepage
+              Required for onepage navigation links
 
-							AVAILABLE CLASSES:
-							submenu-dark = dark sub menu
-						-->
-						<div
-							class="navbar-collapse collapse float-right nav-main-collapse submenu-dark"
-						>
-							<nav class="nav-main">
-								<!--
-									.nav-onepage
-									Required for onepage navigation links
+              Add .external for an external link!
+            -->
+            <ul id="topMain" class="nav nav-pills nav-main nav-onepage">
+              <li class="active">
+                <!-- HOME -->
+               
+				<%= link_to 'HOME', root_path %>
+              </li>
+              <li class="dropdown"><!-- sERVICES -->
+                <a class="dropdown-toggle" href="#">
+                  SERVICES
+                </a>
+                <ul class="dropdown-menu">
+                  <li class="dropdown">
+                   
+					<%= link_to 'COMMERCIAL', commercial_path %>
+                  </li>
+                  <li class="dropdown">
+                    
+					<%= link_to 'RESIDENTIAL', residential_path %>
+                  </li>
+                  <li class="dropdown">
+                   
+					<%= link_to 'REQUEST FOR QUOTE', form_path %>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <!-- WORK -->
+                
+				<%= link_to "PORTFOLIO", "#{root_path}#work" %>
+              </li>
+              <li>
+                <!-- NEWS -->
+				
+				<%= link_to "NEWS", "#{root_path}#news" %>
+              </li>
 
-									Add .external for an external link!
-								-->
-								<ul id="topMain" class="nav nav-pills nav-main nav-onepage">
-									<li class="active">
-										<!-- HOME -->
-										<a href="index.html"> HOME </a>
-									</li>
+              <li>
+                <!-- CLIENTS -->
+				<%= link_to "CLIENTS", "#{root_path}#clients" %>
+              </li>
 
-
-									<li class="dropdown"><!-- sERVICES -->
-										<a class="dropdown-toggle" href="#">
-											SERVICES
-										</a>
-										<ul class="dropdown-menu">
-											<li class="dropdown">
-												<a class="dropdown-toggle" href="commercial.html">
-													COMMERCIAL
-												</a>
-											</li>
-											<li class="dropdown">
-												<a class="dropdown-toggle" href="residential.html">
-													RESIDENTIAL
-												</a>
-											</li>
-											<li class="dropdown">
-												<a class="dropdown-toggle" href="#">
-													REQUEST FOR QUOTE
-												</a>
-											</li>
-										</ul>
-									</li>
-									<li>
-										<!-- WORK -->
-										<a href="index.html#work"> PORTFOLIO </a>
-									</li>
-									<li>
-										<!-- NEWS -->
-										<a href="index.html#news"> NEWS </a>
-									</li>
-
-									<li>
-										<!-- CLIENTS -->
-										<a href="index.html#clients"> CLIENTS </a>
-									</li>
-
-									<li>
-										<!-- CONTACT -->
-										<a href="index.html#contact"> CONTACT </a>
-									</li>
-								</ul>
-							</nav>
-						</div>
-					</div>
-				</header>
-				<!-- /Top Nav -->
-			</div>
+              <li>
+                <!-- CONTACT -->
+				<%= link_to "CONTACT", "#{root_path}#contact" %>
+              </li>
+		<% if !current_user %>
+			<li><%= link_to "LOGIN", new_user_session_path %></li>
+			<li><%= link_to "SIGN UP", new_user_registration_path %></li>
+			
+			<% else %>
+			<li><%= link_to "PROFILE", edit_user_registration_path %></li>
+			<li><%= link_to "LOGOUT", destroy_user_session_path, method: :delete %></li>
+			<% end %>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <!-- /Top Nav -->
+  </div>
 
 			<section class="page-header page-header-xs dark">
 				<div class="container">
