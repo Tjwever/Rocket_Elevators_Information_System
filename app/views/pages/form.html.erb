@@ -92,11 +92,69 @@
 									<div class="card-heading">
 											<h2 class=" text-danger card-title">Step 2: Select the desired product</h2>
 									</div>
-								</div>
-									<div id="fields10">
-										<label class="radio fw-500"><input type="radio" id="productType" name="radio-btn"  value="standard"/><i></i>Standard</label>
-										<label class="radio fw-500"><input type="radio" id="productType" name="radio-btn"  value="premium"/><i></i> Premium</label>
-										<label class="radio fw-500"><input type="radio" id="productType" name="radio-btn"  value="excelium"/> <i></i>Excelium</label>
+									<div class="row  ">
+										<div id ="fields-1" class="col-md-4 ">
+											<h6 class="my-auto"> Number of apartments:</h6>
+											<input type="number"  min="0" id="type1" class="form-control " oninput="validity.valid||(value='');"> 
+										</div>
+										<div id ="fields-2" class="col-md-4 ">
+											<h6 class="my-auto">Number of floors:</h6>
+											<input type="number"  min="0" id="type2" class="form-control " oninput="validity.valid||(value='');">
+										</div>
+										<div id="fields-3" class="col-md-4">
+											<h6 class="my-auto">Number of basements:</h6>
+											<input type="number"  min="0" id="type3" class="form-control " oninput="validity.valid||(value='');">
+										</div>
+										<div id="fields-4" class="col-md-4">
+											<h6 class="my-auto" >Number of businesses</h6>
+											<input type="number"  min="0" id="type4" class="form-control " oninput="validity.valid||(value='');">
+										</div>
+										<div id="fields-5" class="col-md-4">
+											<h6 class="my-auto">Parking space available</h6>
+											<input type="number"  min="0" id="type5" class="form-control " oninput="validity.valid||(value='');">
+										</div>
+										<div id="fields-6" class="col-md-4">
+											<h6 class="my-auto"> Number of cages: </h6>
+											<input type="number"  min="0" id="type6" class="form-control " oninput="validity.valid||(value='');">
+										</div>
+										<div id="fields-7" class="col-md-4">
+											<h6 class="my-auto"> Rental companies</h6>
+											<input type="number"  min="0" id="type7" class="form-control " oninput="validity.valid||(value='');">
+										</div>
+										<div id="fields-8" class="col-md-4">
+												<h6 class="my-auto"> Max occupants per floor</h6>
+												<input type="number"  min="0" id="type8" class="form-control " oninput="validity.valid||(value='');">
+										</div>
+										<div id="fields-9" class="col-md-4">
+												<h6 class="my-auto"> Active Hour (Max 24h)</h6>
+												<input type="number"  min="0" max="24" id="type9" class="form-control mb-2" oninput="validity.valid||(value='');">
+										</div>
+								    </div>
+									<div class="row ">
+										<div class="col-md-12">
+											<div class="card card-default ">
+												<div class="card-heading">
+														<h2 class=" text-danger card-title">Step 2: Select the desired product</h2>
+												</div>
+
+
+											</div>
+													<div id="fields10">
+
+
+														<label class="radio fw-500">
+									
+														<input type="radio" id="productType" name="radio-btn"  value="standard"/>
+
+														<i></i>Standard</label>
+
+
+														<label class="radio fw-500">
+														 <input type="radio" id="productType" name="radio-btn"  value="premium"/><i></i> Premium</label>
+														 <label class="radio fw-500">
+														 <input type="radio" id="productType" name="radio-btn"  value="excelium"/> <i></i>Excelium</label>
+
+													</div></div>
 									</div>
 
 					</fieldset>
@@ -122,7 +180,8 @@
 									<div class="row"><div class="col-6 my-auto">Unit price:
 
 									</div>
-									<div class="col-6"><input id="unitPrice" class="form-control text-white bg-transparent" type="text" readonly>
+									<div >
+										<input id="Btn-center" type="submit" class=" btn btn-shadow-1 btn-outline-dark text-white" value="Submit">
 									</div>
 								</div>
 								<div class="row">
@@ -184,7 +243,10 @@ class="callout alert alert-success b-0 rad-0 m-0 pt-60 pb-60 clearfix"
 </div>
 <!-- /wrapper -->
 <!-- Script JS -->	
-<%= javascript_include_tag '/assets/javascripts/app.js', 'data-turbolinks-track': 'reload' %>
+<%= javascript_include_tag "application" %>
+	<%= javascript_include_tag("application.js") %>
+	<%= javascript_include_tag('app.js') %>
+	<%= javascript_include_tag('scripts.js') %> 
 
 <!-- SCROLL TO TOP -->
 <a href="#" id="toTop"></a>

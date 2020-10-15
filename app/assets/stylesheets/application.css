@@ -15,6 +15,14 @@
  *= require font-awesome
  *= require_tree .
  *= require_self
+ *= require essentials.css
+ *= require layout.css
+ *= require red.css
+ *= require header-1.css
+ *= require font-awesome
+ 
+
+ *= require jquery-ui
  *= require red
  *= require essentials
  *= require extralayers
@@ -23,3 +31,5 @@
  *= require form
  *= require settings
  */
+
+ 

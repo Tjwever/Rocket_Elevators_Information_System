@@ -11,7 +11,9 @@
 // about supported directives.
 //
 //= require jquery3
-//= require_tree .
+//= require jquery_ujs
+//= require jquery-ui
+
 //= require_self
 //= require activestorage
 //= require turbolinks
@@ -20,3 +22,4 @@
 //= require jquery.themepunch.revolution.min
 //= require jquery.themepunch.tools.min
 //= require scripts
+//= require_tree .
