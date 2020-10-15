@@ -12,9 +12,10 @@
  *
  *= require_self
  *= require font-awesome
- *= require jquery-ui
+ 
 
  */
+ @import "jquery-ui";
  @import "bootstrap";
  @import "red";
  @import "essentials";
