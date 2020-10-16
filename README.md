@@ -35,19 +35,16 @@
 :heavy_check_mark: CSS 3;\
 :heavy_check_mark: Javascript;\
 :heavy_check_mark: Bootstrap;
+:heavy_check_mark: MySqL
 
-<!-- ## :rocket: Technologies
 
-The following tools were used in this project:
 
-- [Bootstrap]()
-- [HTML3]()
-- [CSS5]()
-- [JavaScript]() -->
+## :white_check_mark: Instructions to acces to th admin panel: 
 
-## :white_check_mark: Requirements
+-
+-
+-
 
-No requirements
 
 ## :memo: Routes
 
@@ -55,7 +52,7 @@ No requirements
 - residential page: <b>/residential</b>
 - commercial page: <b>/commercial</b>
 - form page: <b>/form</b>
-- Admin panel:<b>/admin</b>
+- Admin panel: <b>/admin</b>
 
 ## :memo: License
 

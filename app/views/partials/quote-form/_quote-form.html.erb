@@ -129,12 +129,6 @@
       </div>
     </div>
   <% end %>
-</div>
-<%= javascript_tag do %>
-if(window.location.href.substr(-2) !== "?r") {
-  window.location = window.location.href + "?r";
-}
-<% end %>
 
 
 <!-- pop up -->
@@ -157,3 +151,10 @@ if(window.location.href.substr(-2) !== "?r") {
     </div>
   </div>
 </div>
+
+
+ <%= javascript_tag do %>
+if(window.location.href.substr(-2) !== "?r") {
+  window.location = window.location.href + "?r";
+}
+<% end %>

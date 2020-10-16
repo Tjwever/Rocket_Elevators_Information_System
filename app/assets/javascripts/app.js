@@ -5,6 +5,7 @@
 
 // Get form data
 
+
 const planSelector = document.getElementById("planSelector");
 const nbApparts = document.getElementById("type1");
 const nbFloors = document.getElementById("type2");
