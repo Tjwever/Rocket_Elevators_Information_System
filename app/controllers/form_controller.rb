@@ -3,9 +3,6 @@ class FormController < ApplicationController
   end
 
   def create
-
-
-    puts 
     
     quote = Quote.new
     quote.NbApparts = params[:NbApparts]
@@ -22,9 +19,9 @@ class FormController < ApplicationController
     quote.UnitPrice = params[:UnitPrice].delete('$ ,')   
     quote.PriceElevator = params[:PriceElevator].delete('$ ,') 
     quote.InstallationFee = params[:InstallationFee].delete('$ ,')  
-    quote.Total = params[:Total].delete('$ ,')    
-
+    quote.Total = params[:Total].delete('$ ,')  
 
     quote.save
+    redirect_to :root
   end
 end
