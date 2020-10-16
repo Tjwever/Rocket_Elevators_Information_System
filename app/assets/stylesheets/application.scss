@@ -15,21 +15,16 @@
  *= require font-awesome
  *= require_tree .
  *= require_self
- *= require essentials.css
- *= require layout.css
- *= require red.css
- *= require header-1.css
  *= require font-awesome
  
 
- *= require jquery-ui
- *= require red
- *= require essentials
- *= require extralayers
- *= require header-1
- *= require layout
- *= require form
- *= require settings
  */
-
- 
+ @import "jquery-ui";
+ @import "bootstrap";
+ @import "red";
+ @import "essentials";
+ @import "extralayers";
+ @import "header-1";
+ @import "layout";
+ @import "form";
+ @import "settings";
