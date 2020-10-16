@@ -21,8 +21,22 @@
     <%= stylesheet_link_tag    'layout', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag    'red', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag    'https://use.fontawesome.com/releases/v5.0.10/css/all.css' %>
+
+
+    
+
     <%= stylesheet_link_tag    'https://cdn.jsdelivr.net/npm/et-line@1.0.1/style.min.css' %>-->
     <%= render 'partials/header' %>
+    
+    <% unless flash.empty? %>
+          <script type="text/javascript">
+            <% flash.each do |f| %>
+          <% type = f[0].to_s.gsub('alert', 'error').gsub('notice', 'info') %>
+            toastr['<%= type %>']('<%= f[1] %>');
+          <% end %>
+          </script>
+        <% end %>
+
   </head>
 
   <body class="enable-animation">
