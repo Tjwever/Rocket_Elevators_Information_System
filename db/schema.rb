@@ -21,8 +21,10 @@ ActiveRecord::Schema.define(version: 2020_10_16_001352) do
   end
 
   create_table "quotes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.decimal "InstallationFee", precision: 10
-    t.decimal "Total", precision: 10
+    t.integer "totalCost"
+    t.integer "InstallationFee"
+    t.integer "Total"
+    t.integer "TotalNBofElevator"
     t.string "ElevatorChoice"
     t.integer "NbApparts"
     t.integer "NbFloors"
@@ -34,8 +36,8 @@ ActiveRecord::Schema.define(version: 2020_10_16_001352) do
     t.integer "nbOccup"
     t.integer "Activity24"
     t.integer "NbElevator"
-    t.decimal "UnitPrice", precision: 10
-    t.decimal "PriceElevator", precision: 10
+    t.integer "UnitPrice"
+    t.integer "PriceElevator"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -46,8 +48,8 @@ ActiveRecord::Schema.define(version: 2020_10_16_001352) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
     t.boolean "superadmin_role", default: false
     t.boolean "employee_role", default: false
     t.boolean "user_role", default: true

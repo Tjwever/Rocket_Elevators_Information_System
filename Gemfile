@@ -7,7 +7,7 @@ gem 'jquery-ui-rails'
 
 #gem 'bootstrap-social'
 # https://github.com/gavinkflam/bootstrap-social-rails
-gem 'font-awesome-rails'
+#gem 'font-awesome-rails'
 
 gem 'cancancan'
 
@@ -72,4 +72,5 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem'devise'
+# modification saad
 gem 'rails_admin', '~> 2.0'
