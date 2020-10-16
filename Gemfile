@@ -17,6 +17,9 @@ gem 'toastr-rails'
 gem 'autoprefixer-rails'
 gem 'bootstrap', '~> 4.1.1'
 
+
+
+
 # https://github.com/rails/jquery-rails
 gem 'jquery-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -76,3 +79,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem'devise'
 # modification saad
 gem 'rails_admin', '~> 2.0'
+gem 'rails_admin_rollincode', '~> 1.0'
