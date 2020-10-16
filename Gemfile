@@ -7,6 +7,13 @@ gem "font-awesome-rails"
 
 gem 'jquery-ui-rails'
 
+#gem 'bootstrap-social'
+# https://github.com/gavinkflam/bootstrap-social-rails
+gem 'font-awesome-rails'
+
+gem 'cancancan'
+
+gem 'toastr-rails'
 gem 'autoprefixer-rails'
 gem 'bootstrap', '~> 4.1.1'
 

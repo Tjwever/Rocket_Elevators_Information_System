@@ -13,7 +13,7 @@
 //= require jquery3
 //= require jquery_ujs
 //= require jquery-ui
-
+//= require toastr
 //= require_self
 //= require activestorage
 //= require turbolinks
