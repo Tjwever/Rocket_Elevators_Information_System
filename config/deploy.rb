@@ -1,5 +1,5 @@
 # config valid for current version and patch releases of Capistrano
-lock "~> 3.11.0"
+lock "~> 3.14.1"
 
 before 'deploy', 'rvm1:install:ruby'
 set :rvm_map_bins, [ 'rake', 'gem', 'bundle', 'ruby', 'puma', 'pumactl' ]
@@ -39,3 +39,14 @@ set :repo_url, "https://github.com/saadeddinne/saadeddinne-Rocket_Elevators_Info
 
 # Uncomment the following to require manually verifying the host key before first deploy.
 # set :ssh_options, verify_host_key: :secure
+before "deploy:assets:precompile", "deploy:yarn_install" 
+namespace :deploy do 
+ desc 'Run rake yarn:install' 
+ task :yarn_install do 
+   on roles(:web) do 
+     within release_path do 
+       execute("cd #{release_path} && yarn install --check-files") 
+     end 
+   end 
+ end 
+end

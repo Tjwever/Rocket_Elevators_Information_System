@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   get '/commercial', to: 'pages#commercial'
   get '/residential', to: 'pages#residential'
   get '/form', to: 'pages#form'
+  post '/form', to: 'form#create'
+
   root 'pages#home'
 
 

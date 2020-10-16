@@ -14,6 +14,8 @@ gem 'font-awesome-rails'
 gem 'cancancan'
 
 gem 'toastr-rails'
+gem 'autoprefixer-rails'
+gem 'bootstrap', '~> 4.1.1'
 
 # https://github.com/rails/jquery-rails
 gem 'jquery-rails'
