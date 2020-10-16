@@ -19,12 +19,12 @@ class FormController < ApplicationController
     quote.Activity24 = params[:Activity24]   
     quote.ElevatorChoice = params[:ElevatorChoice] 
     quote.NbElevator = params[:NbElevator]   
-    quote.UnitPrice = params[:UnitPrice]   
-    quote.PriceElevator = params[:PriceElevator] 
-    quote.InstallationFee = params[:InstallationFee]   
-    quote.Total = params[:Total]    
+    quote.UnitPrice = params[:UnitPrice].delete('$ ,')   
+    quote.PriceElevator = params[:PriceElevator].delete('$ ,') 
+    quote.InstallationFee = params[:InstallationFee].delete('$ ,')  
+    quote.Total = params[:Total].delete('$ ,')    
 
 
-    # quote.save
+    quote.save
   end
 end

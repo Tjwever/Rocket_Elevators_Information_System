@@ -7,6 +7,9 @@ gem "font-awesome-rails"
 
 gem 'jquery-ui-rails'
 
+gem 'autoprefixer-rails'
+gem 'bootstrap', '~> 4.1.1'
+
 # https://github.com/rails/jquery-rails
 gem 'jquery-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
