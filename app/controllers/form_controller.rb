@@ -22,6 +22,6 @@ class FormController < ApplicationController
     quote.Total = params[:Total].delete('$ ,')  
 
     quote.save
-    redirect_to :root
+    # redirect_to :root
   end
 end
