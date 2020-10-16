@@ -11,18 +11,24 @@
 // about supported directives.
 //
 //= require jquery3
-//= require jquery_ujs
-//= require jquery-ui
-//= require toastr
+//= require_tree .
 //= require_self
 //= require activestorage
 //= require turbolinks
+//
 //= require owl.carousel.min
-//= require demo.revolution_slider
 //= require jquery.themepunch.revolution.min
 //= require jquery.themepunch.tools.min
+//= require demo.revolution_slider
+//
+//= require jquery.magnific-popup.min
+//= require jquery.mixitup.min
+//= require smoothscroll
 //= require scripts
-//= require_tree .
+//= require isotope.pkgd.min
+//
+//= require toastr
+
 
 
 
