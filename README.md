@@ -35,19 +35,16 @@
 :heavy_check_mark: CSS 3;\
 :heavy_check_mark: Javascript;\
 :heavy_check_mark: Bootstrap;
+:heavy_check_mark: MySqL
 
-<!-- ## :rocket: Technologies
 
-The following tools were used in this project:
 
-- [Bootstrap]()
-- [HTML3]()
-- [CSS5]()
-- [JavaScript]() -->
+## :white_check_mark: Instructions to acces to th admin panel: 
 
-## :white_check_mark: Requirements
+-
+-
+-
 
-No requirements
 
 ## :memo: Routes
 
