@@ -4,19 +4,10 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.7.1'
 
 gem 'jquery-ui-rails'
-
-#gem 'bootstrap-social'
-# https://github.com/gavinkflam/bootstrap-social-rails
-#gem 'font-awesome-rails'
-
 gem 'cancancan'
-gem "font-awesome-rails"
 gem 'toastr-rails'
 gem 'autoprefixer-rails'
 gem 'bootstrap', '~> 4.1.1'
-
-
-
 
 # https://github.com/rails/jquery-rails
 gem 'jquery-rails'
