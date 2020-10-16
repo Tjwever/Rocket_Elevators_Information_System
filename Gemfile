@@ -12,7 +12,7 @@ gem 'jquery-ui-rails'
 #gem 'font-awesome-rails'
 
 gem 'cancancan'
-
+gem "font-awesome-rails"
 gem 'toastr-rails'
 gem 'autoprefixer-rails'
 gem 'bootstrap', '~> 4.1.1'
