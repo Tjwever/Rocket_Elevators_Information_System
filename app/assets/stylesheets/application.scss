@@ -11,20 +11,23 @@
  * It is generally better to create a new file per style scope.
  *
  *= require bootstrap
- *= require bootstrap-social
  *= require font-awesome
  *= require_tree .
  *= require_self
- *= require font-awesome
- 
+ * 
+ *
+ *= require extralayers
+ *= require settings
+ *= require essentials
+ *= require layout
+ *= require red
+ *= require header-1
+ *= require form
+ *= require magnific-popup
+ *= require owl.carousel
+ *= require owl.pack
+ *= require owl.theme
+ *= require owl.transitions
+
+
  */
- @import "jquery-ui";
- @import "bootstrap";
- @import "toastr";
- @import "red";
- @import "essentials";
- @import "extralayers";
- @import "header-1";
- @import "layout";
- @import "form";
- @import "settings";
