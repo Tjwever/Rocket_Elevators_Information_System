@@ -26,9 +26,5 @@
 //= require smoothscroll
 //= require scripts
 //= require isotope.pkgd.min
-//
+//=require bootstrap-sprockets
 //= require toastr
-
-
-
-
