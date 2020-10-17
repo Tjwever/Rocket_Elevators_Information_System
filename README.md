@@ -19,10 +19,10 @@
   <a href="#white_check_mark-requirements">Instructions to acces to th admin panel</a> &#xa0; | &#xa0;
   <a href="#checkered_flag-starting">Starting</a> &#xa0; | &#xa0;
   <a href="#memo-license">License</a> &#xa0; | &#xa0;
-  <a href="https://github.com/cindyokino" target="_blank">Cindy Okino</a>
-  <a href="https://github.com/Jcoderre" target="_blank">Joey Coderre</a>
-  <a href="https://github.com/Christ-Saravia" target="_blank">Christ-Saravia </a>
-  <a href="https://github.com/saadeddine" target="_blank">Saad eddine</a>
+  <a href="https://github.com/cindyokino" target="_blank">Cindy Okino &#xa0; | &#xa0;</a>
+  <a href="https://github.com/Jcoderre" target="_blank">Joey Coderre &#xa0; | &#xa0;</a>
+  <a href="https://github.com/Christ-Saravia" target="_blank">Christ-Saravia &#xa0; | &#xa0;</a>
+  <a href="https://github.com/saadeddine" target="_blank">Saad eddine &#xa0; | &#xa0;</a>
 </p>
 
 <br>
@@ -43,7 +43,7 @@
 <li>Ruby on rails</li>
 <li>Ubuntu</li>
 </ol>
-## :white_check_mark: Instructions to acces to th admin panel:
+📚 Instructions to acces to th admin panel:
 
 To log as Admin:
 
