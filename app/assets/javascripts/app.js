@@ -4,46 +4,48 @@
  */
 
 // Get form data
+jQuery(function() { 	//it will load jQuery after the page is load (equivalent to onReady)
 
-
-const planSelector = document.getElementById("planSelector");
-const nbApparts = document.getElementById("type1");
-const nbFloors = document.getElementById("type2");
-const nbBasement = document.getElementById("type3");
-const nbBusiness = document.getElementById("type4");
-const nbParking = document.getElementById("type5");
-const nbCages = document.getElementById("type6");
-const nbDistinctTenant = document.getElementById("type7");
-const nbOccup = document.getElementById("type8");
-const activity24 = document.getElementById("type9");
-const nbElevator = document.getElementById("nbElevator");
-const totalCost = document.getElementById("totalCost");
-const instFee = document.getElementById("instFee");
-const unitPrice = document.getElementById("unitPrice");
-const priceElevator = document.getElementById("priceElevator");
-const productType = document.getElementsByName("ElevatorChoice");
-
-// Form elements Events Listener
-// planSelector.addEventListener("change", divControll);
-planSelector.addEventListener("change", () => {
-	divControll();
-	reloadForm();
+	const planSelector = document.getElementById("planSelector");
+	const nbApparts = document.getElementById("type1");
+	const nbFloors = document.getElementById("type2");
+	const nbBasement = document.getElementById("type3");
+	const nbBusiness = document.getElementById("type4");
+	const nbParking = document.getElementById("type5");
+	const nbCages = document.getElementById("type6");
+	const nbDistinctTenant = document.getElementById("type7");
+	const nbOccup = document.getElementById("type8");
+	const activity24 = document.getElementById("type9");
+	const nbElevator = document.getElementById("nbElevator");
+	const totalCost = document.getElementById("totalCost");
+	const instFee = document.getElementById("instFee");
+	const unitPrice = document.getElementById("unitPrice");
+	const priceElevator = document.getElementById("priceElevator");
+	const productType = document.getElementsByName("ElevatorChoice");
+	
+	// Form elements Events Listener
+	// planSelector.addEventListener("change", divControll);
+	planSelector.addEventListener("change", () => {
+		divControll();
+		reloadForm();
+	});
+	
+	nbApparts.addEventListener("input", nbElevatorCalculator);
+	nbFloors.addEventListener("input", nbElevatorCalculator);
+	nbBasement.addEventListener("input", nbElevatorCalculator);
+	nbBusiness.addEventListener("input", nbElevatorCalculator);
+	nbParking.addEventListener("input", nbElevatorCalculator);
+	nbCages.addEventListener("input", nbElevatorCalculator);
+	nbDistinctTenant.addEventListener("input", nbElevatorCalculator);
+	nbOccup.addEventListener("input", nbElevatorCalculator);
+	activity24.addEventListener("input", nbElevatorCalculator);
+	
+	//Listener for the radio buttons
+	for (var i = 0; i < productType.length; i++) {
+		productType[i].onclick = getCost;
+	}
+	   
 });
-
-nbApparts.addEventListener("input", nbElevatorCalculator);
-nbFloors.addEventListener("input", nbElevatorCalculator);
-nbBasement.addEventListener("input", nbElevatorCalculator);
-nbBusiness.addEventListener("input", nbElevatorCalculator);
-nbParking.addEventListener("input", nbElevatorCalculator);
-nbCages.addEventListener("input", nbElevatorCalculator);
-nbDistinctTenant.addEventListener("input", nbElevatorCalculator);
-nbOccup.addEventListener("input", nbElevatorCalculator);
-activity24.addEventListener("input", nbElevatorCalculator);
-
-//Listener for the radio buttons
-for (var i = 0; i < productType.length; i++) {
-	productType[i].onclick = getCost;
-}
 
 //     ****** functions  *****
 
