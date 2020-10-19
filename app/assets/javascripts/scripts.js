@@ -56,25 +56,26 @@
 		_loadPopperBS4();
 
 		// Load Bootstrap JS
-		loadScript(plugin_path + 'bootstrap/js/bootstrap.min.js', function() {
+		// loadScript('bootstrap.min.js', function() {
 
-			// Load Material Design Js
-			if(jQuery("body").hasClass('enable-materialdesign')) {
-				loadScript(plugin_path + 'mdl/material.min.js');
-			}
+		// 	// Load Material Design Js
+		// 	if(jQuery("body").hasClass('enable-materialdesign')) {
+		// 		loadScript('mdl/material.min.js');
+		// 	}
 
-			// Init
-			Init(false);
+		// 	// Init
+		// 	Init(false);
 
-		});
+		// });
 
 
 		/* --- */
 		if(jQuery("body").hasClass("smoothscroll") && navigator.platform.indexOf('Mac') < 0) {
 
-			loadScript(plugin_path + 'smoothscroll.js', function() {
+			loadScript('/assets/smoothscroll.js', function() {
 				jQuery.smoothScroll();
 			});
+			Init(false);
 
 		}
 		/* --- */
@@ -100,42 +101,42 @@
 		}
 
 		// Reinit on Ajax
-		_owl_carousel();
-		_flexslider();
-		_lightbox();
+		// _owl_carousel();
+		// _flexslider();
+		// _lightbox();
 		_mixitup();
 		_animate();
 		_onepageNav();
 		_scrollTo(false, 0);
-		_parallax();
-		_video();
-		_youtubeBG();
-		_toggle();
-		_placeholder();
-		_wrotate();
-		_lazyload();
+		// _parallax();
+		// _video();
+		// _youtubeBG();
+		// _toggle();
+		// _placeholder();
+		// _wrotate();
+		// _lazyload();
 		_misc();
-		_countDown();
-		_masonryGallery();
-		_toastr(false,false,false,false);
-		_charts();
-		_select2();
-		_form();
-		_pickers();
-		_editors();
-		_pajinate();
-		_zoom();
-		_autosuggest();
-		_stepper();
+		// _countDown();
+		// _masonryGallery();
+		// _toastr(false,false,false,false);
+		// _charts();
+		// _select2();
+		// _form();
+		// _pickers();
+		// _editors();
+		// _pajinate();
+		// _zoom();
+		// _autosuggest();
+		// _stepper();
 		_slimScroll();
 		_modalAutoLoad();
-		_bgimage();
-		_cookie_alert();
-		_widget_flickr();
-		_widget_twitter();
-		_widget_facebook();
-		_widget_dribbble();
-		_widget_media();
+		// _bgimage();
+		// _cookie_alert();
+		// _widget_flickr();
+		// _widget_twitter();
+		// _widget_facebook();
+		// _widget_dribbble();
+		// _widget_media();
 
 		/** Bootstrap Tooltip **/ 
 		jQuery("[data-toggle=tooltip]").tooltip();
@@ -1179,7 +1180,7 @@
 
 		if(_container1.length > 0) {
 
-			loadScript(plugin_path + 'jquery.nav.min.js', function() {
+			loadScript('/assets/jquery.nav.min.js', function() {
 
 				jQuery(_container1).onePageNav({
 					currentClass: 		'active',
@@ -1207,7 +1208,7 @@
 
 		if(_container2.length > 0) {
 
-			loadScript(plugin_path + 'jquery.nav.min.js', function() {
+			loadScript('jquery.nav.min.js', function() {
 
 				jQuery(_container2).onePageNav({
 					currentClass: 		'active',
@@ -1237,7 +1238,7 @@
 
 		if(_container.length > 0) {
 
-			loadScript(plugin_path + 'owl-carousel/owl.carousel.min.js', function() {
+			loadScript('owl-carousel/owl.carousel.min.js', function() {
 
 				_container.each(function() {
 
@@ -1394,7 +1395,7 @@
 
 		if(_container2.length > 0) {
 
-			loadScript(plugin_path + 'owl-carousel-2/owl.carousel.min.js', function() {
+			loadScript('owl.carousel.min.js', function() {
 
 
 				_container2.each(function() {
@@ -1492,7 +1493,7 @@
 		
 		if(_container.length > 0) {
 
-			loadScript(plugin_path + 'slider.flexslider/jquery.flexslider-min.js', function() {
+			loadScript('jquery.flexslider-min.js', function() {
 
 				if(jQuery().flexslider) {
 					var	_controlNav 	= _container.attr('data-controlNav'),
@@ -1795,7 +1796,7 @@
 		var _container = jQuery('.mix-grid');
 		
 		if(_container.length > 0) {
-			loadScript(plugin_path + 'mixitup/jquery.mixitup.min.js', function() {
+			loadScript('/assets/jquery.mixitup.min.js', function() {
 
 				if(jQuery().mixitup) {
 
@@ -2019,7 +2020,7 @@
 		var portfolio_isotope_container = jQuery("#portfolio.portfolio-isotope");
 
 		if(portfolio_isotope_container.length > 0) {
-			loadScript(plugin_path + 'isotope/isotope.pkgd.min.js', function() {
+			loadScript('/assets/isotope.pkgd.min.js', function() {
 
 				// Isotope Portfolio
 				if(jQuery().isotope) {
@@ -2170,7 +2171,7 @@
 		var blog_isotope_container = jQuery("#blog.blog-isotope");
 
 		if(blog_isotope_container.length > 0) {
-			loadScript(plugin_path + 'isotope/isotope.pkgd.min.js', function() {
+			loadScript('/assets/isotope.pkgd.min.js', function() {
 
 				// Isotope blog
 				if(jQuery().isotope) {
@@ -2403,17 +2404,6 @@
 		});
 
 
-
-
-
-		/** Custom File Upload
-			<input class="custom-file-upload" type="file" id="file" name="myfiles[]" multiple />
-		 *********************** **/
-		var file_container = jQuery("input[type=file]");
-
-		if(file_container.length > 0) {
-			loadScript(plugin_path + 'custom.fle_upload.js');
-		}
 
 
 
@@ -3526,7 +3516,7 @@
 
 		if(_container.length > 0) {
 
-			loadScript(plugin_path + 'slimscroll/jquery.slimscroll.min.js', function() {
+			loadScript('jquery.slimscroll.min.js', function() {
 
 				if(jQuery().slimScroll) {
 
