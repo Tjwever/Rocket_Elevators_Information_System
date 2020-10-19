@@ -13,7 +13,9 @@
  *= require bootstrap
  *= require font-awesome
  *= require_tree .
- *= require_self
+ *= require_self 
+ * 
+ *
  *= require extralayers
  *= require settings
  *= require essentials
@@ -26,5 +28,4 @@
  *= require owl.pack
  *= require owl.theme
  *= require owl.transitions
- */
-
+*/

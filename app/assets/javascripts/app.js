@@ -5,7 +5,6 @@
 
 // Get form data
 
-
 const planSelector = document.getElementById("planSelector");
 const nbApparts = document.getElementById("type1");
 const nbFloors = document.getElementById("type2");
@@ -44,6 +43,7 @@ activity24.addEventListener("input", nbElevatorCalculator);
 for (var i = 0; i < productType.length; i++) {
 	productType[i].onclick = getCost;
 }
+	   
 
 //     ****** functions  *****
 

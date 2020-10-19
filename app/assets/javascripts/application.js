@@ -11,7 +11,8 @@
 // about supported directives.
 //
 //= require jquery3
-//= require_tree .
+//= require popper
+//= require bootstrap-sprockets
 //= require_self
 //= require activestorage
 //= require turbolinks
@@ -26,5 +27,7 @@
 //= require smoothscroll
 //= require scripts
 //= require isotope.pkgd.min
-//=require bootstrap-sprockets
+//= require jquery.slimscroll
+//= require jquery.nav.min
+//
 //= require toastr

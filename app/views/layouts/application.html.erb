@@ -9,8 +9,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
     <%= favicon_link_tag asset_path('favicon-16x16.png') %>
     
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= stylesheet_pack_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
 <!--
@@ -43,7 +41,10 @@
     <%= yield %>
     <%= render 'partials/footer' %>
     <%= javascript_include_tag 'demo.revolution_slider.js', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'jquery.themepunch.revolution.min.js', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'contact.js', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'jquery.mixitup.min', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'scripts', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'contact', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'smoothscroll', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'jquery.nav.min', 'data-turbolinks-track': 'reload' %>
   </body>
 </html>
