@@ -31,7 +31,3 @@
 //= require jquery.nav.min
 //
 //= require toastr
-
-
-
-
