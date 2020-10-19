@@ -23,6 +23,7 @@
     <%= stylesheet_link_tag    'https://cdn.jsdelivr.net/npm/et-line@1.0.1/style.min.css' %>
 -->
 
+
     <%= render 'partials/header' %>
     
     <% unless flash.empty? %>
@@ -38,6 +39,7 @@
 
   <body class="enable-animation">
     <%= yield %>
+    
     <%= render 'partials/footer' %>
     <%= javascript_include_tag 'jquery.themepunch.tools.min.js', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'jquery.themepunch.revolution.min.js', 'data-turbolinks-track': 'reload' %>
