@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2020_10_19_230812) do
 
-  create_table "batteries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "batteries", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.integer "Building_Id"
     t.integer "Employee_Id"
     t.string "Type"
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2020_10_19_230812) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "building_details", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "building_details", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.integer "Building_Id"
     t.text "Information_Key"
     t.text "Value"
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 2020_10_19_230812) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "buildings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "buildings", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.integer "Customer_Id"
     t.string "Building_Address"
     t.string "Name_Of_Building_Admin"
@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 2020_10_19_230812) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "columns", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "columns", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.integer "Battery_Id"
     t.string "Type"
     t.integer "Nb_Of_Floor_Served"
@@ -58,7 +58,7 @@ ActiveRecord::Schema.define(version: 2020_10_19_230812) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "customers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "customers", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.integer "UserId"
     t.date "Customers_Creation_Date"
     t.string "Name_Of_Company"
@@ -74,7 +74,7 @@ ActiveRecord::Schema.define(version: 2020_10_19_230812) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "elevators", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "elevators", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.integer "Column_Id"
     t.integer "Serial_Number"
     t.string "Model"
@@ -89,7 +89,7 @@ ActiveRecord::Schema.define(version: 2020_10_19_230812) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "employees", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "employees", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.string "FirstName"
     t.string "LastName"
     t.string "Title"
@@ -97,7 +97,7 @@ ActiveRecord::Schema.define(version: 2020_10_19_230812) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "leads", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "leads", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.string "fullName"
     t.string "companyName"
     t.string "email"
@@ -105,18 +105,16 @@ ActiveRecord::Schema.define(version: 2020_10_19_230812) do
     t.string "projectName"
     t.string "projectDescription"
     t.string "department"
-    t.string "subject"
-    t.string "message"
+    t.text "subject"
+    t.text "message"
     t.binary "attachedFile"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "quotes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.integer "totalCost"
-    t.integer "InstallationFee"
-    t.integer "Total"
-    t.integer "TotalNBofElevator"
+  create_table "quotes", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+    t.decimal "InstallationFee", precision: 10
+    t.decimal "Total", precision: 10
     t.string "ElevatorChoice"
     t.integer "NbApparts"
     t.integer "NbFloors"
@@ -128,20 +126,20 @@ ActiveRecord::Schema.define(version: 2020_10_19_230812) do
     t.integer "nbOccup"
     t.integer "Activity24"
     t.integer "NbElevator"
-    t.integer "UnitPrice"
-    t.integer "PriceElevator"
+    t.decimal "UnitPrice", precision: 10
+    t.decimal "PriceElevator", precision: 10
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.boolean "superadmin_role", default: false
     t.boolean "employee_role", default: false
     t.boolean "user_role", default: true
