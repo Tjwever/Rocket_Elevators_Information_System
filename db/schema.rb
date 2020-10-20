@@ -112,7 +112,7 @@ ActiveRecord::Schema.define(version: 2020_10_19_230812) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "quotes", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "quotes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.decimal "InstallationFee", precision: 10
     t.decimal "Total", precision: 10
     t.string "ElevatorChoice"

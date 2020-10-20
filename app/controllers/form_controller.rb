@@ -3,8 +3,7 @@ class FormController < ApplicationController
   def index
   end
 
-  def create
-    
+  def create    
     quote = Quote.new
     quote.NbApparts = params[:NbApparts]
     quote.NbFloors = params[:NbFloors]   
@@ -23,6 +22,6 @@ class FormController < ApplicationController
     quote.Total = params[:Total].delete('$ ,')  
 
     quote.save
-    # redirect_to :root
+    redirect_to :thank_you
   end
 end

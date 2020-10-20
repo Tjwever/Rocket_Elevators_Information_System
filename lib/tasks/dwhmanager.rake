@@ -27,7 +27,7 @@ namespace :dwhmanager do
     task :rollback do
       Rake::Task["db:rollback"].invoke
     end
-
+# remarque joey de s est ce que ca fait partie de cammande 
     task :seed do
       Rake::Task["db:seed"].invoke
     end
