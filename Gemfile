@@ -11,6 +11,9 @@ gem 'bootstrap', '~> 4.1.1'
 gem 'rails_admin_dynamic_charts', github: 'openjaf/rails_admin_dynamic_charts'
 gem 'chartkick'
 gem 'descriptive_statistics'
+
+gem "pg"
+
 # https://github.com/rails/jquery-rails
 gem 'jquery-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
