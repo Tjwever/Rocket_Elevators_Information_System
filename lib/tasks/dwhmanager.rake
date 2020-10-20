@@ -1,6 +1,6 @@
-task spec: ["dwh:db:test:prepare"]
+task spec: ["dwhmanager:db:test:prepare"]
 
-namespace :dwh do
+namespace :dwhmanager do
 
   namespace :db do |ns|
 
@@ -54,8 +54,8 @@ namespace :dwh do
 
     # append and prepend proper tasks to all the tasks defined here above
     ns.tasks.each do |task|
-      task.enhance ["dwh:set_custom_config"] do
-        Rake::Task["dwh:revert_to_original_config"].invoke
+      task.enhance ["dwhmanager:set_custom_config"] do
+        Rake::Task["dwhmanager:revert_to_original_config"].invoke
       end
     end
   end
