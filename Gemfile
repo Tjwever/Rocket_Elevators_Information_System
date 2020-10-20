@@ -11,6 +11,8 @@ gem 'bootstrap', '~> 4.1.1'
 
 gem "pg"
 
+gem "faker"
+
 # https://github.com/rails/jquery-rails
 gem 'jquery-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
