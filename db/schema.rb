@@ -105,18 +105,16 @@ ActiveRecord::Schema.define(version: 2020_10_19_230812) do
     t.string "projectName"
     t.string "projectDescription"
     t.string "department"
-    t.string "subject"
-    t.string "message"
+    t.text "subject"
+    t.text "message"
     t.binary "attachedFile"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "quotes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.integer "totalCost"
-    t.integer "InstallationFee"
-    t.integer "Total"
-    t.integer "TotalNBofElevator"
+    t.decimal "InstallationFee", precision: 10
+    t.decimal "Total", precision: 10
     t.string "ElevatorChoice"
     t.integer "NbApparts"
     t.integer "NbFloors"
@@ -128,8 +126,8 @@ ActiveRecord::Schema.define(version: 2020_10_19_230812) do
     t.integer "nbOccup"
     t.integer "Activity24"
     t.integer "NbElevator"
-    t.integer "UnitPrice"
-    t.integer "PriceElevator"
+    t.decimal "UnitPrice", precision: 10
+    t.decimal "PriceElevator", precision: 10
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -140,8 +138,8 @@ ActiveRecord::Schema.define(version: 2020_10_19_230812) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.boolean "superadmin_role", default: false
     t.boolean "employee_role", default: false
     t.boolean "user_role", default: true

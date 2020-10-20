@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'contact_us/index'
+  
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   get 'user/index'
   get 'user/show'
@@ -12,9 +12,9 @@ Rails.application.routes.draw do
   
   get '/commercial', to: 'pages#commercial'
   get '/residential', to: 'pages#residential'
-  get '/form', to: 'pages#form'
+  get '/form', to: 'pages#form'  
+  get '/thank-you', to: 'pages#thankyou'
   post '/form', to: 'form#create'
-
   post '/contact-us', to: 'contact_us_form#create'
 
   root 'pages#home'
