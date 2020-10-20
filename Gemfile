@@ -8,9 +8,7 @@ gem 'cancancan'
 gem 'toastr-rails'
 gem 'autoprefixer-rails'
 gem 'bootstrap', '~> 4.1.1'
-gem 'rails_admin_dynamic_charts', github: 'openjaf/rails_admin_dynamic_charts'
-gem 'chartkick'
-gem 'descriptive_statistics'
+gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 
 gem "pg"
 

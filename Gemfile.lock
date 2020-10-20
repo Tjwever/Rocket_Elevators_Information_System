@@ -1,11 +1,10 @@
 GIT
-  remote: https://github.com/openjaf/rails_admin_dynamic_charts.git
-  revision: d5736079166ef3d3c2c057169a4eaaed6845accf
+  remote: https://github.com/faker-ruby/faker.git
+  revision: a905527b06af6a39a91d561e9050636733845612
+  branch: master
   specs:
-    rails_admin_dynamic_charts (0.0.1)
-      chartkick (> 0)
-      rails (>= 3.2)
-      rails_admin (> 0)
+    faker (2.14.0)
+      i18n (>= 1.6, < 2)
 
 GEM
   remote: https://rubygems.org/
@@ -95,11 +94,9 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (~> 1.5)
       xpath (~> 3.2)
-    chartkick (3.4.1)
     childprocess (3.0.0)
     concurrent-ruby (1.1.7)
     crass (1.0.6)
-    descriptive_statistics (2.5.1)
     devise (4.7.3)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -304,9 +301,8 @@ DEPENDENCIES
   capistrano-rails (~> 1.4)
   capistrano3-puma
   capybara (>= 2.15)
-  chartkick
-  descriptive_statistics
   devise
+  faker!
   jbuilder (~> 2.7)
   jquery-rails
   jquery-ui-rails
@@ -316,7 +312,6 @@ DEPENDENCIES
   puma (~> 4.1)
   rails (~> 5.2, >= 5.2.4.2)
   rails_admin (~> 2.0)
-  rails_admin_dynamic_charts!
   rails_admin_rollincode (~> 1.0)
   rvm1-capistrano3
   sass-rails (>= 6)
