@@ -1,0 +1,62 @@
+<style>
+  #Btn-center {
+  width: 100%;
+  height: 50px;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  }
+</style>
+<section class="page-header page-header-xs dark">
+  <div class="container">
+    <h1>SERVICES</h1>
+    <!-- breadcrumbs -->
+    <ol class="breadcrumb">
+      <li><a href="/">HOME</a></li>
+      <li><a href="#" class="active">QUOTE FORM</a></li>
+    </ol>
+    <!-- /breadcrumbs -->
+  </div>
+</section>
+<section>
+  <div class="container ">
+    <div class="container">
+      <header class="text-center  mdl-shadow--24dp">
+        <h2 class="m-0 uppercase ">Get a quote for your project <span>right now !</span> </h2>
+        <p class="font-lato fs-20 m-0 uppercase">Rocket elevator online calculator</p>
+      </header>
+      <div class="divider divider-center divider-color">
+        <!-- divider -->
+        <i class="fa fa-chevron-down"></i>
+      </div>
+    </div>
+
+    <!-- render the quote-form partial-->
+    <%= render 'partials/quote-form/quote-form' %>
+
+  </div>
+</section>
+<!-- /CONTACT -->
+<!-- /REQUEST QUOTE FORM  -->
+<div class="callout alert alert-success b-0 rad-0 m-0 pt-60 pb-60 clearfix">
+  <div class="text-center">
+    <h3>
+      Call now at <span><strong> (581) 701-0303</strong></span> for more details!
+    </h3>
+    <p class="font-lato fs-20">
+      We truly care about our users and our product.
+    </p>
+    <a href="/#contact" class="btn btn-primary btn-lg btn-round mt-30" >CONTACT US NOW</a>
+  </div>
+</div>
+<!-- /wrapper -->
+<!-- Script JS -->
+<%= javascript_include_tag "application" %>
+<%= javascript_include_tag("application.js") %>
+<%= javascript_include_tag('app.js') %>
+<%= javascript_include_tag('scripts.js') %>
+
+<!--/Script JS -->
+<!-- SCROLL TO TOP -->
+<a href="#" id="toTop"></a>

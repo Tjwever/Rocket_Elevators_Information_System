@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  UserId: 1
+  Customers_Creation_Date: 
+  Name_Of_Company: MyString
+  Company_HQ_Address: MyString
+  Name_Of_Company_Contact: MyString
+  Company_Contact_Phone: 1
+  Company_Contact_Email: MyString
+  Company_Description: MyString
+  Tech_Authority_Name: MyString
+  Tech_Authority_Phone: 1
+  Tech_Manager_Email: MyString
+
+two:
+  UserId: 1
+  Customers_Creation_Date: 
+  Name_Of_Company: MyString
+  Company_HQ_Address: MyString
+  Name_Of_Company_Contact: MyString
+  Company_Contact_Phone: 1
+  Company_Contact_Email: MyString
+  Company_Description: MyString
+  Tech_Authority_Name: MyString
+  Tech_Authority_Phone: 1
+  Tech_Manager_Email: MyString

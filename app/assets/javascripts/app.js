@@ -20,7 +20,7 @@ const totalCost = document.getElementById("totalCost");
 const instFee = document.getElementById("instFee");
 const unitPrice = document.getElementById("unitPrice");
 const priceElevator = document.getElementById("priceElevator");
-const productType = document.getElementsByName("radio-btn");
+const productType = document.getElementsByName("ElevatorChoice");
 
 // Form elements Events Listener
 // planSelector.addEventListener("change", divControll);
@@ -43,6 +43,7 @@ activity24.addEventListener("input", nbElevatorCalculator);
 for (var i = 0; i < productType.length; i++) {
 	productType[i].onclick = getCost;
 }
+	   
 
 //     ****** functions  *****
 
@@ -262,7 +263,11 @@ function getCost() {
 	}
 }
 function reloadForm() {
-	document.getElementById("displayCost").reset();
+	nbElevator.value = "";
+	unitPrice.value = "";
+	priceElevator.value = "";
+	instFee.value = "";
+	totalCost.value = "";
 	productType[0].checked = false;
 	productType[1].checked = false;
 	productType[2].checked = false;
