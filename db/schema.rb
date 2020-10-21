@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_20_123920) do
+ActiveRecord::Schema.define(version: 2020_10_19_230812) do
 
   create_table "batteries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.integer "Building_Id"
@@ -101,10 +101,6 @@ ActiveRecord::Schema.define(version: 2020_10_20_123920) do
     t.string "name"
     t.string "filter"
     t.string "class_name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "leads", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "fullName"
     t.string "companyName"
@@ -113,8 +109,8 @@ ActiveRecord::Schema.define(version: 2020_10_20_123920) do
     t.string "projectName"
     t.string "projectDescription"
     t.string "department"
-    t.text "subject"
-    t.text "message"
+    t.string "subject"
+    t.string "message"
     t.binary "attachedFile"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
