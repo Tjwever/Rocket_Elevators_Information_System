@@ -8,7 +8,7 @@ class CreateLeads < ActiveRecord::Migration[5.2]
       t.string :projectName 
       t.string :projectDescription 
       t.string :department 
-      t.text :subject 
+      t.text   :subject 
       t.text   :message 
       t.binary :attachedFile 
 

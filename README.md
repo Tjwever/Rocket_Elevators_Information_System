@@ -63,6 +63,7 @@ To log as Admin:
 - residential page: <b>/residential</b>
 - commercial page: <b>/commercial</b>
 - form page: <b>/form</b>
+- thank you page: <b>/thank-you</b>
 - Admin panel: <b>/admin</b>
 
 ```sh

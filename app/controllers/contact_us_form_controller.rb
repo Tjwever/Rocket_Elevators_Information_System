@@ -2,8 +2,7 @@ class ContactUsFormController < ApplicationController
   def index
   end
 
-  def create
-    
+  def create    
     lead = Lead.new
     lead.fullName = params[:fullName]
     lead.companyName = params[:companyName]   
@@ -17,6 +16,6 @@ class ContactUsFormController < ApplicationController
     lead.attachedFile = params[:attachedFile]   
     
     lead.save
-    # redirect_to :root
+    redirect_to :thank_you
   end
 end
