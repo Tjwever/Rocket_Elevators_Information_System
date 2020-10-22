@@ -2,6 +2,30 @@ task spec: ["dwhmanager:db:test:prepare"]
 
 namespace :dwhmanager do
 
+# Task to manage transfert data from database to datawarehouse 
+require 'pg'
+
+task transfert: :environment do
+  conn = PG::Connection.open(host: 'localhost', dbname: 'data_storage', user: 'postgres', password: 'SimpleRed')
+  puts "Connected to database #{conn.db} as #{conn.user} with password #{conn.pass}"
+
+
+  # FACT QUOTES
+  Quote.all.each do |q|
+    user_tmp = User.where(id: q.id).first
+    puts "INSERT INTO factquotes (quoteid, creation, companyname, email, nbelevator) VALUES (#{q.id}, '#{q.created_at}', #{user_tmp.company}, #{user_tmp.email}, #{q.NbElevator})"
+    
+    conn.exec("INSERT INTO factquotes (quoteid, creation, companyname, email, nbelevator) VALUES (#{q.id}, '#{q.created_at}', '#{user_tmp.company}', '#{user_tmp.email}', #{q.NbElevator})")
+   
+    end
+  
+  end 
+
+
+
+end
+# db tasks
+
   namespace :db do |ns|
 
     task :drop do
