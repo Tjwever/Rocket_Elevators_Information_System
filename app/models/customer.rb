@@ -1,3 +1,3 @@
 class Customer < ApplicationRecord
-    has_many :Building
+    has_many :building
 end
