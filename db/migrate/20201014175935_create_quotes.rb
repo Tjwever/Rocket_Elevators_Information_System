@@ -1,22 +1,22 @@
 class CreateQuotes < ActiveRecord::Migration[5.2]
   def change
     create_table :quotes do |t|
-      t.decimal :InstallationFee
-      t.decimal :Total
-      t.string :ElevatorChoice
-      t.integer :NbApparts
-      t.integer :NbFloors
-      t.integer :NbBasements
-      t.integer :NbBusiness
-      t.integer :NbParking
-      t.integer :NbCages
-      t.integer :NbDistinctTenant
+      t.decimal :installationFee
+      t.decimal :total
+      t.string :elevatorChoice
+      t.integer :nbApparts
+      t.integer :nbFloors
+      t.integer :nbBasements
+      t.integer :nbBusiness
+      t.integer :nbParking
+      t.integer :nbCages
+      t.integer :nbDistinctTenant
       t.integer :nbOccup
-      t.integer :Activity24
-      t.integer :NbElevator
-      t.decimal :UnitPrice
-      t.decimal :PriceElevator
-
+      t.integer :activity24
+      t.integer :nbElevator
+      t.decimal :unitPrice
+      t.decimal :priceElevator
+      t.references :users, foreign_key: true
       t.timestamps
     end
   end

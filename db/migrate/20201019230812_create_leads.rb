@@ -11,7 +11,6 @@ class CreateLeads < ActiveRecord::Migration[5.2]
       t.text   :subject 
       t.text   :message 
       t.binary :attachedFile 
-
       t.timestamps 
     end
   end 

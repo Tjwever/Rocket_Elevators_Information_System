@@ -1,16 +1,15 @@
 class CreateBatteries < ActiveRecord::Migration[5.2]
   def change
     create_table :batteries do |t|
-      t.integer :Building_Id
-      t.integer :Employee_Id
-      t.string :Type
-      t.string :Status
-      t.date :Date_Of_Commissioning
-      t.date :Date_Of_Last_Inspection
-      t.text :Certificate_Of_Operations
-      t.text :Information
-      t.text :Notes
-
+      t.string :types
+      t.string :status
+      t.date :date_of_commissioning
+      t.date :date_of_last_inspection
+      t.text :certificate_of_operations
+      t.text :information
+      t.text :notes
+      t.references :employees, foreign_key: true
+      t.references :buildings, foreign_key: true
       t.timestamps
     end
   end

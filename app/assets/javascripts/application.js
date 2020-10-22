@@ -29,5 +29,6 @@
 //= require isotope.pkgd.min
 //= require jquery.slimscroll
 //= require jquery.nav.min
+//= require jquery.remotipart
 //
 //= require toastr
