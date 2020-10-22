@@ -8,8 +8,8 @@ class CreateBatteries < ActiveRecord::Migration[5.2]
       t.text :certificate_of_operations
       t.text :information
       t.text :notes
-      t.references :employees, foreign_key: true
-      t.references :buildings, foreign_key: true
+      t.references :employee, foreign_key: true
+      t.references :building, foreign_key: true
       t.timestamps
     end
   end

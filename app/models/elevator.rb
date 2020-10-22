@@ -1,3 +1,3 @@
 class Elevator < ApplicationRecord
-    belongs_to :Column
+    belongs_to :column
 end
