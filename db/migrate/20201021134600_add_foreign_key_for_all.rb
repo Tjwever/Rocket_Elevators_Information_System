@@ -10,7 +10,7 @@ class AddForeignKeyForAll < ActiveRecord::Migration[5.2]
     add_reference :customers, :users, foreign_key: true
     add_reference :elevators, :columns, foreign_key: true
     add_reference :employees, :users, foreign_key: true
-    add_reference :quotes, :users, foreign_key: true
+    add_reference :quotes, :users, foreign_key: true 
     
   end
 end
