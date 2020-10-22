@@ -6,7 +6,7 @@ class CreateColumns < ActiveRecord::Migration[5.2]
       t.string :status
       t.text :information
       t.text :notes
-      t.references :batteries, foreign_key: true
+      t.references :battery, foreign_key: true
       t.timestamps
     end
   end
