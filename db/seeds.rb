@@ -9,17 +9,7 @@ random_type = ["residential", "commercial", "corporate"]
 random_status = ["Active", "Inactive"]
 departement_selector = ["Sales","Customer Services","Administration"]
 info_key = ["Type, Construction Year, Last Renovation Year, Number of elevator in place"]
-random_year = rand(1945..1990)
-random_reno = rand(1991..2010)
-random_old_elevator = (0..8)
-batterie_id = rand(1..20)
-building_id = rand(1..20)
-customers_id = rand(1..15)
-column_id = rand(1..75)
-employee_id = rand(1..7)
-user_id = rand(1..10)
-floor_served = rand(5..25)
-random_values = [random_type.sample, random_year, random_reno, random_old_elevator]
+random_values = [random_type.sample, Faker::Date.between(from: '1945-09-23', to: '1990-09-25'), Faker::Date.between(from: '1991-09-23', to: '2010-09-25'), Faker::Number.between(from: 1, to: 7)]
 random_address = CSV.readlines(Rails.root.join('address.csv'))
 
 =begin
@@ -79,15 +69,15 @@ end
         building_tech_contact_name: Faker::Name.name,
         building_tech_contact_email: Faker::Internet.safe_email,
         building_tech_contact_phone: Faker::PhoneNumber.cell_phone,
-        customers_id: Faker::Number.between(from: 1, to: 15),
+        customer_id: Faker::Number.between(from: 1, to: 15),
     )
 end
 
 20.times do
     BuildingDetail.create!(
         information_key: info_key,
-        value: random_values,
-        buildings_id: building_id,
+        value: [random_type.sample, Faker::Date.between(from: '1945-09-23', to: '1990-09-25'), Faker::Date.between(from: '1991-09-23', to: '2010-09-25'), Faker::Number.between(from: 1, to: 7)],
+        building_id: Faker::Number.between(from: 1, to: 20),
     )
 end
 
@@ -100,34 +90,34 @@ end
         certificate_of_operations: Faker::Code.nric,
         information: Faker::Lorem.sentence,
         notes: Faker::Lorem.sentences,
-        employees_id: Faker::Number.between(from: 1, to: 7),
-        buildings_id: Faker::Number.between(from: 1, to: 20),
+        employee_id: Faker::Number.between(from: 1, to: 7),
+        building_id: Faker::Number.between(from: 1, to: 20),
     )
 end
 
 75.times do 
-    Column.create(
+    Column.create!(
         types: random_type.sample,
         status: random_status.sample,
         nb_of_floor_served: Faker::Number.between(from: 5, to: 25),
         information: Faker::Lorem.sentence,
         notes: Faker::Lorem.sentences,
-        batteries_id: Faker::Number.between(from: 1, to: 20)
+        battery_id: Faker::Number.between(from: 1, to: 20)
     )
 end
 
 375.times do
-    Elevator.create(
-        serial_number: Faker::Device.serial,
+    Elevator.create!(
+        serial_number: Faker::Barcode.ean_with_composite_symbology ,
         model: Faker::Number.hexadecimal(digits: 3),
         types: random_type.sample,
         status: random_status.sample,
         date_of_commissioning: Faker::Date.between(from: '2017-09-23', to: '2020-09-25'),
-        date_of_last_inspection: Faker::Date.between(from: '2017-09-23', to: '2020-09-25'),
+        date_of_last_inspection: Faker::Date.between(from: '2020-01-23', to: '2020-09-25'),
         certificate_of_inspection: Faker::Code.nric,
         information: Faker::Lorem.sentence,
         notes: Faker::Lorem.sentences,
-        columns_id: Faker::Number.between(from: 1, to: 75),
+        column_id: Faker::Number.between(from: 1, to: 75),
     )
 end
 
