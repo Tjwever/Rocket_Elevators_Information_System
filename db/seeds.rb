@@ -121,13 +121,6 @@ end
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-employee.create!(email: 'nicolas.genest@codeboxx.biz', password: '123456', superadmin_role: 1, employee_role: 0, user_role: 0)
-User.create!(email: 'nadya.fortier@codeboxx.biz', password: '123456', superadmin_role: 1, employee_role: 0, user_role: 0)
-User.create!(email: 'martin.chantal@codeboxx.biz', password: '123456', superadmin_role: 1, employee_role: 0, user_role: 0)
-User.create!(email: 'mathieu.houde@codeboxx.biz', password: '123456', superadmin_role: 1, employee_role: 0, user_role: 0)
-User.create!(email: 'david.boutin@codeboxx.biz', password: '123456', superadmin_role: 0, employee_role: 1, user_role: 0)
-User.create!(email: 'mathieu.lortie@codeboxx.biz', password: '123456', superadmin_role: 0, employee_role: 1, user_role: 0)
-User.create!(email: 'thomas.carrier@codeboxx.biz', password: '123456', superadmin_role: 0, employee_role: 1, user_role: 0)
 
 User.create!(email: 'nicolas.genest@codeboxx.biz', password: '123456', superadmin_role: 1, employee_role: 0, user_role: 0)
 User.create!(email: 'nadya.fortier@codeboxx.biz', password: '123456', superadmin_role: 1, employee_role: 0, user_role: 0)
@@ -136,3 +129,12 @@ User.create!(email: 'mathieu.houde@codeboxx.biz', password: '123456', superadmin
 User.create!(email: 'david.boutin@codeboxx.biz', password: '123456', superadmin_role: 0, employee_role: 1, user_role: 0)
 User.create!(email: 'mathieu.lortie@codeboxx.biz', password: '123456', superadmin_role: 0, employee_role: 1, user_role: 0)
 User.create!(email: 'thomas.carrier@codeboxx.biz', password: '123456', superadmin_role: 0, employee_role: 1, user_role: 0)
+
+
+Employee.create!(firstName: 'Nicolas', lastName: 'Genest', title: "CEO", users_id: 1)
+Employee.create!(firstName: 'Nadya', lastName: 'Fortier', title: "Director", users_id: 2)
+Employee.create!(firstName: 'Martin', lastName: 'Chantal', title: "Director-Assistant", users_id: 3)
+Employee.create!(firstName: 'Mathieu', lastName: 'Houde', title: "Captain", users_id: 4)
+Employee.create!(firstName: 'David', lastName: 'Boutin', title: "Engineer", users_id: 5)
+Employee.create!(firstName: 'Mathieu', lastName: 'Lortie', title: "Engineer", users_id: 6)
+Employee.create!(firstName: 'Thomas', lastName: 'Carrier', title: "Engineer", users_id: 7)
