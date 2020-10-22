@@ -8,6 +8,7 @@ gem 'cancancan'
 gem 'toastr-rails'
 gem 'autoprefixer-rails'
 gem 'bootstrap', '~> 4.1.1'
+gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 
 gem "pg"
 

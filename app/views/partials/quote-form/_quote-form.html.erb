@@ -124,11 +124,38 @@
                 </ul>
               </fieldset>
             </div>
+            
           </div>
         </div>
       </div>
     </div>
   <% end %>
+
+
+<!-- pop up -->
+<!-- Modal -->
+<div class="modal fade" id="popUpBox" tabindex="-1" role="dialog" aria-labelledby="popUpBoxTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-info md text-center" id="popUpBoxTitle"> Rocket Elevators</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+      </div>
+      <div class="modal-body text-dark">
+        <!-- Message -->
+        <p class="text-center">Thank you for your submit!</p>
+        <p class="text-center">Please call us for more information</p>
+        <p class="text-center">Our team will answer all your questions !</p>
+        <a href="/admin/quote"><input id="Btn-center" type="button" class=" btn btn-shadow-1 btn-outline-dark text-black" value="See your quote !"></a>
+        <br/>  
+        <p class="text-center">Or</p> 
+        <a href="/#contact"><input id="Btn-center" type="button" class=" btn btn-shadow-1 btn-outline-dark text-black" value="Contact Us !" ></a>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 <%= javascript_tag do %>
