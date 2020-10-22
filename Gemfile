@@ -9,7 +9,12 @@ gem 'toastr-rails'
 gem 'autoprefixer-rails'
 gem 'bootstrap', '~> 4.1.1'
 
+# gems to automatized tasks with whenever
+gem 'execjs'
+gem 'therubyracer'
 gem "pg"
+gem 'whenever', require: false
+gem 'yaml'
 
 # https://github.com/rails/jquery-rails
 gem 'jquery-rails'
