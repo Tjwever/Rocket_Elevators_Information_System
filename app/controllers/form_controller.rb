@@ -24,21 +24,21 @@ class FormController < ApplicationController
   # POST /form.json
   def create    
     quote = Quote.new
-    quote.NbApparts = params[:NbApparts]
-    quote.NbFloors = params[:NbFloors]   
-    quote.NbBasements = params[:NbBasements]   
-    quote.NbBusiness = params[:NbBusiness]   
-    quote.NbParking = params[:NbParking]   
-    quote.NbCages = params[:NbCages]   
-    quote.NbDistinctTenant = params[:NbDistinctTenant]   
+    quote.nbApparts = params[:NbApparts]
+    quote.nbFloors = params[:NbFloors]   
+    quote.nbBasements = params[:NbBasements]   
+    quote.nbBusiness = params[:NbBusiness]   
+    quote.nbParking = params[:NbParking]   
+    quote.nbCages = params[:NbCages]   
+    quote.nbDistinctTenant = params[:NbDistinctTenant]   
     quote.nbOccup = params[:nbOccup]   
-    quote.Activity24 = params[:Activity24]   
-    quote.ElevatorChoice = params[:ElevatorChoice] 
-    quote.NbElevator = params[:NbElevator]   
-    quote.UnitPrice = params[:UnitPrice].delete('$ ,')   
-    quote.PriceElevator = params[:PriceElevator].delete('$ ,') 
-    quote.InstallationFee = params[:InstallationFee].delete('$ ,')  
-    quote.Total = params[:Total].delete('$ ,')  
+    quote.activity24 = params[:Activity24]   
+    quote.elevatorChoice = params[:ElevatorChoice] 
+    quote.nbElevator = params[:NbElevator]   
+    quote.unitPrice = params[:UnitPrice].delete('$ ,')   
+    quote.priceElevator = params[:PriceElevator].delete('$ ,') 
+    quote.installationFee = params[:InstallationFee].delete('$ ,')  
+    quote.total = params[:Total].delete('$ ,')  
 
     quote.save
     redirect_to :thank_you
