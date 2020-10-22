@@ -6,7 +6,9 @@
 # database schema. If you need to create the application database on another
 # system, you should be using db:schema:load, not running all the migrations
 # from scratch. The latter is a flawed and unsustainable approach (the more migrations
-
+# you'll amass, the slower it'll run and the greater likelihood for issues).
+#
+# It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 2020_10_22_183602) do
 
@@ -203,10 +205,8 @@ ActiveRecord::Schema.define(version: 2020_10_22_183602) do
     t.integer "nbElevator"
     t.decimal "unitPrice", precision: 10
     t.decimal "priceElevator", precision: 10
-    t.bigint "users_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["users_id"], name: "index_quotes_on_users_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
@@ -220,6 +220,8 @@ ActiveRecord::Schema.define(version: 2020_10_22_183602) do
     t.boolean "superadmin_role", default: false
     t.boolean "employee_role", default: false
     t.boolean "user_role", default: true
+    t.string "company"
+    t.index ["company"], name: "index_users_on_company", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -232,5 +234,4 @@ ActiveRecord::Schema.define(version: 2020_10_22_183602) do
   add_foreign_key "customers", "users", column: "users_id"
   add_foreign_key "elevators", "columns", column: "columns_id"
   add_foreign_key "employees", "users", column: "users_id"
-  add_foreign_key "quotes", "users", column: "users_id"
 end
