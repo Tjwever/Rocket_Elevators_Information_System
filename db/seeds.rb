@@ -5,7 +5,7 @@ CSV.foreach(Rails.root.join('address.csv'), headers: true) do |row|
     puts row.inspect
 end
 
-random_type = ["Residential", "Commercial", "Corporate"]
+random_type = ["residential", "commercial", "corporate"]
 random_status = ["Active", "Inactive"]
 departement_selector = ["Sales","Customer Services","Administration"]
 info_key = ["Type, Construction Year, Last Renovation Year, Number of elevator in place"]
@@ -18,6 +18,7 @@ customers_id = [1..15]
 column_id = [1..75]
 employee_id = [1..7]
 user_id = [1..10]
+floor_served = [5..25]
 random_values = [random_type.sample, random_year.sample, random_reno.sample, random_old_elevator.sample]
 random_address = CSV.readlines(Rails.root.join('address.csv'))
 
@@ -37,13 +38,12 @@ end
 
 15.times do
     Customer.create(
-        customers_creation_date: Faker::Date.between(from: '2017-09-23', to: '2020-09-25'),
-        Name_of_company: Faker::Company.name,
-        compagny_hq_address: random_address.sample,
+        name_of_company: Faker::Company.name,
+        company_hq_address: random_address.sample,
         name_of_company_contact: Faker::Name.name,
         company_contact_phone: Faker::PhoneNumber.cell_phone,
         company_contact_email: Faker::Internet.safe_email,
-        company_Description: Faker::Company.buzzword,
+        company_description: Faker::Company.buzzword,
         tech_authority_name: Faker::Name.name,
         tech_authority_phone: Faker::PhoneNumber.cell_phone,
         tech_manager_email: Faker::Internet.safe_email,
@@ -54,65 +54,61 @@ end
 20.times do
     Building.create(
         building_address: random_address.sample,
-        name_Of_building_admin: Faker::Name.name,
+        name_of_building_admin: Faker::Name.name,
         email_of_building_admin: Faker::Internet.safe_email,
         phone_of_building_admin: Faker::PhoneNumber.cell_phone,
         building_tech_contact_name: Faker::Name.name,
         building_tech_contact_email: Faker::Internet.safe_email,
         building_tech_contact_phone: Faker::PhoneNumber.cell_phone,
-        customer_id: customers_id.sample,
+        customers_id: customers_id.sample,
     )
 end
 
 20.times do
     BuildingDetail.create(
-        building_id: building_id.sample,
         information_key: info_key,
         value: random_values,
+        buildings_id: building_id.sample,
     )
 end
 
 20.times do
     Battery.create(
-        building_id: building_id.sample,
-        employee_id: employee_id.sample,
-        type: random_type.sample,
+        types: random_type.sample,
         status: random_status.sample,
         date_of_commissioning: Faker::Date.between(from: '2017-09-23', to: '2020-09-25'),
         date_of_last_inspection: Faker::Date.between(from: '2017-09-23', to: '2020-09-25'),
         certificate_of_operations: Faker::Code.nric,
-        information: Fakker::Lorem.sentence,
-        notes: Fakker::Lorem.sentences,
+        information: Faker::Lorem.sentence,
+        notes: Faker::Lorem.sentences,
+        employees_id: employee_id.sample,
+        buildings_id: building_id.sample,
     )
 end
 
 75.times do 
     Column.create(
-        batteries_id: batterie_id.sample,
-        serial_number: Faker::Device.serial,
-        model: Faker::Number.hexadecimal(digits: 3),
-        type: random_type.sample,
+        types: random_type.sample,
         status: random_status.sample,
-        date_of_commissioning: Faker::Date.between(from: '2017-09-23', to: '2020-09-25'),
-        date_of_last_inspection: Faker::Date.between(from: '2017-09-23', to: '2020-09-25'),
-        certificate_of_inspection: Faker::Code.nric,
+        nb_of_floor_served: floor_served.sample,
         information: Faker::Lorem.sentence,
         notes: Faker::Lorem.sentences,
+        batteries_id: batterie_id.sample,
     )
 end
 
 375.times do
     Elevator.create(
-        column_id: column_id.sample,
         serial_number: Faker::Device.serial,
         model: Faker::Number.hexadecimal(digits: 3),
-        type: random_type.sample,
+        types: random_type.sample,
         status: random_status.sample,
         date_of_commissioning: Faker::Date.between(from: '2017-09-23', to: '2020-09-25'),
         date_of_last_inspection: Faker::Date.between(from: '2017-09-23', to: '2020-09-25'),
         certificate_of_inspection: Faker::Code.nric,
         information: Faker::Lorem.sentence,
         notes: Faker::Lorem.sentences,
+        columns_id: column_id.sample,
     )
 end
 
