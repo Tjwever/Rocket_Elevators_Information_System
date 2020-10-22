@@ -2,87 +2,6 @@ task spec: ["dwhmanager:db:test:prepare"]
 
 namespace :dwhmanager do
 
-#   task fake: :environment do
-
-#     # Generate fake quotes
-#     300.times do
-#       Quote.create([{
-
-#         installationFee: Faker::Number.between(from: 10000, to: 50000),
-#         total: Faker::Number.between(from: 10000, to: 50000),
-#         elevatorChoice: ["Residential", "Commercial", "Corporate", "Hybrid"].sample,
-#         nbApparts: Faker::Number.between(from: 30, to: 300),
-#         nbFloors: Faker::Number.between(from: 5, to: 50),
-#         nbBasements: Faker::Number.between(from: 1, to: 5),
-#         nbBusiness: Faker::Number.between(from: 1, to: 20),
-#         nbParking: Faker::Number.between(from: 10, to: 70),       
-#         nbCages: Faker::Number.between(from: 1, to: 10),
-#         nbDistinctTenant: Faker::Number.between(from: 1, to: 5),
-#         nbOccup: Faker::Number.between(from: 20, to: 100),
-#         activity24: Faker::Number.between(from: 1, to: 24),
-#         nbElevator: Faker::Number.between(from: 1, to: 10),
-#         unitPrice: Faker::Number.between(from: 1000, to: 5000),
-        
-#       }])
-#     end
-#     # Generate fake Adresses
-#     50.times do
-#       Adress.create([{
-#         type: ["Businesss", "Shipping", "Home"].sample,
-#         status: [:Active, :Inactive].sample,
-#         entity: [:Building, :Customer].sample,
-#         streetNumber: Faker::Address.unique.secondary_address,
-#         suite: Faker::Number.unique.number(digits: 4),
-#         city: Faker::Address.city_prefix,
-#         postalCode: Faker::Address.unique.postcode,
-#         country: [:US, :CA].sample,
-#         # notes: ""
-#       }])
-#     end
-  
-#     #   Generate fake building
-#     100.times do 
-#       Building.create([{       
-
-#         building_address: Faker::Name.name,
-#         name_of_building_admin: Faker::Name.name,
-#         email_of_building_admin: Faker::Internet.email,
-#         phone_of_building_admin: Faker::PhoneNumber.phone_number,
-#         building_tech_contact_name: Faker::Artist.name,
-#         building_tech_contact_email: Faker::Internet.email,
-#         building_tech_contact_phone: Faker::PhoneNumber.phone_number,
-#         customers_id: Faker::Number.between(from: 1, to: 100),
-#       }])
-#     end
-#     # Generate fake battery
-#     200.times do 
-#       Battery.create([{
-#         types: ["Residential", "Commercial", "Corporate", "Hybrid"].sample,
-#         status: ["Active", "Maintenance", "Inactive"].sample,
-#         date_of_commissioning: Faker::Date.between(from: 1000.days.ago, to: Date.today),
-#         date_of_last_inspection: Faker::Date.between(from: 1000.days.ago, to: Date.today),
-#         certificate_of_operations: Faker::IndustrySegments.industry,
-#         information: Faker::IndustrySegments.industry,  
-#         notes: Faker::IndustrySegments.industry, 
-#         employees_id:  Faker::Number.between(from: 1, to: 100), 
-       
-        
-#       }])
-#     end
-
-#  #   Generate fake column
-#  300.times do 
-#   Column.create([{
-#     types: ["Residential", "Commercial", "Corporate", "Hybrid"].sample,
-#     nb_of_floor_served: Faker::Number.between(from: 1, to: 70),
-#     status: ["Active", "Maintenance", "Inactive"].sample,
-#     information: Faker::IndustrySegments.industry,
-#     notes: Faker::IndustrySegments.industry,
-#     batteries_id:  Faker::Number.between(from: 1, to: 100),
-#   }])
-# end
-# end
-
 # Task to manage transfert data from database to datawarehouse 
 require 'pg'
 
@@ -91,11 +10,17 @@ task transfert: :environment do
   puts "Connected to database #{conn.db} as #{conn.user} with password #{conn.pass}"
 
 
-   # FACT ELEVATOR
-   Elevator.all.each do |e|
-    puts "INSERT INTO factelevator (serialnumber, commissioningdate, buildingid, customerid, buildingcity) VALUES (#{e.serial_number}, '#{e.date_of_commissioning}', '#{e.columns.batteries.buildings.id}', '#{e.columns.batteries.buildings.customers.id}', '#{e.columns.batteries.buildings.building_address}')"
-    conn.exec("INSERT INTO factelevator (serialnumber, commissioningdate, buildingid, customerid, buildingcity) VALUES (#{e.serial_number}, '#{e.date_of_commissioning}', '#{e.columns.batteries.buildings.id}', '#{e.columns.batteries.buildings.customers.id}', '#{e.columns.batteries.buildings.building_address}')")
-  end
+  # FACT QUOTES
+  Quote.all.each do |q|
+    user_tmp = User.where(id: q.id).first
+    if user_tmp 
+      puts "INSERT INTO factquotes (quoteid, creation, companyname, email, nbelevator) VALUES (#{q.id}, '#{q.created_at}', #{user_tmp.company}, #{user_tmp.email}, #{q.NbElevator})"
+    
+      conn.exec("INSERT INTO factquotes (quoteid, creation, companyname, email, nbelevator) VALUES (#{q.id}, '#{q.created_at}', '#{user_tmp.company}', '#{user_tmp.email}', #{q.NbElevator})")
+   
+    end
+  
+  end 
 
 
 

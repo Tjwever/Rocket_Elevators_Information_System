@@ -1,3 +1,3 @@
-class Quote < ApplicationRecord 
-  
+class Quote < ApplicationRecord
+   
 end
