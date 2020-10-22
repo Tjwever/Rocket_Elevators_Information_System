@@ -7,102 +7,112 @@ end
 
 random_type = ["Residential", "Commercial", "Corporate"]
 random_status = ["Active", "Inactive"]
+departement_selector = ["Sales","Customer Services","Administration"]
+info_key = ["Type, Construction Year, Last Renovation Year, Number of elevator in place"]
+random_year = [1945..1990]
+random_reno = [1991..2010]
+random_old_elevator = [0..8]
+batterie_id = [1..20]
+building_id = [1..20]
+customers_id = [1..15]
+column_id = [1..75]
+employee_id = [1..7]
+user_id = [1..10]
+random_values = [random_type.sample, random_year.sample, random_reno.sample, random_old_elevator.sample]
+random_address = CSV.readlines(Rails.root.join('address.csv'))
 
 52.times do
-    Leads.create(
-        fullName: Fakker::Name.name
-        companyName: Fakker::Company.name
-        email: Fakker::Internet.safe_email
-        phone: Fakker::PhoneNumber.cell_phone
-        projectName: Fakker::Space.star
-        projectDescription: Fakker::Company.catch_phrase
-        department: Fakker::
-        subject: Fakker::sentence
-        message: Fakker::Lorem.paragraphs
+    Lead.create(
+        fullName: Faker::Name.name,
+        companyName: Faker::Company.name,
+        email: Faker::Internet.safe_email,
+        phone: Faker::PhoneNumber.cell_phone,
+        projectName: Faker::Space.star,
+        projectDescription: Faker::Company.catch_phrase,
+        department: departement_selector.sample,
+        subject: Faker::Lorem.sentence,
+        message: Faker::Lorem.paragraphs,
     )
 end
 
-
-
-
 15.times do
-    Customers.create(
-        UserId:
-        Customers_creation_date: Fakker::Date.between(from: '2017-09-23', to: '2020-09-25')
-        Name_of_company: Fakker::Company.name
-        Compagny_hq_address: Fakker::
-        Name_of_company_contact: Fakker::Name.name
-        Company_contact_phone: Fakker::PhoneNumber.cell_phone
-        Company_contact_email: Fakker::Internet.safe_email
-        Company_Description: Fakker::Company.buzzword
-        Tech_Authority_Name: Fakker::Name.name
-        Tech_Authority_Phone: Fakker::PhoneNumber.cell_phone
-        Tech_Manager_Email: Fakker::Internet.safe_email
+    Customer.create(
+        customers_creation_date: Faker::Date.between(from: '2017-09-23', to: '2020-09-25'),
+        Name_of_company: Faker::Company.name,
+        compagny_hq_address: random_address.sample,
+        name_of_company_contact: Faker::Name.name,
+        company_contact_phone: Faker::PhoneNumber.cell_phone,
+        company_contact_email: Faker::Internet.safe_email,
+        company_Description: Faker::Company.buzzword,
+        tech_authority_name: Faker::Name.name,
+        tech_authority_phone: Faker::PhoneNumber.cell_phone,
+        tech_manager_email: Faker::Internet.safe_email,
+        users_id: user_id.sample,
     )
 end
 
 20.times do
     Building.create(
-        Customer_Id:
-        Building_Address: Fakker::
-        Name_Of_Building_Admin: Fakker::Name.name
-        Email_Of_Building_Admin: Fakker::Internet.safe_email
-        Phone_Of_Building_Admin: Fakker::PhoneNumber.cell_phone
-        Building_Tech_Contact_Name: Fakker::Name.name
-        Building_Tech_Contact_Email: Fakker::Internet.safe_email
-        Building_Tech_Contact_Phone: Fakker::PhoneNumber.cell_phone
+        building_address: random_address.sample,
+        name_Of_building_admin: Faker::Name.name,
+        email_of_building_admin: Faker::Internet.safe_email,
+        phone_of_building_admin: Faker::PhoneNumber.cell_phone,
+        building_tech_contact_name: Faker::Name.name,
+        building_tech_contact_email: Faker::Internet.safe_email,
+        building_tech_contact_phone: Faker::PhoneNumber.cell_phone,
+        customer_id: customers_id.sample,
     )
 end
 
 20.times do
     BuildingDetail.create(
-        Building_Id:
-        Information_Key: Fakker::
-        Value: Fakker::
+        building_id: building_id.sample,
+        information_key: info_key,
+        value: random_values,
     )
 end
 
 20.times do
-    Batterie.create(
-        Building_Id:
-        Employee_Id:
-        Type: random_type.sample
-        Status: random_status.sample
-        Date_Of_Commissioning: Fakker::Date.between(from: '2017-09-23', to: '2020-09-25')
-        Date_Of_Last_Inspection: Fakker::Date.between(from: '2017-09-23', to: '2020-09-25')
-        Certificate_Of_Operations: Fakker::Code.nric
-        Information: Fakker::sentence
-        Notes: Fakker::Lorem.sentences
+    Battery.create(
+        building_id: building_id.sample,
+        employee_id: employee_id.sample,
+        type: random_type.sample,
+        status: random_status.sample,
+        date_of_commissioning: Faker::Date.between(from: '2017-09-23', to: '2020-09-25'),
+        date_of_last_inspection: Faker::Date.between(from: '2017-09-23', to: '2020-09-25'),
+        certificate_of_operations: Faker::Code.nric,
+        information: Fakker::Lorem.sentence,
+        notes: Fakker::Lorem.sentences,
     )
 end
 
 75.times do 
     Column.create(
-        Column_Id:
-        Serial_Number: Fakker::Device.serial
-        Model: Fakker::Number.hexadecimal(digits: 3)
-        Type: random_type.sample
-        Status: random_status.sample
-        Date_Of_Commissioning: Fakker::Date.between(from: '2017-09-23', to: '2020-09-25')
-        Date_Of_Last_Inspection: Fakker::Date.between(from: '2017-09-23', to: '2020-09-25')
-        Certificate_Of_Inspection: Fakker::Code.nric
-        Information: Fakker::sentence
-        Notes: Fakker::Lorem.sentences
+        batteries_id: batterie_id.sample,
+        serial_number: Faker::Device.serial,
+        model: Faker::Number.hexadecimal(digits: 3),
+        type: random_type.sample,
+        status: random_status.sample,
+        date_of_commissioning: Faker::Date.between(from: '2017-09-23', to: '2020-09-25'),
+        date_of_last_inspection: Faker::Date.between(from: '2017-09-23', to: '2020-09-25'),
+        certificate_of_inspection: Faker::Code.nric,
+        information: Faker::Lorem.sentence,
+        notes: Faker::Lorem.sentences,
     )
 end
 
 375.times do
     Elevator.create(
-        Column_Id:
-        Serial_Number: Fakker::Device.serial
-        Model: Fakker::Number.hexadecimal(digits: 3)
-        Type: random_type.sample
-        Status: random_status.sample
-        Date_Of_Commissioning: Fakker::Date.between(from: '2017-09-23', to: '2020-09-25')
-        Date_Of_Last_Inspection: Fakker::Date.between(from: '2017-09-23', to: '2020-09-25')
-        Certificate_Of_Inspection: Fakker::Code.nric
-        Information: Fakker::sentence
-        Notes: Fakker::Lorem.sentences
+        column_id: column_id.sample,
+        serial_number: Faker::Device.serial,
+        model: Faker::Number.hexadecimal(digits: 3),
+        type: random_type.sample,
+        status: random_status.sample,
+        date_of_commissioning: Faker::Date.between(from: '2017-09-23', to: '2020-09-25'),
+        date_of_last_inspection: Faker::Date.between(from: '2017-09-23', to: '2020-09-25'),
+        certificate_of_inspection: Faker::Code.nric,
+        information: Faker::Lorem.sentence,
+        notes: Faker::Lorem.sentences,
     )
 end
 

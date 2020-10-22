@@ -10,134 +10,101 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_21_142403) do
+ActiveRecord::Schema.define(version: 2020_10_19_230812) do
 
   create_table "batteries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.integer "Building_Id"
-    t.integer "Employee_Id"
-    t.string "Type"
-    t.string "Status"
-    t.date "Date_Of_Commissioning"
-    t.date "Date_Of_Last_Inspection"
-    t.text "Certificate_Of_Operations"
-    t.text "Information"
-    t.text "Notes"
+    t.string "type"
+    t.string "status"
+    t.date "date_of_commissioning"
+    t.date "date_of_last_inspection"
+    t.text "certificate_of_operations"
+    t.text "information"
+    t.text "notes"
+    t.bigint "employees_id"
+    t.bigint "buildings_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "buildings_id"
-    t.bigint "employees_id"
-    t.index ["Building_Id"], name: "index_batteries_on_Building_Id"
-    t.index ["Employee_Id"], name: "index_batteries_on_Employee_Id"
     t.index ["buildings_id"], name: "index_batteries_on_buildings_id"
     t.index ["employees_id"], name: "index_batteries_on_employees_id"
   end
 
   create_table "building_details", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.integer "Building_Id"
-    t.text "Information_Key"
-    t.text "Value"
+    t.text "information_key"
+    t.text "value"
+    t.bigint "buildings_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "buildings_id"
-    t.bigint "users_id"
-    t.integer "user_id"
-    t.index ["Building_Id"], name: "index_building_details_on_Building_Id"
     t.index ["buildings_id"], name: "index_building_details_on_buildings_id"
-    t.index ["user_id"], name: "index_building_details_on_user_id"
-    t.index ["users_id"], name: "index_building_details_on_users_id"
   end
 
   create_table "buildings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.integer "Customer_Id"
-    t.string "Building_Address"
-    t.string "Name_Of_Building_Admin"
-    t.string "Email_Of_Building_Admin"
-    t.integer "Phone_Of_Building_Admin"
-    t.string "Building_Tech_Contact_Name"
-    t.string "Building_Tech_Contact_Email"
-    t.integer "Building_Tech_Contact_Phone"
+    t.string "building_address"
+    t.string "name_of_building_admin"
+    t.string "email_of_building_admin"
+    t.integer "phone_of_building_admin"
+    t.string "building_tech_contact_name"
+    t.string "building_tech_contact_email"
+    t.integer "building_tech_contact_phone"
+    t.bigint "customers_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "customers_id"
-    t.bigint "users_id"
-    t.integer "user_id"
-    t.integer "adress_id"
-    t.index ["Customer_Id"], name: "index_buildings_on_Customer_Id"
-    t.index ["adress_id"], name: "index_buildings_on_adress_id"
     t.index ["customers_id"], name: "index_buildings_on_customers_id"
-    t.index ["user_id"], name: "index_buildings_on_user_id"
-    t.index ["users_id"], name: "index_buildings_on_users_id"
   end
 
   create_table "columns", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.integer "Battery_Id"
-    t.string "Type"
-    t.integer "Nb_Of_Floor_Served"
-    t.string "Status"
-    t.text "Information"
-    t.text "Notes"
+    t.string "type"
+    t.integer "nb_of_floor_served"
+    t.string "status"
+    t.text "information"
+    t.text "notes"
+    t.bigint "batteries_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "batteries_id"
-    t.index ["Battery_Id"], name: "index_columns_on_Battery_Id"
     t.index ["batteries_id"], name: "index_columns_on_batteries_id"
   end
 
   create_table "customers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.integer "UserId"
-    t.date "Customers_Creation_Date"
-    t.string "Name_Of_Company"
-    t.string "Company_HQ_Address"
-    t.string "Name_Of_Company_Contact"
-    t.integer "Company_Contact_Phone"
-    t.string "Company_Contact_Email"
-    t.text "Company_Description"
-    t.string "Tech_Authority_Name"
-    t.integer "Tech_Authority_Phone"
-    t.string "Tech_Manager_Email"
+    t.string "name_of_company"
+    t.string "company_hq_address"
+    t.string "name_of_company_contact"
+    t.integer "company_contact_phone"
+    t.string "company_contact_email"
+    t.text "company_description"
+    t.string "tech_authority_name"
+    t.integer "tech_authority_phone"
+    t.string "tech_manager_email"
+    t.bigint "users_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "users_id"
-    t.integer "adress_id"
-    t.index ["UserId"], name: "index_customers_on_UserId"
-    t.index ["adress_id"], name: "index_customers_on_adress_id"
     t.index ["users_id"], name: "index_customers_on_users_id"
   end
 
   create_table "elevators", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.integer "Column_Id"
-    t.integer "Serial_Number"
-    t.string "Model"
-    t.string "Type"
-    t.string "Status"
-    t.date "Date_Of_Commissioning"
-    t.date "Date_Of_Last_Inspection"
-    t.text "Certificate_Of_Inspection"
-    t.text "Information"
-    t.text "Notes"
+    t.integer "serial_number"
+    t.string "model"
+    t.string "type"
+    t.string "status"
+    t.date "date_of_commissioning"
+    t.date "date_of_last_inspection"
+    t.text "certificate_of_inspection"
+    t.text "information"
+    t.text "notes"
+    t.bigint "columns_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "columns_id"
-    t.index ["Column_Id"], name: "index_elevators_on_Column_Id"
     t.index ["columns_id"], name: "index_elevators_on_columns_id"
   end
 
   create_table "employees", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.string "FirstName"
-    t.string "LastName"
-    t.string "Title"
+    t.string "firstName"
+    t.string "lastName"
+    t.string "title"
+    t.bigint "users_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "users_id"
-    t.integer "user_id"
-    t.index ["user_id"], name: "index_employees_on_user_id"
     t.index ["users_id"], name: "index_employees_on_users_id"
   end
 
-  create_table "filters", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.string "name"
-    t.string "filter"
-    t.string "class_name"
   create_table "leads", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "fullName"
     t.string "companyName"
@@ -154,26 +121,24 @@ ActiveRecord::Schema.define(version: 2020_10_21_142403) do
   end
 
   create_table "quotes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.decimal "InstallationFee", precision: 10
-    t.decimal "Total", precision: 10
-    t.string "ElevatorChoice"
-    t.integer "NbApparts"
-    t.integer "NbFloors"
-    t.integer "NbBasements"
-    t.integer "NbBusiness"
-    t.integer "NbParking"
-    t.integer "NbCages"
-    t.integer "NbDistinctTenant"
+    t.decimal "installationFee", precision: 10
+    t.decimal "total", precision: 10
+    t.string "elevatorChoice"
+    t.integer "nbApparts"
+    t.integer "nbFloors"
+    t.integer "nbBasements"
+    t.integer "nbBusiness"
+    t.integer "nbParking"
+    t.integer "nbCages"
+    t.integer "nbDistinctTenant"
     t.integer "nbOccup"
-    t.integer "Activity24"
-    t.integer "NbElevator"
-    t.decimal "UnitPrice", precision: 10
-    t.decimal "PriceElevator", precision: 10
+    t.integer "activity24"
+    t.integer "nbElevator"
+    t.decimal "unitPrice", precision: 10
+    t.decimal "priceElevator", precision: 10
+    t.bigint "users_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "users_id"
-    t.integer "user_id"
-    t.index ["user_id"], name: "index_quotes_on_user_id"
     t.index ["users_id"], name: "index_quotes_on_users_id"
   end
 
@@ -195,9 +160,7 @@ ActiveRecord::Schema.define(version: 2020_10_21_142403) do
   add_foreign_key "batteries", "buildings", column: "buildings_id"
   add_foreign_key "batteries", "employees", column: "employees_id"
   add_foreign_key "building_details", "buildings", column: "buildings_id"
-  add_foreign_key "building_details", "users", column: "users_id"
   add_foreign_key "buildings", "customers", column: "customers_id"
-  add_foreign_key "buildings", "users", column: "users_id"
   add_foreign_key "columns", "batteries", column: "batteries_id"
   add_foreign_key "customers", "users", column: "users_id"
   add_foreign_key "elevators", "columns", column: "columns_id"
