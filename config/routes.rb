@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   
+  authenticate :user, ->(user) { user.superadmin_role? } do
+    mount Blazer::Engine, at: "blazer"
+  end
+  
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   get 'user/index'
   get 'user/show'

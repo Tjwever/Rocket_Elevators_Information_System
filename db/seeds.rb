@@ -1,5 +1,3 @@
-require 'csv'
-require "faker"
 
 CSV.foreach(Rails.root.join('address.csv'), headers: true) do |row|
     # puts row.inspect
@@ -12,7 +10,7 @@ info_key = ["Type, Construction Year, Last Renovation Year, Number of elevator i
 random_values = [random_type.sample, Faker::Date.between(from: '1945-09-23', to: '1990-09-25'), Faker::Date.between(from: '1991-09-23', to: '2010-09-25'), Faker::Number.between(from: 1, to: 7)]
 random_address = CSV.readlines(Rails.root.join('address.csv'))
 
-=begin
+
 User.create!(email: 'nicolas.genest@codeboxx.biz', password: '123456', superadmin_role: 1, employee_role: 0, user_role: 0)
 User.create!(email: 'nadya.fortier@codeboxx.biz', password: '123456', superadmin_role: 1, employee_role: 0, user_role: 0)
 User.create!(email: 'martin.chantal@codeboxx.biz', password: '123456', superadmin_role: 1, employee_role: 0, user_role: 0)
@@ -29,7 +27,7 @@ Employee.create!(firstName: 'Mathieu', lastName: 'Houde', title: "Captain", user
 Employee.create!(firstName: 'David', lastName: 'Boutin', title: "Engineer", users_id: 5)
 Employee.create!(firstName: 'Mathieu', lastName: 'Lortie', title: "Engineer", users_id: 6)
 Employee.create!(firstName: 'Thomas', lastName: 'Carrier', title: "Engineer", users_id: 7)
-=end
+
 
 52.times do
     Lead.create(
