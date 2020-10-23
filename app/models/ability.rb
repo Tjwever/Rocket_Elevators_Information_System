@@ -17,9 +17,9 @@ class Ability
             can :manage, :dashboard         # allow access to dashboard
       else
             #can :read, :all
-            can :access, :rails_admin
-            can :read, Quote
-            can :destroy, Quote  
+            authorize! :access, :rails_admin
+            authorize! :read, Quote
+            authorize! :destroy, Quote  
       end
 
     
