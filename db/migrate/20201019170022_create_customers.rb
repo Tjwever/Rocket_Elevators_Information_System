@@ -2,7 +2,7 @@ class CreateCustomers < ActiveRecord::Migration[5.2]
   def change
     create_table :customers do |t|
       t.string :name_of_company
-      t.string :company_hq_address
+      t.integer :company_hq_address_id
       t.string :name_of_company_contact
       t.string :company_contact_phone
       t.string :company_contact_email
