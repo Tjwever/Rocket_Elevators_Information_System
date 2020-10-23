@@ -29,7 +29,12 @@ require 'pg'
       # FACT CONTACT
       Lead.all.each do |l|
         # puts "INSERT INTO factcontact (contactid, creation, companyname, email, projectname) VALUES (#{l.id}, '#{l.created_at}', '#{l.companyName}', '#{l.email}', #{l.projectName})"
-        conn.exec("INSERT INTO factcontact (contactid, creation, companyname, email, projectname) VALUES (#{l.id}, '#{l.created_at}', '#{l.companyName}', '#{l.email}', '#{l.projectName}')")
+        conn.prepare("factStatement", "INSERT INTO factcontact (contactid, creation, companyname, email, projectname) VALUES ($1, $2, $3, $4, $5)")
+        conn.exec_prepared("factStatement", [l.id, l.created_at, l.companyName, l.email, l.projectName])
+        conn.exec("DEALLOCATE factStatement")
+        
+        #{l.id}, '#{l.created_at}', #{ActiveRecord::Base.connection.quote(l.companyName)}, '#{l.email}', '#{l.projectName}')"
+
       end
 
       # FACT ELEVATOR
