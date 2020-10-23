@@ -79,8 +79,9 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
-# production:
-#   <<: *default
-#   database: data_storage_production
-#   username: postgres
-#   password: <%= ENV['SimpleYellow'] %>
+production:
+  <<: *default
+  database: data_storage_production
+  Username: codeboxx
+  password: <%= ENV['Codeboxx1!'] %>
+  host: http://codeboxx-postgresql.cq6zrczewpu2.us-east-1.rds.amazonaws.com/

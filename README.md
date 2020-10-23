@@ -80,10 +80,10 @@ rake routes
 
 Made with :heart: by
 
-- Cindy Okino
-- Joey Coderre
-- Christ Saravia
-- Saad Eddine
+<img src='https://github-readme-stats.vercel.app/api?username=cindyokino&&show_icons=true&title_color=002776&icon_color=FFFFFF&text_color=FFDF00&bg_color=009C3B'>
+<img src='https://github-readme-stats.vercel.app/api?username=Jcoderre&&show_icons=true&title_color=ffffff&icon_color=FFFFFF&text_color=FFFFFF&bg_color=001F97'>
+<img src='https://github-readme-stats.vercel.app/api?username=Christ-Saravia&&show_icons=true&title_color=ffffff&icon_color=FFFFFF&text_color=FFFFFF&bg_color=C8102E'>
+<img src='https://github-readme-stats.vercel.app/api?username=saadeddinne&&show_icons=true&title_color=ffffff&icon_color=FFFFFF&text_color=FFFFFF&bg_color=E70013'>
 
 &#xa0;
 

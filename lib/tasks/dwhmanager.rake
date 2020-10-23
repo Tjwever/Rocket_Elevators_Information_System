@@ -6,7 +6,7 @@ namespace :dwhmanager do
 require 'pg'
 
   task transfert: :environment do
-    conn = PG::Connection.open(host: 'localhost', dbname: 'data_storage', user: 'postgres', password: 'admin')
+    conn = PG::Connection.open(host: 'localhost', dbname: 'data_storage', user: 'postgres', password: 'SimpleRed')
     puts "Connected to database #{conn.db} as #{conn.user} with password #{conn.pass}"
 
     
@@ -27,10 +27,15 @@ require 'pg'
       end 
 
       # FACT CONTACT
-      # Lead.all.each do |l|
-      #   # puts "INSERT INTO factcontact (contactid, creation, companyname, email, projectname) VALUES (#{l.id}, '#{l.created_at}', '#{l.companyName}', '#{l.email}', #{l.projectName})"
-      #   conn.exec("INSERT INTO factcontact (contactid, creation, companyname, email, projectname) VALUES (#{l.id}, '#{l.created_at}', '#{l.companyName}', '#{l.email}', '#{l.projectName}')")
-      # end
+      Lead.all.each do |l|
+        # puts "INSERT INTO factcontact (contactid, creation, companyname, email, projectname) VALUES (#{l.id}, '#{l.created_at}', '#{l.companyName}', '#{l.email}', #{l.projectName})"
+        conn.prepare("factcontact", "INSERT INTO factcontact (contactid, creation, companyname, email, projectname) VALUES ($1, $2, $3, $4, $5)")
+        conn.exec_prepared("factcontact", [l.id, l.created_at, l.companyName, l.email, l.projectName])
+        conn.exec("DEALLOCATE factcontact")
+        
+        #{l.id}, '#{l.created_at}', #{ActiveRecord::Base.connection.quote(l.companyName)}, '#{l.email}', '#{l.projectName}')"
+
+      end
 
       # FACT ELEVATOR
     Elevator.all.each do |e|
@@ -56,6 +61,7 @@ require 'pg'
           end
         end
       end
+      # changer le nom (avec foregn key)
       buildingAddressId = c.company_hq_address_id
       address = Adress.find(buildingAddressId)
 
@@ -69,7 +75,7 @@ require 'pg'
   end
 
   task cleardwh: :environment do 
-    conn = PG::Connection.open(host: 'localhost', dbname: 'data_storage', user: 'postgres', password: 'SimpleRed')
+    conn = PG::Connection.open(host: 'localhost', dbname: 'data_storage', user: 'postgres', password: 'admin')
   puts "Connected to database #{conn.db} as #{conn.user} with password #{conn.pass}"
 
     conn.exec("TRUNCATE TABLE dimcustomers RESTART IDENTITY;")
