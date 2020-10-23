@@ -31,8 +31,8 @@ Employee.create!(firstName: 'Thomas', lastName: 'Carrier', title: "Engineer", us
 
 52.times do
     Lead.create(
-        fullName: Faker::Name.name,
-        companyName: Faker::Company.name,
+        fullName: Faker::Name.name.gsub(/\W/, ''),
+        companyName: Faker::Company.name.gsub(/\W/, ''),
         email: Faker::Internet.safe_email,
         phone: Faker::PhoneNumber.cell_phone,
         projectName: Faker::Space.star,
@@ -45,9 +45,9 @@ end
 
 15.times do
     Customer.create!(
-        name_of_company: Faker::Company.name,
+        name_of_company: Faker::Company.name.gsub(/\W/, ''),
         company_hq_address: random_address.sample,
-        name_of_company_contact: Faker::Name.name,
+        name_of_company_contact: Faker::Name.name.gsub(/\W/, ''),
         company_contact_phone: Faker::PhoneNumber.cell_phone,
         company_contact_email: Faker::Internet.safe_email,
         company_description: Faker::Company.buzzword,
@@ -61,10 +61,10 @@ end
 20.times do
     Building.create!(
         building_address: "test",
-        name_of_building_admin: Faker::Name.name,
+        name_of_building_admin: Faker::Name.name.gsub(/\W/, ''),
         email_of_building_admin: Faker::Internet.safe_email,
         phone_of_building_admin: Faker::PhoneNumber.cell_phone,
-        building_tech_contact_name: Faker::Name.name,
+        building_tech_contact_name: Faker::Name.name.gsub(/\W/, ''),
         building_tech_contact_email: Faker::Internet.safe_email,
         building_tech_contact_phone: Faker::PhoneNumber.cell_phone,
         customer_id: Faker::Number.between(from: 1, to: 15),
@@ -106,7 +106,7 @@ end
 
 375.times do
     Elevator.create!(
-        serial_number: Faker::Barcode.ean_with_composite_symbology ,
+        serial_number: Faker::Number.between(from: 1000000, to: 20000000),
         model: Faker::Number.hexadecimal(digits: 3),
         types: random_type.sample,
         status: random_status.sample,
@@ -118,6 +118,33 @@ end
         column_id: Faker::Number.between(from: 1, to: 75),
     )
 end
+
+100.times do
+    Quote.create(
+            installationFee: Faker::Number.between(from: 500, to: 2000),
+            total: Faker::Number.between(from: 50000, to: 200000),
+            elevatorChoice: Faker::Number.between(from: 1, to: 3),
+            nbApparts: Faker::Number.between(from: 50, to: 200),
+            nbFloors: Faker::Number.between(from: 10, to: 70),
+            nbBasements: Faker::Number.between(from: 1, to: 10),
+            nbBusiness: Faker::Number.between(from: 1, to: 5),
+            nbParking: Faker::Number.between(from: 50, to: 200),
+            nbCages: Faker::Number.between(from: 1, to: 10),
+            nbDistinctTenant: Faker::Number.between(from: 1, to: 3),
+            nbOccup: Faker::Number.between(from: 50, to: 200),
+            activity24: Faker::Number.between(from: 0, to: 24),
+            nbElevator: Faker::Number.between(from: 1, to: 15),
+            unitPrice: Faker::Number.between(from: 11000, to: 15000),
+            priceElevator: Faker::Number.between(from: 100000, to: 200000),
+    )
+end
+
+
+
+   
+    
+
+
 
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
