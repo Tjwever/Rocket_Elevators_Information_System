@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(version: 2020_10_22_183602) do
 
   create_table "adresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.string "type"
+    t.string "adresstype"
     t.string "status"
     t.string "entity"
     t.integer "streetNumber"
@@ -107,7 +107,7 @@ ActiveRecord::Schema.define(version: 2020_10_22_183602) do
   end
 
   create_table "buildings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.string "building_address"
+    t.integer "building_address_id"
     t.string "name_of_building_admin"
     t.string "email_of_building_admin"
     t.string "phone_of_building_admin"
@@ -134,7 +134,7 @@ ActiveRecord::Schema.define(version: 2020_10_22_183602) do
 
   create_table "customers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name_of_company"
-    t.string "company_hq_address"
+    t.integer "company_hq_address_id"
     t.string "name_of_company_contact"
     t.string "company_contact_phone"
     t.string "company_contact_email"

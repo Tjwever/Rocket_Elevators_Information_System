@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get 'user/create'
   get 'user/destroy'
   get 'user/update'
+  get '/transfer-data', to: 'transfer_data#transfer'
   devise_for :users
   
   get '/commercial', to: 'pages#commercial'
