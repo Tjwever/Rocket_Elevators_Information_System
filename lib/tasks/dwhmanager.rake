@@ -6,55 +6,66 @@ namespace :dwhmanager do
 require 'pg'
 
   task transfert: :environment do
-  conn = PG::Connection.open(host: 'localhost', dbname: 'data_storage', user: 'postgres', password: 'SimpleRed')
-  puts "Connected to database #{conn.db} as #{conn.user} with password #{conn.pass}"
+    conn = PG::Connection.open(host: 'localhost', dbname: 'data_storage', user: 'postgres', password: 'admin')
+    puts "Connected to database #{conn.db} as #{conn.user} with password #{conn.pass}"
 
-  
-
-  conn.exec("TRUNCATE TABLE dimcustomers RESTART IDENTITY;")
-  conn.exec("TRUNCATE TABLE factquotes RESTART IDENTITY;")
-  conn.exec("TRUNCATE TABLE factcontact RESTART IDENTITY;")
-  conn.exec("TRUNCATE TABLE factelevator RESTART IDENTITY;")
-  puts "Cleared table"
-
-  # FACT QUOTES
-  Quote.all.each do |q|
-      user_tmp = Customer.where(id: q.id).first
-      if user_tmp 
-        puts "INSERT INTO factquotes (quoteid, creation, companyname, email, nbelevator) VALUES (#{q.id}, '#{q.created_at}', '#{user_tmp.name_of_company}', '#{user_tmp.company_contact_email}', #{q.nbElevator})"
-      
-        conn.exec("INSERT INTO factquotes (quoteid, creation, companyname, email, nbelevator) VALUES (#{q.id}, '#{q.created_at}', '#{user_tmp.name_of_company}', '#{user_tmp.company_contact_email}', #{q.nbElevator})")
     
-      end    
 
-    end 
-    # FACT CONTACT
-    Lead.all.each do |l|
-      puts "INSERT INTO factcontact (contactid, creation, companyname, email, projectname) VALUES (#{l.id}, '#{l.created_at}', '#{l.companyName}', '#{l.email}', #{l.projectName})"
+    conn.exec("TRUNCATE TABLE dimcustomers RESTART IDENTITY;")
+    conn.exec("TRUNCATE TABLE factquotes RESTART IDENTITY;")
+    conn.exec("TRUNCATE TABLE factcontact RESTART IDENTITY;")
+    conn.exec("TRUNCATE TABLE factelevator RESTART IDENTITY;")
+    puts "Cleared table"
 
-      conn.exec("INSERT INTO factcontact (contactid, creation, companyname, email, projectname) VALUES (#{l.id}, '#{l.created_at}', '#{l.companyName}', '#{l.email}', '#{l.projectName}')")
+      # FACT QUOTES
+      Quote.all.each do |q|
+        user_tmp = Customer.where(id: q.id).first
+        if user_tmp 
+          # puts "INSERT INTO factquotes (quoteid, creation, companyname, email, nbelevator) VALUES (#{q.id}, '#{q.created_at}', '#{user_tmp.name_of_company}', '#{user_tmp.company_contact_email}', #{q.nbElevator})"
+          conn.exec("INSERT INTO factquotes (quoteid, creation, companyname, email, nbelevator) VALUES (#{q.id}, '#{q.created_at}', '#{user_tmp.name_of_company}', '#{user_tmp.company_contact_email}', #{q.nbElevator})")
+        end   
+      end 
+
+      # FACT CONTACT
+      # Lead.all.each do |l|
+      #   # puts "INSERT INTO factcontact (contactid, creation, companyname, email, projectname) VALUES (#{l.id}, '#{l.created_at}', '#{l.companyName}', '#{l.email}', #{l.projectName})"
+      #   conn.exec("INSERT INTO factcontact (contactid, creation, companyname, email, projectname) VALUES (#{l.id}, '#{l.created_at}', '#{l.companyName}', '#{l.email}', '#{l.projectName}')")
+      # end
+
+      # FACT ELEVATOR
+    Elevator.all.each do |e|
+        buildingAddressId = e.column.battery.building.building_address_id
+        address = Adress.find(buildingAddressId)
+        # puts "INSERT INTO factelevator (serialnumber, datecommissioning, buildingid, customerid, buildingcity) VALUES ('#{e.serial_number}', '#{e.date_of_commissioning}', '#{e.column.battery.building.id}', '#{e.column.battery.building.customer.id}', '#{address.city}')"
+        conn.exec("INSERT INTO factelevator (serialnumber, datecommissioning, buildingid, customerid, buildingcity) VALUES ('#{e.serial_number}', '#{e.date_of_commissioning}', '#{e.column.battery.building.id}', '#{e.column.battery.building.customer.id}', '#{address.city}')")
     end
 
-     # FACT ELEVATOR
-     Elevator.all.each do |e|
-      puts "INSERT INTO factelevator (serialnumber, datecommissioning, buildingid, customerid, buildingcity) VALUES (#{e.serial_number}, '#{e.date_of_commissioning}', '#{e.column.battery.building.id}', '#{e.column.battery.building.customer.id}', '#{e.column.battery.building.building_address}')"
-      conn.exec("INSERT INTO factelevator (serialnumber, datecommissioning, buildingid, customerid, buildingcity) VALUES (#{e.serial_number}, '#{e.date_of_commissioning}', '#{e.column.battery.building.id}', '#{e.column.battery.building.customer.id}', '#{e.column.battery.building.building_address}')")
-    end
-# DIMENSION CUSTOMERS
-    Customer.all.each do |a|
-      nbelevators = 0
-      a.building.all.each do |b|
-          b.battery.all.each do |c|
-              c.column.all.each do |d|
-                nbelevators += d.elevator.count
-              end
+    # DIM CUSTOMERS
+    Customer.all.each do |c|
+      # puts "c id #{c.id}"
+      totalElevators = 0
+      # puts "nb of buildings #{c.building.length()}" 
+      c.building.each do |bld|
+        # puts "nb of batteries #{bld.battery.length()}"
+        bld.battery.each do |btt|
+          # puts "nb of columns #{btt.column.length()}"
+          btt.column.each do |col|
+            # puts "nb of elevators #{col.elevator.length()}"
+            totalElevators += col.elevator.length()
+            # puts totalElevators
           end
-
+        end
       end
-      puts "INSERT INTO dimcustomers (creation, companyname, companyfullname, companyemail, nbelevators, customercity) VALUES ('#{a.created_at}', '#{a.name_of_company}', '#{a.name_of_company_contact}', '#{a.company_contact_email}', #{nbelevators}, '#{a.company_hq_address}')"
-      conn.exec("INSERT INTO dimcustomers (creation, companyname, companyfullname, companyemail, nbelevators, customercity) VALUES ('#{a.created_at}', '#{a.name_of_company}', '#{a.name_of_company_contact}', '#{a.company_contact_email}', #{nbelevators}, '#{a.company_hq_address}')")
-  end
+      buildingAddressId = c.company_hq_address_id
+      address = Adress.find(buildingAddressId)
 
+      conn.exec("INSERT INTO dimcustomers (companyname, companyfullname, companyemail, nbelevators, customercity, creation) VALUES ('#{c.name_of_company}', '#{c.name_of_company_contact}', '#{c.company_contact_email}', #{totalElevators},'#{address.city}', '#{c.created_at}')")
+    end
+
+  end
+  task emptest: :environment do
+    # Employee.create!(user: User.create!(email: 'nicolas.genest@codeboxx.biz', password: '123456', superadmin_role: 1, employee_role: 0, user_role: 0), firstName: 'Nicolas', lastName: 'Genest', title: "CEO")
+    # Employee.create!(, firstName: 'Nicolas', lastName: 'Genest', title: "CEO")
   end
 
   task cleardwh: :environment do 
