@@ -20,7 +20,11 @@ Rails.application.routes.draw do
   get '/thank-you', to: 'pages#thankyou'
   post '/form', to: 'form#create'
   post '/contact-us', to: 'contact_us_form#create'
-  get '/chart', to: 'application#postgres_update'
+  # get '/chart', to: 'application#postgres_update'
+
+  get '/chart-page', to: 'pages#chart'
+  get '/chart', to: 'application#view_chart'
+  get '/warehouse-update', to: 'application#postgres_update'
 
   root 'pages#home'
 

@@ -1,5 +1,16 @@
 RailsAdmin.config do |config|
+
+
+# Link to charts and link to upload the data warehouse postgres
+config.navigation_static_links = {
+  'Charts & Data Warehouse' => '/chart-page'
+}
+
+
+
   ### Popular gems integration
+
+  config.parent_controller = 'ApplicationController'
 
   ## == Devise ==
    config.authenticate_with do
