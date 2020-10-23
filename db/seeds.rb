@@ -60,7 +60,7 @@ end
 
 20.times do
     Building.create!(
-        building_address: "test",
+        building_address: random_address.sample,
         name_of_building_admin: Faker::Name.name,
         email_of_building_admin: Faker::Internet.safe_email,
         phone_of_building_admin: Faker::PhoneNumber.cell_phone,
