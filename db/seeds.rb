@@ -57,14 +57,14 @@ puts "### Seeding customers ###"
         tech_manager_email: Faker::Internet.safe_email,
         users_id:Faker::Number.between(from: 1, to: 7), 
         updated_at: dateCreationUpdate,
-        created_at:dateCreationUpdate
+        created_at: dateCreationUpdate
     )
 end
 
 puts "### Seeding Buildings ###"
 20.times do
     Building.create!(
-        building_address: random_address.sample,
+        building_address: "test",
         name_of_building_admin: Faker::Name.name,
         email_of_building_admin: Faker::Internet.safe_email,
         phone_of_building_admin: Faker::PhoneNumber.cell_phone,
