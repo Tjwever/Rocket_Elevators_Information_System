@@ -9,7 +9,6 @@ class CreateBuildings < ActiveRecord::Migration[5.2]
       t.string :building_tech_contact_email
       t.string :building_tech_contact_phone
       t.references :customer, foreign_key: true
-      t.references :address, foreign_key: true
       t.timestamps
     end
   end

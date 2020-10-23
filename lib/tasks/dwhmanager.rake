@@ -27,10 +27,10 @@ require 'pg'
       end 
 
       # FACT CONTACT
-      # Lead.all.each do |l|
-      #   # puts "INSERT INTO factcontact (contactid, creation, companyname, email, projectname) VALUES (#{l.id}, '#{l.created_at}', '#{l.companyName}', '#{l.email}', #{l.projectName})"
-      #   conn.exec("INSERT INTO factcontact (contactid, creation, companyname, email, projectname) VALUES (#{l.id}, '#{l.created_at}', '#{l.companyName}', '#{l.email}', '#{l.projectName}')")
-      # end
+      Lead.all.each do |l|
+        # puts "INSERT INTO factcontact (contactid, creation, companyname, email, projectname) VALUES (#{l.id}, '#{l.created_at}', '#{l.companyName}', '#{l.email}', #{l.projectName})"
+        conn.exec("INSERT INTO factcontact (contactid, creation, companyname, email, projectname) VALUES (#{l.id}, '#{l.created_at}', '#{l.companyName}', '#{l.email}', '#{l.projectName}')")
+      end
 
       # FACT ELEVATOR
     Elevator.all.each do |e|
@@ -56,6 +56,7 @@ require 'pg'
           end
         end
       end
+      # changer le nom (avec foregn key)
       buildingAddressId = c.company_hq_address_id
       address = Adress.find(buildingAddressId)
 
