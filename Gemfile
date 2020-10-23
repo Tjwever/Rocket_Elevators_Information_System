@@ -71,4 +71,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem'devise'
 # modification saad
 gem 'rails_admin', '~> 2.0'
-gem 'rails_admin_rollincode', '~> 1.0'
+gem 'rails_admin_rollincode', :git => 'https://github.com/Jcoderre/rails_admin_theme', :branch => 'master'
