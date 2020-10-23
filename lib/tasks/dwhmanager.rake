@@ -26,7 +26,7 @@ require 'pg'
         end   
       end 
 
-      FACT CONTACT
+      # FACT CONTACT
       Lead.all.each do |l|
         # puts "INSERT INTO factcontact (contactid, creation, companyname, email, projectname) VALUES (#{l.id}, '#{l.created_at}', '#{l.companyName}', '#{l.email}', #{l.projectName})"
         conn.exec("INSERT INTO factcontact (contactid, creation, companyname, email, projectname) VALUES (#{l.id}, '#{l.created_at}', '#{l.companyName}', '#{l.email}', '#{l.projectName}')")
