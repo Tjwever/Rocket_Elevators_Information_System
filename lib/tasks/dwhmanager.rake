@@ -6,7 +6,7 @@ namespace :dwhmanager do
 require 'pg'
 
   task transfert: :environment do
-    conn = PG::Connection.open(host: 'localhost', dbname: 'data_storage', user: 'postgres', password: 'admin')
+    conn = PG::Connection.open(host: 'codeboxx-postgresql.cq6zrczewpu2.us-east-1.rds.amazonaws.com', dbname: 'data_storage', user: 'codeboxx', password: 'Codeboxx1!')
     puts "Connected to database #{conn.db} as #{conn.user} with password #{conn.pass}"
 
     
@@ -29,7 +29,6 @@ require 'pg'
       # FACT CONTACT
       Lead.all.each do |l|
         # puts "INSERT INTO factcontact (contactid, creation, companyname, email, projectname) VALUES (#{l.id}, '#{l.created_at}', '#{l.companyName}', '#{l.email}', #{l.projectName})"
-
         conn.prepare("factcontact", "INSERT INTO factcontact (contactid, creation, companyname, email, projectname) VALUES ($1, $2, $3, $4, $5)")
         conn.exec_prepared("factcontact", [l.id, l.created_at, l.companyName, l.email, l.projectName])
         conn.exec("DEALLOCATE factcontact")
