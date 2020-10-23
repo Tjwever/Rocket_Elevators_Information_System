@@ -17,12 +17,9 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  # For details on connection pooling, see Rails configuration guide
-  # https://guides.rubyonrails.org/configuring.html#database-pooling
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: postgres
-  password: SimpleRed
-  host: localhost
+  username: codeboxx
+  password: Codeboxx1!
+  host: codeboxx-postgresql.cq6zrczewpu2.us-east-1.rds.amazonaws.com
 development:
   <<: *default
   database: data_storage
@@ -84,4 +81,4 @@ production:
   database: data_storage_production
   Username: codeboxx
   password: <%= ENV['Codeboxx1!'] %>
-  host: http://codeboxx-postgresql.cq6zrczewpu2.us-east-1.rds.amazonaws.com/
+  host: codeboxx-postgresql.cq6zrczewpu2.us-east-1.rds.amazonaws.com
