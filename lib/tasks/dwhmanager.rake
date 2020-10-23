@@ -75,7 +75,7 @@ require 'pg'
   end
 
   task cleardwh: :environment do 
-    conn = PG::Connection.open(host: 'localhost', dbname: 'data_storage', user: 'postgres', password: 'SimpleRed')
+    conn = PG::Connection.open(host: 'localhost', dbname: 'data_storage', user: 'postgres', password: 'admin')
   puts "Connected to database #{conn.db} as #{conn.user} with password #{conn.pass}"
 
     conn.exec("TRUNCATE TABLE dimcustomers RESTART IDENTITY;")

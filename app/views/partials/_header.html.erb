@@ -124,7 +124,7 @@
 											<li><%= link_to "SIGN UP", new_user_registration_path %></li>
 										<% elsif current_user.superadmin_role? %>
 											<li><%= link_to "ADMIN PANEL", rails_admin_path %> </li>
-											<li><%= link_to "CHART VIEWER", blazer_path %> </li>
+											<li><%= link_to "CHART VIEWER", chart_path %> </li>
 											<li><%= link_to "LOGOUT", destroy_user_session_path, method: :delete %></li>
 										<% elsif current_user.employee_role? %>
 											<li><%= link_to "ADMIN PANEL", rails_admin_path %> </li>
