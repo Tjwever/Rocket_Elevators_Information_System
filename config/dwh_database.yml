@@ -23,6 +23,7 @@ default: &default
   username: postgres
   password: SimpleRed
   host: localhost
+  prepared_statements: true
 development:
   <<: *default
   database: data_storage
