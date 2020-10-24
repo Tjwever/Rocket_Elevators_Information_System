@@ -31,6 +31,9 @@
 
 1. Making a static website dynamic by implementing the MVC model.
    This architecture was chosen by the corporate architect at Rocket Elevators to set up the company's new information system.
+2. Expanding the relational database model
+3. Implementation of a Data Warehouse
+4. Seeding data base with data NB: real adress are used
 
 🎞️ Video demonstration : <a href="https://youtu.be/z47oGSMz6aQ" target="_blank">Rockect Elevator MVC architecture &#xa0; | &#xa0;</a>
 
@@ -42,9 +45,31 @@
 <li>Javascript</li>
 <li>Bootstrap</li>
 <li>MySqL</li>
+<li>Postgres</li>
 <li>Ruby on rails</li>
 <li>Ubuntu</li>
 </ol>
+
+📚 The three queries:
+
+```sh
+SELECT to_char(creation,'yyyy Month') AS selected_month, COUNT(contactid) as monthly_contacts
+    FROM factcontact
+GROUP BY selected_month
+```
+
+```sh
+SELECT to_char(creation,'yyyy Month') AS selected_month, COUNT(quoteid) as monthly_quotes
+    FROM factquotes
+GROUP BY selected_month
+```
+
+```sh
+SELECT SUM(nbelevators) as elevators_per_customer, companyname
+    FROM dimcustomers
+GROUP BY companyname
+```
+
 📚 Instructions to acces to th admin panel:
 
 To log as Admin:
@@ -55,6 +80,15 @@ To log as Admin:
 3. Username: mathieu.houde@codeboxx.biz
    password: 123456
 4. Member : Admin Panel
+```
+
+📚 Instructions to acces to use Blazer (Chart): unfortunately doesn't work because of connexion with amazon database
+
+```sh
+1. Admin Panel
+2. Links
+3. Chart
+
 ```
 
 ## :memo: Routes
@@ -79,11 +113,6 @@ rake routes
 - This project is under license from CodeBoxx.
 
 Made with :heart: by
-
-<img src='https://github-readme-stats.vercel.app/api?username=cindyokino&&show_icons=true&title_color=002776&icon_color=FFFFFF&text_color=FFDF00&bg_color=009C3B'>
-<img src='https://github-readme-stats.vercel.app/api?username=Jcoderre&&show_icons=true&title_color=ffffff&icon_color=FFFFFF&text_color=FFFFFF&bg_color=001F97'>
-<img src='https://github-readme-stats.vercel.app/api?username=Christ-Saravia&&show_icons=true&title_color=ffffff&icon_color=FFFFFF&text_color=FFFFFF&bg_color=C8102E'>
-<img src='https://github-readme-stats.vercel.app/api?username=saadeddinne&&show_icons=true&title_color=ffffff&icon_color=FFFFFF&text_color=FFFFFF&bg_color=E70013'>
 
 &#xa0;
 
