@@ -24,7 +24,7 @@
   <a href="https://github.com/Christ-Saravia" target="_blank">Christ-Saravia &#xa0; | &#xa0;</a>
   <a href="https://github.com/saadeddine" target="_blank">Saad eddine &#xa0; | &#xa0;</a>
 </p>
-
+<hr>
 <br>
 
 ## :dart: About
@@ -34,8 +34,9 @@
 2. Expanding the relational database model
 3. Implementation of a Data Warehouse
 4. Seeding data base with data NB: real adress are used
+<hr>
 
-🎞️ Video demonstration week 4: <a href="https://youtu.be/z47oGSMz6aQ" target="_blank">Rockect Elevator MVC architecture &#xa0; | &#xa0;</a>
+🎞️ Video demonstration week 4: <a href="https://youtu.be/z47oGSMz6aQ" target="_blank">Rockect Elevator MVC architecture &#xa0; | &#xa0;</a> <br>
 🎞️ Video demonstration week 5: <a href="https://youtu.be/MZsV4H8LtnY" target="_blank">Rockect Elevator Data Ware House &#xa0; | &#xa0;</a>
 
 ## :sparkles: Features
