@@ -30,8 +30,8 @@ Employee.create!(firstName: 'Thomas', lastName: 'Carrier', title: "Engineer", us
 puts "### Seeding Leads ###"
 52.times do
     Lead.create(
-        fullName: Faker::Name.name,
-        companyName: Faker::Company.name,
+        fullName: Faker::Name.name.gsub(/\W/, ''),
+        companyName: Faker::Company.name.gsub(/\W/, ''),
         email: Faker::Internet.safe_email,
         phone: Faker::PhoneNumber.cell_phone,
         projectName: Faker::Space.star,
@@ -46,13 +46,13 @@ puts "### Seeding customers ###"
 15.times do
     dateCreationUpdate = Faker::Date.between(from: '2017-09-23', to: '2020-09-25')
     Customer.create!(
-        name_of_company: Faker::Company.name,
+        name_of_company: Faker::Company.name.gsub(/\W/, ''),
         company_hq_address_id: rand(1..200),
-        name_of_company_contact: Faker::Name.name,
+        name_of_company_contact: Faker::Name.name.gsub(/\W/, ''),
         company_contact_phone: Faker::PhoneNumber.cell_phone,
         company_contact_email: Faker::Internet.safe_email,
         company_description: Faker::Company.buzzword,
-        tech_authority_name: Faker::Name.name,
+        tech_authority_name: Faker::Name.name.gsub(/\W/, ''),
         tech_authority_phone: Faker::PhoneNumber.cell_phone,
         tech_manager_email: Faker::Internet.safe_email,
         users_id:Faker::Number.between(from: 1, to: 7), 
@@ -65,10 +65,10 @@ puts "### Seeding Buildings ###"
 20.times do
     Building.create!(
         building_address_id: rand(1..200),
-        name_of_building_admin: Faker::Name.name,
+        name_of_building_admin: Faker::Name.name.gsub(/\W/, ''),
         email_of_building_admin: Faker::Internet.safe_email,
         phone_of_building_admin: Faker::PhoneNumber.cell_phone,
-        building_tech_contact_name: Faker::Name.name,
+        building_tech_contact_name: Faker::Name.name.gsub(/\W/, ''),
         building_tech_contact_email: Faker::Internet.safe_email,
         building_tech_contact_phone: Faker::PhoneNumber.cell_phone,
         customer_id: Faker::Number.between(from: 1, to: 15),
@@ -114,7 +114,7 @@ end
 puts "### Seeding Elevators ###"
 375.times do
     Elevator.create!(
-        serial_number: Faker::Barcode.ean_with_composite_symbology ,
+        serial_number: Faker::Barcode.ean,
         model: Faker::Number.hexadecimal(digits: 3),
         types: random_type.sample,
         status: random_status.sample,
