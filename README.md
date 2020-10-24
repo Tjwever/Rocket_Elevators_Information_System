@@ -106,13 +106,18 @@ rake routes
 
 ![](routes.png)
 
-<br>
+<hr>
 
 ## :memo: License
 
 - This project is under license from CodeBoxx.
 
 Made with :heart: by
+
+- Cindy Okino
+- Joey Coderre
+- Christ Saravia
+- Saad Eddine
 
 &#xa0;
 
